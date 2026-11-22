@@ -1,0 +1,1381 @@
+[
+ {
+  "id": "business-01",
+  "stem": "PEST (Political, Economic, Social, Technological) is a macro environmental analysis method Choose the incorrect pair of each constituent of PEST with its activity",
+  "context": [],
+  "options": [
+   {
+    "text": "Political - Service-related regulations along with their compliance, and changes in political environment are observed.",
+    "img": null
+   },
+   {
+    "text": "Economical - Target market growth rate, inflation and interest rates, labor costs, etc. are observed.",
+    "img": null
+   },
+   {
+    "text": "Social - The potential environmental pollution of air, water, and soil occurred by social services is observed.",
+    "img": null
+   },
+   {
+    "text": "Technological - Changes in technological environment, the effect of new technologies, activities of research and development, the effect of technological transfers, etc. are observed.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-02",
+  "stem": "Choose the action carried out by Team Leader Lee of Company A that can be a strong possibility to violate the professional ethics.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-02-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "He carried out the database design of the financial system for other companies.",
+    "img": null
+   },
+   {
+    "text": "He provided a technical commissioned education to a team member with low technical skills.",
+    "img": null
+   },
+   {
+    "text": "He searched and applied domestic and international regulations in relation to project execution.",
+    "img": null
+   },
+   {
+    "text": "He notified the project owner of the major weaknesses of the existing system discovered during the project.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "business-03",
+  "stem": "Refer to the artiele below and choose the system '000* that forcibly disclose the evidence of both parties directly involved in the dispute before trial.",
+  "context": [],
+  "options": [
+   {
+    "text": "Discovery",
+    "img": null
+   },
+   {
+    "text": "Compulsory license",
+    "img": null
+   },
+   {
+    "text": "Trade dress",
+    "img": null
+   },
+   {
+    "text": "Right of publicity",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "business-04",
+  "stem": "Choose an activity not appropriate for the 'Assess proposals and sign a contract phase in the IT business process to place an order below:",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-04-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Make a tender announcement",
+    "img": null
+   },
+   {
+    "text": "Select suppliers",
+    "img": null
+   },
+   {
+    "text": "Negotiate contract",
+    "img": null
+   },
+   {
+    "text": "Send RFI (Request for Information)",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-05",
+  "stem": "Which is NOT a correct description about software copyright?",
+  "context": [],
+  "options": [
+   {
+    "text": "Open source license is protected by copyright.",
+    "img": null
+   },
+   {
+    "text": "Includes computer programs and specifications of them.",
+    "img": null
+   },
+   {
+    "text": "Developers of software have the right to use, duplicate, distribute, and modify the software.",
+    "img": null
+   },
+   {
+    "text": "Program languages, protocols, and algorithms to develop programs are protected by copyright.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-06",
+  "stem": "Choose a question that is NOT appropriate to the UL/UX design principle \"Build UI?UX intuitive and consistent.* that is established by e-Government.",
+  "context": [],
+  "options": [
+   {
+    "text": "Are words and sentences easily understood by users?",
+    "img": null
+   },
+   {
+    "text": "Is there a same operation repeated multiple times to complete a task?",
+    "img": null
+   },
+   {
+    "text": "Are clues and information helpful to the users' behavior provided at the appropriate time and location?",
+    "img": null
+   },
+   {
+    "text": "Are terms, styles, layouts, operation methods of functions, etc. applied consistently throughout the whole pages?",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "business-07",
+  "stem": "Choose the characteristic NOI appropriate to the Smart Factory:",
+  "context": [],
+  "options": [
+   {
+    "text": "The analysis results based on IEEE 802.11p protocol-centered ITS (Intelligent Transport Systems) must be reflected through actuators.",
+    "img": null
+   },
+   {
+    "text": "Extreme self-organization and self-optimization features are gained by granting the intelligence to the entities related to manufacturing and by connecting to the loT (Internet of Things).",
+    "img": null
+   },
+   {
+    "text": "The states of the equipment and machines are measured by smart sensors and the occurrences of abnormal patterns are recognized by the use of the big data, and the pre-emptive maintenance can be provided.",
+    "img": null
+   },
+   {
+    "text": "Smart Factories implement the automated and digitized manufacturing environment through the integration of whole manufacture processes with CPPS (Cyber-Physical Production Systems) including loT (Internet of Things), Al (Artificial Intelligence), Big-data etc.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "business-08",
+  "stem": "Choose the Al framework described in the example below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "The framework is second-generation machine learning system of Google. It is an open-source framework based on the Data Flow Graph method developed by Google for machine learning and deep learning."
+   },
+   {
+    "type": "li",
+    "text": "Directions of mathematical formulae and data flows are represented using nodes and edges."
+   }
+  ],
+  "options": [
+   {
+    "text": "Keras.",
+    "img": null
+   },
+   {
+    "text": "Theano.",
+    "img": null
+   },
+   {
+    "text": "TensorFlow.",
+    "img": null
+   },
+   {
+    "text": "PyTorch.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-09",
+  "stem": "Choose the IT business process improvement technique described belon",
+  "context": [
+   {
+    "type": "li",
+    "text": "A technique that analyzes the gap between the respondents' expectation for service quality and the level of quality provided by the company to improve the service quality."
+   },
+   {
+    "type": "li",
+    "text": "Divide services into 5 dimensions, i.e., Tangibles, Reliability, Responsiveness, Assurance, and Empathy to inquire into and evaluate services."
+   }
+  ],
+  "options": [
+   {
+    "text": "6 SIGMA",
+    "img": null
+   },
+   {
+    "text": "BPR (Business Process Reengineering)",
+    "img": null
+   },
+   {
+    "text": "SERVQUAL",
+    "img": null
+   },
+   {
+    "text": "TRIZ",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-10",
+  "stem": "The Diagram below shows a service that maximizes the transaction efficiency and cross-network effect. Which of the following business models serves as a basis for the service?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-10-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "A.I. business model",
+    "img": null
+   },
+   {
+    "text": "Cloud business model",
+    "img": null
+   },
+   {
+    "text": "Platform business model",
+    "img": null
+   },
+   {
+    "text": "Social business model",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-11",
+  "stem": "Below are some cases of the use of software with patent rights. Choose a case that does not violate the Patent Right Act.",
+  "context": [],
+  "options": [
+   {
+    "text": "When the software was sold online",
+    "img": null
+   },
+   {
+    "text": "When the software was used at home for personal use",
+    "img": null
+   },
+   {
+    "text": "When the software was distributed offline using a USB flash drive",
+    "img": null
+   },
+   {
+    "text": "When the software was transmitted online to a person who has an intention to sell it",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "business-12",
+  "stem": "Choose an appropriate model for building a big data analysis platform taking the circumstances below into account.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Sufficient time and budget are allocated for the development of the platform."
+   },
+   {
+    "type": "li",
+    "text": "Sufficient number of developers with knowledge and expertise on the platform are available."
+   },
+   {
+    "type": "li",
+    "text": "Reviewing commercial software products has identified a number of issues for modification."
+   }
+  ],
+  "options": [
+   {
+    "text": "Introduction of Saas",
+    "img": null
+   },
+   {
+    "text": "Outsourcing development",
+    "img": null
+   },
+   {
+    "text": "In-house development",
+    "img": null
+   },
+   {
+    "text": "Introduction of package",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-13",
+  "stem": "Refer to the Example below and choose the correctly linked BSC(balanced score card) perspective with KPI (Key Performance Indicator) examples.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-13-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Customer Satisfaction level of Internal Process - Ratio of sales cost, Ordinary profit",
+    "img": null
+   },
+   {
+    "text": "Financial - Rate of progress in development, Number of patents",
+    "img": null
+   },
+   {
+    "text": "Internal Process - Ratio of sales cost, Ordinary profit",
+    "img": null
+   },
+   {
+    "text": "Learning and Growth - Procure rate of major talent, Retirement rate",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-14",
+  "stem": "The diagram below illustrates the process of an Information Strategy Plan (ISP). Which answer correctly orders the process for (a) through (d)?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-14-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Define Requirements & Improvements → Business Process Analysis → Information Environment Analysis → Establish Business Procedures and Informatization Plans",
+    "img": null
+   },
+   {
+    "text": "Define Requirements & Improvements → Information Environment Analysis → Business Process Analysis → Establish Business Procedures and Informatization Plans",
+    "img": null
+   },
+   {
+    "text": "Information Environment Analysis → Business Process Analysis → Establish Business Procedures and Informatization Plans → Define Requirements & Improvements",
+    "img": null
+   },
+   {
+    "text": "Information Environment Analysis - Business Process Analysis → Define Requirements & Improvements → Establish Business Procedures and Informatization Plans",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "business-15",
+  "stem": "Choose the IT business planning methodology that best fits the description below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Describe the input/output information, procedures, and functional verification requirements of the functions to be implemented to create the proposal for a specific software development project, and refine them to the detail level that enables the derivation of Functional Points (FPs)."
+   },
+   {
+    "type": "li",
+    "text": "In addition to functional requirements, describe the requirements of technical, non-functional (performance, quality, security, etc.), and project support into indicators to be measured by objective metrics."
+   }
+  ],
+  "options": [
+   {
+    "text": "BPR, Business Process Reengineering",
+    "img": null
+   },
+   {
+    "text": "EA, Enterprise Architecture",
+    "img": null
+   },
+   {
+    "text": "ISMP, Information System Master Plan",
+    "img": null
+   },
+   {
+    "text": "ISP, Information Strategy Plan",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-16",
+  "stem": "Which is the system explained in the [Example] below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Maximizes the productivity through the integration of a variety of management resources of the enterprise into a single system."
+   },
+   {
+    "type": "li",
+    "text": "The objective is to maximize the efficiency of business through integrated liaison/management of major tasks and information sharing."
+   },
+   {
+    "type": "li",
+    "text": "Contributes towards the effective sharing of data and the enhancement of flexibility in the organization."
+   }
+  ],
+  "options": [
+   {
+    "text": "CRM (Customer Relationship Management)",
+    "img": null
+   },
+   {
+    "text": "ERP (Enterprise Resource Planning)",
+    "img": null
+   },
+   {
+    "text": "KMS (Knowledge Management System)",
+    "img": null
+   },
+   {
+    "text": "SCM (Supply Chain Management)",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "business-17",
+  "stem": "Which is NOI a correct code of ethics for software engineers?",
+  "context": [],
+  "options": [
+   {
+    "text": "Software engineers must treat co-workers fair.",
+    "img": null
+   },
+   {
+    "text": "Software engineers must work to comply with public interests.",
+    "img": null
+   },
+   {
+    "text": "Focus on stakeholders perspectives for professional decisions.",
+    "img": null
+   },
+   {
+    "text": "When produce and change software, highest possible standards must be met.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-18",
+  "stem": "An analysis has been conducted to identify the major cause of product defects in the manufacturing process. The results are shown in the table and the graph below. The result shows that Categories A and D dominate over 80% of defect cases. Which analysis technique is used?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-18-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Affinity diagram",
+    "img": null
+   },
+   {
+    "text": "Pareto diagram",
+    "img": null
+   },
+   {
+    "text": "Scatter diagram",
+    "img": null
+   },
+   {
+    "text": "Cause and effect diagram",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "business-19",
+  "stem": "Which of the following is NOT a correct explanation about a non-fungible token (NFT)?",
+  "context": [],
+  "options": [
+   {
+    "text": "CryptoPunk is the typical token.",
+    "img": null
+   },
+   {
+    "text": "The ownership of digital assets is ensured.",
+    "img": null
+   },
+   {
+    "text": "Tokens of the same type have same values.",
+    "img": null
+   },
+   {
+    "text": "As a kind of blockchain token, it is a token that cannot be replaced with other tokens.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-20",
+  "stem": "What process of IT Infrastructure Library (ITIL) involves the following activities?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Recognizes and records events that lead to failure or lower the quality of IT services."
+   },
+   {
+    "type": "li",
+    "text": "Classifies and categorizes the recorded events."
+   },
+   {
+    "type": "li",
+    "text": "Utilizes previous solutions from similar events from the past."
+   },
+   {
+    "type": "li",
+    "text": "Resolves the events so as to minimize the business discontinuity and to recover to provide normal IT services."
+   }
+  ],
+  "options": [
+   {
+    "text": "Change management",
+    "img": null
+   },
+   {
+    "text": "Incident management",
+    "img": null
+   },
+   {
+    "text": "Availability management",
+    "img": null
+   },
+   {
+    "text": "Configuration management",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "business-21",
+  "stem": "Choose the core technology to implement the access control service described below that fits in the blank (a).",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-21-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Mobile Edge Computing",
+    "img": null
+   },
+   {
+    "text": "Blockchain",
+    "img": null
+   },
+   {
+    "text": "Internet of Things",
+    "img": null
+   },
+   {
+    "text": "Server Virtualization",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "business-22",
+  "stem": "Choose an enterprise solution required for the company described below:",
+  "context": [
+   {
+    "type": "li",
+    "text": "Information on purchases, logistics, productions, accounting and sales is registered in separate systems for manufacturing and sales of the ordered products."
+   },
+   {
+    "type": "li",
+    "text": "Data in different systems are frequently inconsistent, requiring data validation for book closing quite often."
+   },
+   {
+    "type": "li",
+    "text": "The system consists of independent business processes, which makes it difficult to monitor or trace the entire operational process."
+   }
+  ],
+  "options": [
+   {
+    "text": "Supply chain management (SCM)",
+    "img": null
+   },
+   {
+    "text": "Manufacturing execution system (MES)",
+    "img": null
+   },
+   {
+    "text": "Enterprise resource planning (ERP)",
+    "img": null
+   },
+   {
+    "text": "Product lifecycle management (PLM)",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-23",
+  "stem": "Which of the following is NOT a correct explanation about a non-fungible token (NFT)?",
+  "context": [],
+  "options": [
+   {
+    "text": "CryptoPunk is the typical token.",
+    "img": null
+   },
+   {
+    "text": "The ownership of digital assets is ensured.",
+    "img": null
+   },
+   {
+    "text": "Tokens of the same type have same values.",
+    "img": null
+   },
+   {
+    "text": "As a kind of blockchain token, it is a token that cannot be replaced with other tokens.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-24",
+  "stem": "Which of the following is NOT correct about the Data Take?",
+  "context": [],
+  "options": [
+   {
+    "text": "A single repository of data collected inside or outside of an organization.",
+    "img": null
+   },
+   {
+    "text": "A data repository used by field workers for specific tasks.",
+    "img": null
+   },
+   {
+    "text": "A repository of transformed data used for tasks such as data mining or machine learning.",
+    "img": null
+   },
+   {
+    "text": "A repository of a variety of source data collected and stored for the purpose of preserving the diversity of the data.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "business-25",
+  "stem": "Choose the system explained below",
+  "context": [
+   {
+    "type": "li",
+    "text": "The system that maximizes productivity by integrating the company's variety of management resources into one."
+   },
+   {
+    "type": "li",
+    "text": "The system that automates and manages business processes of purchase, production, finance, accounting. logistics, supply chain, human resources management, and operation in general."
+   }
+  ],
+  "options": [
+   {
+    "text": "CRM (Customer Relationship Management)",
+    "img": null
+   },
+   {
+    "text": "ERP (Enterprise Resource Planning)",
+    "img": null
+   },
+   {
+    "text": "KMS (Knowledge Management System)",
+    "img": null
+   },
+   {
+    "text": "SCM (Supply Chain Management)",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "business-26",
+  "stem": "The figure in the [Example] illustrates the Business Value Chain of an e-Commerce company. Which is the Value Chain activity for (a)?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-26-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Additional Activity",
+    "img": null
+   },
+   {
+    "text": "Operation Activity",
+    "img": null
+   },
+   {
+    "text": "Strategic Activity",
+    "img": null
+   },
+   {
+    "text": "Support Activity",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-27",
+  "stem": "Choose the correct ordering procedure to introduce an information system in the IT business.",
+  "context": [],
+  "options": [
+   {
+    "text": "Planning the order → Evaluate proposals and sign contract → Prepare a Request for Proposal(RFP) → Monitor suppliers → Acquire and close",
+    "img": null
+   },
+   {
+    "text": "Planning the order → Monitor suppliers → Prepare a Request for Proposal(RFP) → Evaluate proposals and sign contract → Acquire and close",
+    "img": null
+   },
+   {
+    "text": "Planning the order → Prepare a Request for Proposal(RFP) → Monitor suppliers → Evaluate proposals and sign contract → Acquire and close",
+    "img": null
+   },
+   {
+    "text": "Planning the order → Prepare a Request for Proposal(RFP) → Evaluate proposals and sign contract → Monitor suppliers → Acquire and close",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-28",
+  "stem": "Which of the following is NOT a corect countermeasure against private information breach under Private Information Protection Guidelines?",
+  "context": [],
+  "options": [
+   {
+    "text": "Any incidence of information breach must be notified to the information owner immediately or within five days.",
+    "img": null
+   },
+   {
+    "text": "The owner must be notified of the details, time, and circumstances of the breach of his/her personal information.",
+    "img": null
+   },
+   {
+    "text": "Any incidence of information breach must be notified by writing, email, or SMS.",
+    "img": null
+   },
+   {
+    "text": "It is the business owners duty to report every incidence of personal information breach.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-29",
+  "stem": "Recently, many leading companies have begun to consistently adopt improvement measures to their business processes. Which of the following is NOT a proper measure for business process improvement?",
+  "context": [],
+  "options": [
+   {
+    "text": "Business Process Reengineering (BPR)",
+    "img": null
+   },
+   {
+    "text": "Critical Chain Method (CCM)",
+    "img": null
+   },
+   {
+    "text": "Process Innovation (PI)",
+    "img": null
+   },
+   {
+    "text": "Total Quality Management (TQM)",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-30",
+  "stem": "Choose the web technology described below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "It provides the optimal use environment in various device screens."
+   },
+   {
+    "type": "li",
+    "text": "It mainly focuses on the layout and style changes."
+   },
+   {
+    "type": "li",
+    "text": "A single source and contents are optimized for each device."
+   }
+  ],
+  "options": [
+   {
+    "text": "Dark Web.",
+    "img": null
+   },
+   {
+    "text": "Responsive Web.",
+    "img": null
+   },
+   {
+    "text": "Social Web.",
+    "img": null
+   },
+   {
+    "text": "Semantic Web.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "business-31",
+  "stem": "Choose the solution to improve the data management efficiency by applying the differentiated storage method according to the data access frequency and time as illustrated below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-31-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "BAM (Business Activity Monitoring)",
+    "img": null
+   },
+   {
+    "text": "BRE (Business Rule Engine)",
+    "img": null
+   },
+   {
+    "text": "ILM (Information Lifecycle Management)",
+    "img": null
+   },
+   {
+    "text": "IRM (Information Resource Management)",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-32",
+  "stem": "Choose the development strategy described below:",
+  "context": [
+   {
+    "type": "p",
+    "text": "Company A is planning to construct the environment where employees can freely share the code only to cooperate within the company because the software currently under development must not be disclosed for security reasons."
+   }
+  ],
+  "options": [
+   {
+    "text": "InnerSource",
+    "img": null
+   },
+   {
+    "text": "Crowd Sourcing",
+    "img": null
+   },
+   {
+    "text": "Open Innovation",
+    "img": null
+   },
+   {
+    "text": "Disruptive Innovation",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "business-33",
+  "stem": "The Korean government has recently established the following strategy below after a SWOT analysis on the nation's competitiveness in the field of Artificial Intelligence. What is the type of strategy established in terms of SWOT?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-33-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/business/business-33-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "SO strategy",
+    "img": null
+   },
+   {
+    "text": "WO strategy",
+    "img": null
+   },
+   {
+    "text": "ST strategy",
+    "img": null
+   },
+   {
+    "text": "WT strategy",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-34",
+  "stem": "Which is the Cloud Computing Service described in the [Example] below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Provide middleware environment for development and execution of software."
+   },
+   {
+    "type": "li",
+    "text": "Reduce DBA works because database is managed by the service providers."
+   },
+   {
+    "type": "li",
+    "text": "Make operations using Kubernetes possible through Container-based development,"
+   }
+  ],
+  "options": [
+   {
+    "text": "DaaS (Data as a Service)",
+    "img": null
+   },
+   {
+    "text": "laaS (Infrastructure as a Service)",
+    "img": null
+   },
+   {
+    "text": "PaaS (Platform as a Service)",
+    "img": null
+   },
+   {
+    "text": "SaaS (Service as a Service)",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-35",
+  "stem": "Which is NOT a Business Process Improvement technique?",
+  "context": [],
+  "options": [
+   {
+    "text": "AHP(Analytic Hierarchy Process)",
+    "img": null
+   },
+   {
+    "text": "BPR(Business Process Reengineering)",
+    "img": null
+   },
+   {
+    "text": "PI(Process Innovation)",
+    "img": null
+   },
+   {
+    "text": "Six Sigma",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "business-36",
+  "stem": "Choose the appropriate terminology in the blank © of the \"Technology Adoption Lifecycle\" illustrated in the example below",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-36-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Main Street,",
+    "img": null
+   },
+   {
+    "text": "Bowling Alley.",
+    "img": null
+   },
+   {
+    "text": "Tornado.",
+    "img": null
+   },
+   {
+    "text": "Chasm.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-37",
+  "stem": "Which is NOI an appropriate example of SLA (Service-Level Agreement) components?",
+  "context": [],
+  "options": [
+   {
+    "text": "Guarantee 99.99% of system availability.",
+    "img": null
+   },
+   {
+    "text": "Maintain 80% or more of Service Request Process Rate.",
+    "img": null
+   },
+   {
+    "text": "Set a penalty level when the system failure lasts longer than one hour during the service periods.",
+    "img": null
+   },
+   {
+    "text": "Quarterly reports of the rates of service use and the number of connections must be internally reported.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-38",
+  "stem": "Choose the term that is appropriate for the blank: 3 in the relationship diagram of management system for IT services",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-38-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "OLA (Objectives Level Agreement)",
+    "img": null
+   },
+   {
+    "text": "SLA (Service Level Agreement)",
+    "img": null
+   },
+   {
+    "text": "SLI (Service Level Indicators)",
+    "img": null
+   },
+   {
+    "text": "SLO (Service Level Objectives)",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "business-39",
+  "stem": "Choose the technology illustrated below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-39-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/business/business-39-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Blockchain",
+    "img": null
+   },
+   {
+    "text": "Cloud computing",
+    "img": null
+   },
+   {
+    "text": "Digital twin",
+    "img": null
+   },
+   {
+    "text": "Smart grid",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "business-40",
+  "stem": "Choose the business strategy of the company explained below among the response strategies promoted to respond to environmental changes.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-40-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Digital Transformation",
+    "img": null
+   },
+   {
+    "text": "Disruptive Innovation",
+    "img": null
+   },
+   {
+    "text": "Open Innovation",
+    "img": null
+   },
+   {
+    "text": "Servitization",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-41",
+  "stem": "Choose a statistical quality control tool applied in the graph below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-41-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Control chart",
+    "img": null
+   },
+   {
+    "text": "Scatter plot",
+    "img": null
+   },
+   {
+    "text": "Cause and effect diagram",
+    "img": null
+   },
+   {
+    "text": "Histogram",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "business-42",
+  "stem": "Choose the component that corresponds to the explanation of a component of the IT Ecosystem illustrated below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Technologies of Cloud or Al are applied as the framework to operate business models that bidirectionally connect multiple suppliers and consumers."
+   },
+   {
+    "type": "li",
+    "text": "Triggers the emergence of business models that increase the utility of all participants as the number of them increases and changes companies from production-centered to exchange-centered."
+   },
+   {
+    "type": "img",
+    "src": "img/business/business-42-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Contents (C)",
+    "img": null
+   },
+   {
+    "text": "Platform (P)",
+    "img": null
+   },
+   {
+    "text": "Network (N)",
+    "img": null
+   },
+   {
+    "text": "Device (D)",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "business-43",
+  "stem": "Choose the architect that performs the role explained below:",
+  "context": [
+   {
+    "type": "li",
+    "text": "Design the configuration of whole IT infrastructure and systematization plan including networks, servers, software etc."
+   },
+   {
+    "type": "li",
+    "text": "Design and configure environment of duplexing, backup, and disaster recovery to respond to system failure."
+   },
+   {
+    "type": "li",
+    "text": "System migration, preparation of standard profile, and configuration of the server environment."
+   },
+   {
+    "type": "li",
+    "text": "Solve technical issues in systems and projects."
+   }
+  ],
+  "options": [
+   {
+    "text": "Data Architect",
+    "img": null
+   },
+   {
+    "text": "Technical Architect",
+    "img": null
+   },
+   {
+    "text": "Security Architect",
+    "img": null
+   },
+   {
+    "text": "Application Architect",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "business-44",
+  "stem": "Choose the business strategy of the company explained below among the response strategies promoted to respond to environmental changes.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-44-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Digital Transformation",
+    "img": null
+   },
+   {
+    "text": "Disruptive Innovation",
+    "img": null
+   },
+   {
+    "text": "Open Innovation",
+    "img": null
+   },
+   {
+    "text": "Servitization",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-45",
+  "stem": "Choose the inappropriately connected pair of the BSC (Balanced Score Card) with IT-BSC.",
+  "context": [],
+  "options": [
+   {
+    "text": "Customer perspective - User perspective.",
+    "img": null
+   },
+   {
+    "text": "Internal process perspective - Information technology perspective.",
+    "img": null
+   },
+   {
+    "text": "Financial perspective - Contribution perspective to corporation.",
+    "img": null
+   },
+   {
+    "text": "Learning and growth perspective - Future-oriented perspective.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "business-46",
+  "stem": "Below are the tasks for establishing Information Stragety Planning (ISP) to construct the security management system. Choose the answer with a correct order.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-46-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(a)-(d)-(b)-(c)",
+    "img": null
+   },
+   {
+    "text": "(a)-(d)-(c)-(b)",
+    "img": null
+   },
+   {
+    "text": "(d)-(a)-(b)-(c)",
+    "img": null
+   },
+   {
+    "text": "(d)-(a)-(c)-(b)",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "business-47",
+  "stem": "Each year, the Gartner group releases a graph like the one below in order to demonstrate the industrial and economic values of new technologies and their expected impacts over time. What is this graph called?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/business/business-47-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Hype cycle",
+    "img": null
+   },
+   {
+    "text": "S-Curve model",
+    "img": null
+   },
+   {
+    "text": "Magic Quadrant",
+    "img": null
+   },
+   {
+    "text": "Technology adoption lifecycle",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ }
+]

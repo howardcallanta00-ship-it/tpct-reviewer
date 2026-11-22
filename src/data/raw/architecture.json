@@ -1,0 +1,979 @@
+[
+ {
+  "id": "architecture-01",
+  "stem": "Choose the phenomenon described below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-01-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Convoy effect",
+    "img": null
+   },
+   {
+    "text": "Deadlock",
+    "img": null
+   },
+   {
+    "text": "Starvation",
+    "img": null
+   },
+   {
+    "text": "Thrashing",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "architecture-02",
+  "stem": "Choose the virtual memory segmentation technique explained below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Memory is divided into frames with a fixed size when the physical memory is used"
+   },
+   {
+    "type": "li",
+    "text": "Internal fragmentation occurs frequently but the memory space is not required to be allocated contiguously"
+   }
+  ],
+  "options": [
+   {
+    "text": "Segmentation",
+    "img": null
+   },
+   {
+    "text": "Thrashing",
+    "img": null
+   },
+   {
+    "text": "Locality",
+    "img": null
+   },
+   {
+    "text": "Paging",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "architecture-03",
+  "stem": "What is the type of open-source library described below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-03-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-03-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "OpenCL",
+    "img": null
+   },
+   {
+    "text": "OpenCV",
+    "img": null
+   },
+   {
+    "text": "OpenGL",
+    "img": null
+   },
+   {
+    "text": "OpenMP",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "architecture-04",
+  "stem": "What is the component of Web Architecture that is appropriate to (a) below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-04-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Web Server",
+    "img": null
+   },
+   {
+    "text": "Web Container",
+    "img": null
+   },
+   {
+    "text": "Web Cache Server",
+    "img": null
+   },
+   {
+    "text": "Web Transaction Server",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "architecture-05",
+  "stem": "Choose the network error control method illustrated below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Add an extra bit to make the number of 1s odd or even to detect errors."
+   },
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-05-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Cyclic redundancy check (CRC)",
+    "img": null
+   },
+   {
+    "text": "Echo check",
+    "img": null
+   },
+   {
+    "text": "Parity check",
+    "img": null
+   },
+   {
+    "text": "Hamming code",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "architecture-06",
+  "stem": "Choose the virtual memory management technique described in the example below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Tasks stored in virtual memory to be processed are partitioned into logical-unit blocks and loaded into the main memory to be executed."
+   },
+   {
+    "type": "li",
+    "text": "Words per address consist of two parts including the offset."
+   }
+  ],
+  "options": [
+   {
+    "text": "Paging",
+    "img": null
+   },
+   {
+    "text": "Segmentation",
+    "img": null
+   },
+   {
+    "text": "Segmented Paging",
+    "img": null
+   },
+   {
+    "text": "Paged Segmentation",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "architecture-07",
+  "stem": "Which of the following is NOT a correct explanation of the paging technique, which is one of the virtual memory allocation techniques?",
+  "context": [],
+  "options": [
+   {
+    "text": "An external fragmentation may occur.",
+    "img": null
+   },
+   {
+    "text": "Physical address space is divided into equal sizes and used",
+    "img": null
+   },
+   {
+    "text": "Logical and physical addresses are connected through the page table.",
+    "img": null
+   },
+   {
+    "text": "Data to be processed are divided into pages of a predefined size to be loaded into memory.",
+    "img": null
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "architecture-08",
+  "stem": "Which of the following types of File Systems fit in blanks (a) and (b)",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-08-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(a): FAT 32, (b): exFAT",
+    "img": null
+   },
+   {
+    "text": "(a): FAT 32, (b): NTFS",
+    "img": null
+   },
+   {
+    "text": "(a): FAT 64, (b): exFAT",
+    "img": null
+   },
+   {
+    "text": "(a): FAT 16, (b): NTFS",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "architecture-09",
+  "stem": "Which of the following is NOT a correct description of TCP (Transmission Control Protocol)?",
+  "context": [],
+  "options": [
+   {
+    "text": "It is a connectionless-oriented protocol",
+    "img": null
+   },
+   {
+    "text": "Error-detection ads to reliability",
+    "img": null
+   },
+   {
+    "text": "Three-way handshake is used to establish a connection",
+    "img": null
+   },
+   {
+    "text": "Sliding window protocols are used for a reliable in-order delivery",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "architecture-10",
+  "stem": "What is the suitable command in (a) below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-10-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "arp-s",
+    "img": null
+   },
+   {
+    "text": "scp-s",
+    "img": null
+   },
+   {
+    "text": "ssh-s",
+    "img": null
+   },
+   {
+    "text": "telnet-s",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "architecture-11",
+  "stem": "Which contents does NOT apply CDN (Contents Delivery Network)?",
+  "context": [],
+  "options": [
+   {
+    "text": "Installation files of large-sized mobile games",
+    "img": null
+   },
+   {
+    "text": "MP4 (MPEG-4 Part 14) video files provide VOD (Video On Demand) services",
+    "img": null
+   },
+   {
+    "text": "ASP (Active Server Page) and JSP (Java Server Pages) files that display individual order information",
+    "img": null
+   },
+   {
+    "text": "CSS (Cascading Style Page), JS (JavaScript), JPG (Joint Photographic Expert Group) files that compose layout of web sites.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "architecture-12",
+  "stem": "Choose the error control protocol illustrated in the figure below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-12-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Go-back-N protocol",
+    "img": null
+   },
+   {
+    "text": "Piggy-backing protocol",
+    "img": null
+   },
+   {
+    "text": "Simple protocol",
+    "img": null
+   },
+   {
+    "text": "Stop-and-wait protocol",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "architecture-13",
+  "stem": "Choose the incorrect explanation about the characteristics of quantum computing.",
+  "context": [],
+  "options": [
+   {
+    "text": "Superposition – A quantum particle can be in two or more distinct states at the same time.",
+    "img": null
+   },
+   {
+    "text": "Quantum Bit – The smallest unit of quantum information, referred as Q bit or Qubits in short.",
+    "img": null
+   },
+   {
+    "text": "Quantum Supremacy – impossible to recover to the previous state after the quantum state is measured.",
+    "img": null
+   },
+   {
+    "text": "Entanglement – If a particle state value changes even in the infinitely remote place, the quantum state value at the other end also changes instantaneously.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "architecture-14",
+  "stem": "Which of the following is NOT a container technique appropriate to the description below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-14-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Docker Swarm",
+    "img": null
+   },
+   {
+    "text": "Mesos",
+    "img": null
+   },
+   {
+    "text": "Xen",
+    "img": null
+   },
+   {
+    "text": "Kubernetes",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "architecture-15",
+  "stem": "Which of the following is NOT a correct explanation of MapReduce, which is one of the major technical components of Hadoop?",
+  "context": [],
+  "options": [
+   {
+    "text": "Processes sorted data in a distributed manner and then merges the data again.",
+    "img": null
+   },
+   {
+    "text": "Enables the analysis of mass data in parallel in a large-scale distributed computing environment.",
+    "img": null
+   },
+   {
+    "text": "The result of the analysis process is stored in the HDFS (Hadoop File System).",
+    "img": null
+   },
+   {
+    "text": "A file system consisting of Name Node and Data Node.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "architecture-16",
+  "stem": "Which of the following is NOT a correct explanation about the DNS (Domain Name System)?",
+  "context": [],
+  "options": [
+   {
+    "text": "Multiple IP addresses are not assigned to a single domain",
+    "img": null
+   },
+   {
+    "text": "Domain names are converted into IP addresses and vice versa.",
+    "img": null
+   },
+   {
+    "text": "A domain name is converted into an IP address and vice versa.",
+    "img": null
+   },
+   {
+    "text": "Aliases may be used when domain names are complex.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "architecture-17",
+  "stem": "Which hardware device provided the function that enables the CPU to access a physical memory address using a virtual address?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-17-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Register",
+    "img": null
+   },
+   {
+    "text": "Memory Management Unit (MMU)",
+    "img": null
+   },
+   {
+    "text": "Arithmetic Logic Unit (ALU)",
+    "img": null
+   },
+   {
+    "text": "Cache",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "architecture-18",
+  "stem": "The figure below illustrates the bus structure of the computer system. Choose the appropriate bus for (a).",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-18-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "I/O bus",
+    "img": null
+   },
+   {
+    "text": "Data bus",
+    "img": null
+   },
+   {
+    "text": "Channel bus",
+    "img": null
+   },
+   {
+    "text": "Direct Memory Access (DMA) bus",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "architecture-19",
+  "stem": "What is a correct explanation about SRAM (Static Random Access Memory)?",
+  "context": [],
+  "options": [
+   {
+    "text": "Volatile memory that retains data while electrified",
+    "img": null
+   },
+   {
+    "text": "Memory based on the resistance change of MTJ (Magnetic Tunnel Junction)",
+    "img": null
+   },
+   {
+    "text": "Memory utilizing properties of the amorphous and crystalline state when heat is applied",
+    "img": null
+   },
+   {
+    "text": "Memory applying hysteretic PE (Polarization vs Electric field) characteristic on strong electrical film.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "architecture-20",
+  "stem": "Choose the appropriate open-source software described in the example below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-20-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Cassandra",
+    "img": null
+   },
+   {
+    "text": "CouchDB",
+    "img": null
+   },
+   {
+    "text": "MongoDB",
+    "img": null
+   },
+   {
+    "text": "Redis",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "architecture-21",
+  "stem": "Coose an instruction processing technique of the CPU described below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-21-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Scalar",
+    "img": null
+   },
+   {
+    "text": "Pipeline",
+    "img": null
+   },
+   {
+    "text": "Suoer scalar",
+    "img": null
+   },
+   {
+    "text": "Super pipeline",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "architecture-22",
+  "stem": "Choose the protocol described in the example below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-22-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "IMS (IP Multimedia Subsystem)",
+    "img": null
+   },
+   {
+    "text": "RTCP (Real-time Transport Control Protocol)",
+    "img": null
+   },
+   {
+    "text": "RTP (Real-time Transport Protocol)",
+    "img": null
+   },
+   {
+    "text": "RTSP (Real0time Streaming Protocol)",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "architecture-23",
+  "stem": "Class C network is to be divided into 10 or more subnets and 10 to 13 hosts will be, in turn, connected to each subnet. Choose the correct subnet mask",
+  "context": [],
+  "options": [
+   {
+    "text": "255.255.255.192 (the last 8-bit: 1100 0000)",
+    "img": null
+   },
+   {
+    "text": "255.255.255.224 (the last 8-bit: 1110 0000)",
+    "img": null
+   },
+   {
+    "text": "255.255.255.240 (the last 8-bit: 1111 0000)",
+    "img": null
+   },
+   {
+    "text": "255.255.255.248 (the last 8-bit: 1111 1000)",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "architecture-24",
+  "stem": "What is the RAID (Redundant Array of Independent Disk) type for the storage device described below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-24-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-24-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "RAID 0",
+    "img": null
+   },
+   {
+    "text": "RAID 1",
+    "img": null
+   },
+   {
+    "text": "RAID 5",
+    "img": null
+   },
+   {
+    "text": "RAID 10",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "architecture-25",
+  "stem": "Choose the explanation that is NOT correct about the elements in the header of HTTP protocol.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-25-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Accept: File types that a client can accept (MIME TYPE)",
+    "img": null
+   },
+   {
+    "text": "Host: Domain name of the server",
+    "img": null
+   },
+   {
+    "text": "Referer: Web page address that is currently displayed",
+    "img": null
+   },
+   {
+    "text": "User-Agent: Operating system and connection tool information of the client requested by the current user.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "architecture-26",
+  "stem": "Which explanation is NOT correct about HDFS (Hadoop Distributed File System)?",
+  "context": [],
+  "options": [
+   {
+    "text": "Stored files must be inquired through streaming methods.",
+    "img": null
+   },
+   {
+    "text": "Distributed files can be read applying Map Reduce framework.",
+    "img": null
+   },
+   {
+    "text": "Files stored in Data Nodes can be modified with restrictions.",
+    "img": null
+   },
+   {
+    "text": "HDFS consists of Name Nodes that manage metadata and Data Nodes that store data.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "architecture-27",
+  "stem": "The figure below illustrates the deployment method mostly used in Kubernetes. Choose the appropriate deployment method.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-27-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-27-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Big bang deployment",
+    "img": null
+   },
+   {
+    "text": "Blue-Green deployment",
+    "img": null
+   },
+   {
+    "text": "Canary deployment",
+    "img": null
+   },
+   {
+    "text": "Rolling deployment",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "architecture-28",
+  "stem": "Choose the statement that is NOT appropriate as an explanation of the Forward Error Correction (FEC) in the link layer.",
+  "context": [],
+  "options": [
+   {
+    "text": "Mainly used in poor channel environments or when reliability is highly required",
+    "img": null
+   },
+   {
+    "text": "Enables real-time processing and provides high throughput compared to Backward Error Correction (BEC)",
+    "img": null
+   },
+   {
+    "text": "Errors are detected by the data-receiving hosts using the additional information, and when errors are detected, the data-receiving host corrects them.",
+    "img": null
+   },
+   {
+    "text": "Additional information is sent to detect errors when data are transmitted, the data-receiving host uses the information, and requests the data-sending host to retransmit the data when errors are detected.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "architecture-29",
+  "stem": "Which of the following is NOT a correct explanation about this provisioning?",
+  "context": [],
+  "options": [
+   {
+    "text": "Space zeroing is performed using lazy zeroing and eager zeroing",
+    "img": null
+   },
+   {
+    "text": "A host constantly performs dynamic allocation and space recovery in the storage.",
+    "img": null
+   },
+   {
+    "text": "Logical space which is larger than the actual physical space can be allocated through virtualization technology.",
+    "img": null
+   },
+   {
+    "text": "It is on-demand provisioning technology that flexibly expand the disk space, and allocate the size of space as much as it is used.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "architecture-30",
+  "stem": "Choose the page replacement algorithm used for virtual memory management illustrated below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-30-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-30-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "First-In First-Out (FIFO)",
+    "img": null
+   },
+   {
+    "text": "Least Frequently Used (LFU)",
+    "img": null
+   },
+   {
+    "text": "Least Recent Used (LRU)",
+    "img": null
+   },
+   {
+    "text": "Not Frequently Used (NFU)",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "architecture-31",
+  "stem": "Choose the statement which is NOT appropriate as a feature of UDP (User Datagram Protocol)",
+  "context": [],
+  "options": [
+   {
+    "text": "UDP is a very simple protocol without a flow control.",
+    "img": null
+   },
+   {
+    "text": "UDP provides connectionless service without preset processes.",
+    "img": null
+   },
+   {
+    "text": "UDP provides the congestion control to alleviate the load in the sending processes.",
+    "img": null
+   },
+   {
+    "text": "UDP is used for real-time multimedia data transfer that do not require reliability at the Transport Layer.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "architecture-32",
+  "stem": "Refer to the illustration in the example below and choose the parallel computer processor architecture in Flynn’s taxonomy.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-32-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-32-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "SISD (Single Instruction Single Data Stream)",
+    "img": null
+   },
+   {
+    "text": "SIMD (Single Instruction Multiple Data Stream)",
+    "img": null
+   },
+   {
+    "text": "MISD (Multiple Instruction Single Data Stream)",
+    "img": null
+   },
+   {
+    "text": "MIMD (Multiple Instruction Multiple Data Stream)",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "architecture-33",
+  "stem": "Which of the following is NOT a correct explanation of the congestion control technique of the TCP?",
+  "context": [],
+  "options": [
+   {
+    "text": "Slow start: The size a congestion window slowly increases by one.",
+    "img": null
+   },
+   {
+    "text": "Fast recovery: Congestion avoidance is performed without the slow start after the fast retransmit.",
+    "img": null
+   },
+   {
+    "text": "Fast retransmit: When the Duplicate ACK is received three times, transmission start immediately without waiting for Timeout.",
+    "img": null
+   },
+   {
+    "text": "Congestion avoidance: Once the slow start threshold is reached, TCP regards it as a congestion and the window is increased linearly.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "architecture-34",
+  "stem": "The diagram show below illustrates the execution cycle of a 6-stage pipeline. Which of the following explanation is NOT correctly matched?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/architecture/architecture-34-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "DI: decode the instruction",
+    "img": null
+   },
+   {
+    "text": "CO: calculate the operand",
+    "img": null
+   },
+   {
+    "text": "EI: execute the instructions",
+    "img": null
+   },
+   {
+    "text": "WO: withdraw the operand",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "architecture-35",
+  "stem": "Which of the following is NOT correctly matched between the OSI (Open Systems Interconnection) model application layer protocol and its description?",
+  "context": [],
+  "options": [
+   {
+    "text": "SMTP – a standard protocol for E-mail transmission",
+    "img": null
+   },
+   {
+    "text": "TELNET – consists of both active and passive modes",
+    "img": null
+   },
+   {
+    "text": "HTTP – functions through request and response protocols",
+    "img": null
+   },
+   {
+    "text": "FTP – consists of a command control connection and a data connection",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ }
+]

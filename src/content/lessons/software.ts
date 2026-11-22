@@ -1,0 +1,315 @@
+import type { Lesson } from '../../types';
+
+export const softwareLessons: Lesson[] = [
+  {
+    id: 'sw-testing',
+    title: 'Testing techniques',
+    summary: 'The most-tested Software topic. Know the test levels, the black-box techniques and what "coverage" means.',
+    blocks: [
+      { kind: 'text', md: 'Testing questions usually describe a situation and ask you to **name the technique**. Learn the one-line signature of each.' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Unit test', def: 'Tests one module on its own.', cue: '"a single function / class"' },
+          { term: 'Integration test', def: 'Tests modules working together.', cue: '"interfaces between modules"' },
+          { term: 'System test', def: 'Tests the whole system against requirements.' },
+          { term: 'Acceptance test', def: 'The customer checks the system meets their needs before release.', cue: '"user / customer approval"' },
+          { term: 'Regression test', def: 'Re-runs tests after a change to catch side effects.', cue: '"after a change / fix / refactoring"' },
+        ],
+      },
+      {
+        kind: 'table',
+        head: ['Black-box technique', 'Idea', 'Clue in the question'],
+        rows: [
+          ['Equivalence partitioning', 'One test per group of inputs that behave the same', '"valid / invalid classes"'],
+          ['Boundary value analysis', 'Test at and just outside each edge', 'Range 1–10 → test 0, 1, 10, 11'],
+          ['Decision table', 'Every combination of conditions → action', '"conditions and actions" table'],
+          ['State transition', 'Test moves between states', '"state", "event", "transition"'],
+          ['Pairwise', 'Fewest cases that cover every pair of values', '"optimized combinations"'],
+          ['Error guessing', 'Tester’s experience guesses weak spots', '"experience", "intuition"'],
+          ['Exploratory', 'Learn, design and run tests at the same time', '"no time to write test cases first"'],
+        ],
+      },
+      {
+        kind: 'table',
+        head: ['White-box coverage', 'Requirement'],
+        rows: [
+          ['Statement', 'Every line runs at least once'],
+          ['Decision (branch)', 'Every if-result (whole decision) is true once and false once'],
+          ['Condition', 'Every individual condition (x > 0, y > 0) is true once and false once'],
+          ['MC/DC', 'Each condition shown to independently change the outcome'],
+        ],
+      },
+      { kind: 'steps', title: 'Test process order', items: ['Planning and control', 'Analysis and design (review basis, find conditions, pick techniques, set up environment)', 'Implementation and execution', 'Evaluate exit criteria and report', 'Closure'] },
+      { kind: 'tip', md: 'For condition coverage, make a mini table: one row per test, one column per condition, write T/F. Every column needs both T and F.' },
+      { kind: 'trap', md: '**Regression** is about re-testing after changes. **Acceptance** is about the customer. Do not mix them up because both happen "late".' },
+    ],
+  },
+  {
+    id: 'sw-patterns',
+    title: 'Design patterns (GoF)',
+    summary: 'Match the pattern to its one-sentence purpose. Adapter vs Bridge vs Decorator is the classic trap.',
+    blocks: [
+      { kind: 'text', md: 'The Gang of Four (GoF) patterns come in three groups: **Creational** (how objects are made), **Structural** (how objects are combined), **Behavioral** (how objects talk).' },
+      {
+        kind: 'table',
+        head: ['Pattern', 'Group', 'One-line purpose'],
+        rows: [
+          ['Singleton', 'Creational', 'Only one instance ever exists'],
+          ['Factory Method', 'Creational', 'Subclasses decide which object to create'],
+          ['Builder', 'Creational', 'Build a complex object step by step'],
+          ['Adapter', 'Structural', 'Convert one interface into the one the client expects'],
+          ['Bridge', 'Structural', 'Separate abstraction from implementation so both vary independently'],
+          ['Decorator', 'Structural', 'Add features by wrapping an object'],
+          ['Façade', 'Structural', 'One simple front door to a complex subsystem'],
+          ['Proxy', 'Structural', 'A stand-in that controls access to the real object'],
+          ['Composite', 'Structural', 'Treat single objects and groups (trees) the same way'],
+          ['Observer', 'Behavioral', 'When one object changes, all subscribers are notified'],
+          ['Strategy', 'Behavioral', 'Swap algorithms at runtime'],
+          ['Command', 'Behavioral', 'Wrap a request as an object (undo, queue)'],
+          ['Template Method', 'Behavioral', 'Parent defines steps, subclasses fill in some'],
+        ],
+      },
+      { kind: 'tip', md: '**Adapter** = travel plug (fix a mismatch). **Bridge** = two sides of a river that change independently. **Decorator** = gift wrap (add layers). **Observer** = YouTube subscribe button.' },
+      { kind: 'trap', md: '"Behavior pattern" is a **category**, not a pattern. If it appears as an option, it is almost never the answer.' },
+    ],
+  },
+  {
+    id: 'sw-principles',
+    title: 'Design principles, coupling and cohesion',
+    summary: 'Good design = low coupling, high cohesion, plus SOLID. Expect to name coupling types from code.',
+    blocks: [
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Abstraction', def: 'Pull out the essential idea, hide the details.' },
+          { term: 'Procedure abstraction', def: 'Hide the steps behind a function name, like getSum(100).' },
+          { term: 'Data abstraction', def: 'Hide how data is stored behind operations (a class with private fields).' },
+          { term: 'Information hiding', def: 'Modules expose interfaces, keep internals private.' },
+          { term: 'Stepwise refinement', def: 'Top-down: add detail one level at a time.' },
+          { term: 'Divide and conquer', def: 'Split the problem, solve the parts, combine.' },
+          { term: 'Class / object / instance', def: 'Class = blueprint. Object = a thing declared from it. Instance = the object actually created in memory.' },
+        ],
+      },
+      {
+        kind: 'table',
+        head: ['Coupling (worst → best)', 'What happens', 'Code clue'],
+        rows: [
+          ['Content', 'One module changes or jumps into another’s internals', 'Direct edit of another module’s data / GOTO'],
+          ['Common', 'Modules share global data', 'Global variable used by both'],
+          ['External', 'Modules share an outside format, protocol or device', 'Same file format / device'],
+          ['Control', 'One passes a flag that controls the other’s logic', 'flag, switch, mode parameter'],
+          ['Stamp', 'A whole structure is passed, only part used', 'struct / record parameter'],
+          ['Data', 'Only the simple values needed are passed', 'f(a, b)'],
+        ],
+      },
+      { kind: 'tip', md: 'Coupling order mnemonic: **C**an **C**ats **E**ver **C**atch **S**mall **D**ogs? Content, Common, External, Control, Stamp, Data.' },
+      { kind: 'text', md: '**Cohesion** (best → worst): Functional, Sequential, Communicational, Procedural, Temporal, Logical, Coincidental. High cohesion = one module does one clear job.' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'S – Single responsibility', def: 'A class has one reason to change.' },
+          { term: 'O – Open/closed', def: 'Open for extension, closed for modification.' },
+          { term: 'L – Liskov substitution', def: 'A subclass must work wherever its parent works.' },
+          { term: 'I – Interface segregation', def: 'Many small interfaces beat one fat one.' },
+          { term: 'D – Dependency inversion', def: 'Depend on abstractions, not concrete classes.' },
+        ],
+      },
+      { kind: 'trap', md: 'Structure charts: an **empty** circle on an arrow = data, a **filled** circle = control flag. Always follow the arrowhead for direction.' },
+    ],
+  },
+  {
+    id: 'sw-algorithms',
+    title: 'Sorting and algorithms',
+    summary: 'Recognize a sort from its code or picture, and know the classic algorithm strategies.',
+    blocks: [
+      {
+        kind: 'table',
+        head: ['Sort', 'How to recognize it', 'Average time'],
+        rows: [
+          ['Bubble', 'Compares neighbors a[j] and a[j+1], swaps; largest drifts to the end each pass', 'O(n²)'],
+          ['Selection', 'Finds the minimum, swaps it to the front once per pass', 'O(n²)'],
+          ['Insertion', 'Takes the next item and slides it into a sorted left part', 'O(n²)'],
+          ['Quick', 'Picks a pivot, partitions smaller/larger around it', 'O(n log n)'],
+          ['Merge', 'Splits in half, sorts, merges', 'O(n log n)'],
+          ['Heap', 'Builds a heap, removes the max repeatedly', 'O(n log n)'],
+        ],
+      },
+      { kind: 'tip', md: 'Code with `if (a[j] > a[j+1]) swap` inside two loops = **bubble sort**. A variable like `minIndex` = **selection sort**.' },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Greedy', def: 'Take the best choice at each step. Fast, but no guarantee of the global best.' },
+          { term: 'Dynamic programming', def: 'Store answers to sub-problems and reuse them. Guarantees the optimum.' },
+          { term: 'Divide and conquer', def: 'Split, solve recursively, combine (merge sort, quick sort).' },
+          { term: 'Backtracking', def: 'Try a path, undo when it fails.' },
+        ],
+      },
+      {
+        kind: 'table',
+        head: ['Graph algorithm', 'Solves'],
+        rows: [
+          ['Dijkstra', 'Shortest path from one node to others (non-negative weights)'],
+          ['Kruskal / Prim', 'Minimum spanning tree: cheapest way to connect all nodes'],
+          ['BFS / DFS', 'Visit every node (breadth-first / depth-first)'],
+          ['KMP', 'Find a pattern inside a text string'],
+        ],
+      },
+      { kind: 'text', md: 'Statistics in code: sort then take the middle = **median**. Sum ÷ count = **mean**. Most frequent = **mode**.' },
+    ],
+  },
+  {
+    id: 'sw-datastructures',
+    title: 'Data structures',
+    summary: 'Pick the structure from the behavior described: order of arrival, undo, hierarchy or priority.',
+    blocks: [
+      {
+        kind: 'table',
+        head: ['Structure', 'Rule', 'Everyday example'],
+        rows: [
+          ['Stack', 'Last In, First Out (LIFO)', 'Browser Back button, undo, function calls'],
+          ['Queue', 'First In, First Out (FIFO)', 'A line at a counter, print jobs, security check'],
+          ['Tree', 'Hierarchy, one parent per node', 'Folders, org chart'],
+          ['Binary search tree', 'Left < node < right', 'Fast search: bigger → go right, smaller → go left'],
+          ['Heap', 'Complete binary tree; max-heap parent ≥ children', 'Priority queue, heap sort'],
+          ['Graph', 'Nodes connected any way', 'Maps, social networks'],
+          ['Linked list', 'Nodes chained by pointers', 'Easy insert and delete'],
+        ],
+      },
+      { kind: 'tip', md: 'Ask: "Who comes out first?" Newest → **stack**. Oldest → **queue**. Most important → **heap / priority queue**.' },
+      { kind: 'trap', md: 'In BST search code, `if (x > node.value)` must go to `node.right`. Passing `node.value` (a number) to a search function is always wrong.' },
+    ],
+  },
+  {
+    id: 'sw-requirements',
+    title: 'Requirements and work products',
+    summary: 'Functional vs non-functional, how requirements are gathered, and which document does what.',
+    blocks: [
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Functional requirement', def: 'What the system does: features like "send an SMS after sign-up".' },
+          { term: 'Non-functional requirement', def: 'How well it does it: performance, security, reliability, usability.' },
+          { term: 'Elicitation', def: 'Gathering requirements: interview, survey, observation, workshop, prototyping, focus group, benchmarking.' },
+          { term: 'Inspection / review', def: 'Checking documents for defects. This is verification, not elicitation.' },
+          { term: 'Prototyping', def: 'Build a quick mock-up, show users, refine requirements.' },
+          { term: 'SRS', def: 'Requirements spec from the analysis phase: constraints, system properties, logical model. No code or component details.' },
+          { term: 'RTM', def: 'Requirements Traceability Matrix: links each requirement to design, code and tests.' },
+          { term: 'Baseline', def: 'An approved snapshot. Design baseline = design outputs like sequence diagrams.' },
+        ],
+      },
+      { kind: 'text', md: '**UI vs UX**: UI is the screens and controls. UX is the whole experience. Both are **user-centered**.' },
+      { kind: 'tip', md: 'Functional = verbs (send, save, display). Non-functional = adjectives (fast, secure, available).' },
+    ],
+  },
+  {
+    id: 'sw-modeling',
+    title: 'UML, DFD and architecture styles',
+    summary: 'Recognize diagrams by their symbols and architecture styles by their shape.',
+    blocks: [
+      {
+        kind: 'table',
+        head: ['Diagram', 'Shows', 'Look for'],
+        rows: [
+          ['Use case', 'Actors and what they do with the system', 'Stick figures + ovals'],
+          ['Class', 'Classes, attributes, relationships', 'Boxes with 3 compartments'],
+          ['Sequence', 'Messages over time', 'Vertical lifelines'],
+          ['Communication', 'Objects and numbered messages', 'Links with numbered arrows'],
+          ['State machine', 'States of one object and transitions', 'Rounded states + event arrows'],
+          ['Deployment', 'Hardware nodes and software on them', '3D boxes (nodes)'],
+          ['Component', 'Software components and interfaces', 'Component icons'],
+        ],
+      },
+      { kind: 'text', md: '**DFD symbols**: circle = process, arrow = data flow, two parallel lines = data store, rectangle = external entity (terminator).' },
+      { kind: 'text', md: '**UML extensibility mechanisms**: stereotype `<<name>>`, tagged value `{key = value}`, constraint `{rule}`.' },
+      {
+        kind: 'table',
+        head: ['Architecture style', 'Shape'],
+        rows: [
+          ['Layered', 'Stack of layers, each uses the one below'],
+          ['Client-server', 'Many clients request from a server'],
+          ['Pipes and filters', 'Data stream through processing steps'],
+          ['Repository', 'Components share one central data store'],
+          ['MVC', 'Model, View, Controller separated'],
+          ['Microservices (MSA)', 'Small independent services, deployed separately'],
+        ],
+      },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'MDD', def: 'Model-driven: PIM → PSM → generated code.' },
+          { term: 'CBD', def: 'Build by assembling reusable components.' },
+          { term: 'Product line (SSPL)', def: 'Domain engineering builds core assets; application engineering builds products from them.' },
+          { term: 'IEEE 1471', def: 'A System fulfills a Mission, lives in an Environment, has Stakeholders and an Architecture.' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'sw-code',
+    title: 'Reading Java, Python and C',
+    summary: 'Small code-reading questions: indexes, loops, lambdas, string functions.',
+    blocks: [
+      { kind: 'text', md: 'You are not asked to write programs, only to **trace** small ones. Three rules solve most questions.' },
+      {
+        kind: 'steps',
+        items: [
+          'Indexes start at **0**. The last valid index is **length − 1**. `a[a.length]` throws an exception.',
+          'Python `range(a, b)` stops **before** b. `range(1, N+1)` gives 1..N. `range(0, 100)` runs 100 times.',
+          'Count loop runs: from 0 while i < n = n times. From 0 while i <= n = n + 1 times.',
+        ],
+      },
+      {
+        kind: 'table',
+        head: ['Python string function', 'Returns'],
+        rows: [
+          ['s.count(x)', 'How many times x appears'],
+          ['s.find(x, start)', 'First index of x from "start", or −1'],
+          ['s.rindex(x)', 'Last index where x starts (error if missing)'],
+          ['s.startswith(x)', 'True / False'],
+        ],
+      },
+      { kind: 'text', md: 'Java lambda: `(params) -> expression` or `(params) -> { statements; }`. Parameters always use **round** brackets.' },
+      { kind: 'trap', md: 'Watch for capital letters: `I` and `i` are different variables.' },
+    ],
+  },
+  {
+    id: 'sw-tools',
+    title: 'Tools, process, licenses and maintenance',
+    summary: 'Git, Scrum, CI/CD, build tools, open-source licenses, refactoring and reverse engineering.',
+    blocks: [
+      {
+        kind: 'terms',
+        items: [
+          { term: 'git push / pull / fetch', def: 'push = upload commits. pull = download + merge. fetch = download only.' },
+          { term: 'Product backlog', def: 'All features, prioritized by the Product Owner.' },
+          { term: 'Sprint backlog', def: 'Items the team picked for one sprint.' },
+          { term: 'Jenkins / Travis CI / Docker', def: 'Build, test, package and deploy automatically (CI/CD, distribution).' },
+          { term: 'Maven lifecycle', def: 'compile (to bytecode) → test → package → install (local repo) → deploy (remote repo).' },
+        ],
+      },
+      {
+        kind: 'table',
+        head: ['License', 'Must you open your code?'],
+        rows: [
+          ['GPL', 'Yes, the whole derived program'],
+          ['LGPL', 'Only changes to the library itself'],
+          ['AGPL', 'Yes, even when used over a network'],
+          ['BSD / MIT / Apache', 'No (keep the copyright notice)'],
+        ],
+      },
+      {
+        kind: 'terms',
+        items: [
+          { term: 'Reverse engineering', def: 'Code → design documents (recover lost designs).' },
+          { term: 'Forward engineering', def: 'Design → code (the normal direction).' },
+          { term: 'Reengineering', def: 'Reverse engineer + rebuild.' },
+          { term: 'Restructuring', def: 'Reorganize code at the same level without changing behavior.' },
+          { term: 'Obfuscation', def: 'Make code unreadable to block reverse engineering.' },
+          { term: 'Extract Method', def: 'Move a code fragment into a new named method.' },
+          { term: 'Lazy class', def: 'Code smell: a class that does too little. Fix with Inline Class.' },
+        ],
+      },
+    ],
+  },
+];

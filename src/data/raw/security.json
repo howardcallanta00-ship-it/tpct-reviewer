@@ -1,0 +1,977 @@
+[
+ {
+  "id": "security-01",
+  "stem": "Which is NOT a requisite activity for the implementation of database access control?",
+  "context": [],
+  "options": [
+   {
+    "text": "Implement duplex functions to prepare for failures.",
+    "img": null
+   },
+   {
+    "text": "Implement authentication functions to identify users.",
+    "img": null
+   },
+   {
+    "text": "Define access methods and time to access information.",
+    "img": null
+   },
+   {
+    "text": "Identify users who are able to discern and access critical information.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "security-02",
+  "stem": "Which of the following is NOT a correct explanation about the security of Linux or Linux-like systems?",
+  "context": [],
+  "options": [
+   {
+    "text": "Delete unnecessary accounts using 'userdel' command.",
+    "img": null
+   },
+   {
+    "text": "'Write' permissions on /etc/profile files are removed except for the root user.",
+    "img": null
+   },
+   {
+    "text": "Use 'chmod' command to assign permissions to each user according to the access control policy.",
+    "img": null
+   },
+   {
+    "text": "Include users with access permissions to /etc/hosts. allow files and users without access permissions to /etc/hosts. deny files for access control.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "security-03",
+  "stem": "Choose the correct explanation of the certification system for the Information Security Management System (ISMS).",
+  "context": [],
+  "options": [
+   {
+    "text": "The companies for profit only are subject to the certification.",
+    "img": null
+   },
+   {
+    "text": "There is no guarantee that the company with the certification is 100% safe from information security infringement incidents.",
+    "img": null
+   },
+   {
+    "text": "The initial certification is processed when the certification is acquired for the first time. The certification is valid for five years.",
+    "img": null
+   },
+   {
+    "text": "The scope of certification encompasses not only information and communication services but also the internal task procedures such as groupware and human resource systems which are not directly related to the information and communication services.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "security-04",
+  "stem": "Which is the certification system described below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Examines the adequacy of information protection systems, such as information protection management processes and security policies."
+   },
+   {
+    "type": "li",
+    "text": "Examines the adequacy of the personal information protection management systems such as collection, use, and destruction policies of personal information."
+   }
+  ],
+  "options": [
+   {
+    "text": "ISMS-P(Personal Information & Information Security Management System)",
+    "img": null
+   },
+   {
+    "text": "ITSM(Information Technology Service Management)",
+    "img": null
+   },
+   {
+    "text": "PIMS(Personal Information Security Management System)",
+    "img": null
+   },
+   {
+    "text": "PIPL(Personal Information Protection Level)",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "security-05",
+  "stem": "Which of the following algorithms has NOT been applied for the right purpose?",
+  "context": [],
+  "options": [
+   {
+    "text": "The RSA-2048 algorithm has been applied to encrypt the encryption key.",
+    "img": null
+   },
+   {
+    "text": "The ECC algorithm has been applied to encrypt massive data at high speed.",
+    "img": null
+   },
+   {
+    "text": "The SEED algorithm has been applied to encrypt resident registration numbers.",
+    "img": null
+   },
+   {
+    "text": "The SHA:256 algorithm has been applied to verify the integrity of the data transmitted.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "security-06",
+  "stem": "Choose a Linux command to apply the [Improvement Plan] to the [Status of Access Right to Personal Information Files] below.",
+  "context": [
+   {
+    "type": "p",
+    "text": "\\"
+   },
+   {
+    "type": "img",
+    "src": "img/security/security-06-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "cat",
+    "img": null
+   },
+   {
+    "text": "chown",
+    "img": null
+   },
+   {
+    "text": "touch",
+    "img": null
+   },
+   {
+    "text": "umask",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "security-07",
+  "stem": "Which description is NOT correct about Wireless LAN Security of IEEE 802.11?",
+  "context": [],
+  "options": [
+   {
+    "text": "Use 802.1x as the user authentication method.",
+    "img": null
+   },
+   {
+    "text": "4-way Handshake is used as the key exchange method.",
+    "img": null
+   },
+   {
+    "text": "Separate user authentication methods and the encryption function.",
+    "img": null
+   },
+   {
+    "text": "WEP (Wireless Equivalent Privacy) is used as the encryption algorithm",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "security-08",
+  "stem": "The example below is the summary of Work Application Form for the firewall of Company A. Which of the following interpretation is NOT a correct request for firewall policy changes?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/security/security-08-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "The FTP client program is executed on a computer with the IP address *124:111.37.30.*",
+    "img": null
+   },
+   {
+    "text": "The FTP server program is executed on a server with the IP address *119.31.244.248.*",
+    "img": null
+   },
+   {
+    "text": "The request for firewall policy changes is to use port numbers 20 and 21 in the firewall.",
+    "img": null
+   },
+   {
+    "text": "The firewall policy manager must be set up to allow the in-bound port to source IPs.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "security-09",
+  "stem": "Which of the following is NOT a correct explanation on the SSL(Secure Socket Layer)?",
+  "context": [],
+  "options": [
+   {
+    "text": "HTTPS protocol is SSL applied HTTP protocol.",
+    "img": null
+   },
+   {
+    "text": "In order to apply SSL, SSL certificate must be installed in a web server.",
+    "img": null
+   },
+   {
+    "text": "It runs in the Network Layer of the OSI(Open System Interconnection) 7 layer model.",
+    "img": null
+   },
+   {
+    "text": "Mutual authentication is carried out through the Handshake protocol between the client and the server.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "security-10",
+  "stem": "Choose the security threat against cloud computing described below:",
+  "context": [
+   {
+    "type": "li",
+    "text": "The weaknesses found in the elementary technologies of cloud computing or in the hardware may be extended to the entire cloud computing environment."
+   },
+   {
+    "type": "li",
+    "text": "The hacking of the hypervisor may affect all related operating system and result in the loss of control."
+   }
+  ],
+  "options": [
+   {
+    "text": "Virtualization vulnerabilities",
+    "img": null
+   },
+   {
+    "text": "Insufficient key management",
+    "img": null
+   },
+   {
+    "text": "Insecure API",
+    "img": null
+   },
+   {
+    "text": "Insufficient authentication and access management",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "security-11",
+  "stem": "Choose the statement that is NOT correct about the vulnerabilities of Log4j.",
+  "context": [],
+  "options": [
+   {
+    "text": "Rated as Critical by the Common Vulnerability Scoring System (CVSS).",
+    "img": null
+   },
+   {
+    "text": "Log4j must be updated to the latest version according to the Java version.",
+    "img": null
+   },
+   {
+    "text": "Attacks such as DDoS and malware that make bad use of the Log4j vulnerabilities are possible.",
+    "img": null
+   },
+   {
+    "text": "Vulnerabilities occur because the return value is not verified after Lookup Method of JNDI is called.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "security-12",
+  "stem": "Choose a method of IDS (Intrusion Detection System) that is appropriate to the description below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/security/security-12-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Rule based",
+    "img": null
+   },
+   {
+    "text": "Pattern based",
+    "img": null
+   },
+   {
+    "text": "Behavior based",
+    "img": null
+   },
+   {
+    "text": "Signature based",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "security-13",
+  "stem": "The Access Control Matrix in the example below defines the level of access to the data of Company A for each user. Choose the access control model used in the example.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/security/security-13-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Discretionary Access Control (DAC)",
+    "img": null
+   },
+   {
+    "text": "Mandatory Access Control (MAC)",
+    "img": null
+   },
+   {
+    "text": "Non-Discretionary Access Control (NDAC)",
+    "img": null
+   },
+   {
+    "text": "Role-Based Access Control (RBAC)",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "security-14",
+  "stem": "Choose the incorrect management strategy of the database key encryption.",
+  "context": [],
+  "options": [
+   {
+    "text": "Use the secured random number generator when encryption keys are generated.",
+    "img": null
+   },
+   {
+    "text": "When the encryption keys are saved in file formats, they can be stored in plain text.",
+    "img": null
+   },
+   {
+    "text": "Encryption keys may be changed in 90, 180, or 365 days regularly according to the internal policy of the organization.",
+    "img": null
+   },
+   {
+    "text": "Encryption keys are managed by the database administrator and by the security manager, applying the principles of the minimum rights assignment and of the separation of duties.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "security-15",
+  "stem": "Choose the Linux command to apply the following security requirements.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/security/security-15-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/security/security-15-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "chmod 022 secret.txt",
+    "img": null
+   },
+   {
+    "text": "chmod 644 secret txt",
+    "img": null
+   },
+   {
+    "text": "chmod 755 secret.txt",
+    "img": null
+   },
+   {
+    "text": "chmod 777 secret.txt",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "security-16",
+  "stem": "Choose the most appropriate characteristic to the circumstance described below from the three goals of information security.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Company A operates two firewalls in the computer center."
+   },
+   {
+    "type": "li",
+    "text": "Enables the smooth access to services by detouring the transmission traffic of the network information to other firewalls when anyone of the firewalls fails."
+   }
+  ],
+  "options": [
+   {
+    "text": "Availability",
+    "img": null
+   },
+   {
+    "text": "Confidentiality",
+    "img": null
+   },
+   {
+    "text": "Integrity",
+    "img": null
+   },
+   {
+    "text": "Controllability",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "security-17",
+  "stem": "Choose the term Q related to the personal information protection explained below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/security/security-17-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Generalization",
+    "img": null
+   },
+   {
+    "text": "Obfuscation",
+    "img": null
+   },
+   {
+    "text": "Re-identification",
+    "img": null
+   },
+   {
+    "text": "Standardization",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "security-18",
+  "stem": "Which one of the following encryption technologies has the characteristics described below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Different keys are used for encryption and decryption."
+   },
+   {
+    "type": "li",
+    "text": "Processing speeds for both encryption and decryption are relatively slow."
+   },
+   {
+    "type": "li",
+    "text": "Appropriate for encrypted communications with unknown persons."
+   }
+  ],
+  "options": [
+   {
+    "text": "Block Encryption",
+    "img": null
+   },
+   {
+    "text": "Public Key Encryption",
+    "img": null
+   },
+   {
+    "text": "Stream Encryption",
+    "img": null
+   },
+   {
+    "text": "Symmetric Key Encryption",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "security-19",
+  "stem": "Which is NOT a requisite activity for Digital Signature described below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Senders generate signatures using signature algorithms."
+   },
+   {
+    "type": "li",
+    "text": "Receivers verify received messages and signatures using algorithms."
+   },
+   {
+    "type": "li",
+    "text": "When verification results are true, received messages are determined as right."
+   }
+  ],
+  "options": [
+   {
+    "text": "Encryption",
+    "img": null
+   },
+   {
+    "text": "Integrity",
+    "img": null
+   },
+   {
+    "text": "Message Authentication",
+    "img": null
+   },
+   {
+    "text": "Non-Repudiation",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "security-20",
+  "stem": "Choose the user authentication technology explained below.",
+  "context": [
+   {
+    "type": "p",
+    "text": "Company A recently launched a web service, allowing users to access the service by utilizing their existing login information from google, facebook, etc. without a separate registration."
+   }
+  ],
+  "options": [
+   {
+    "text": "OAuth (Open Authorization)",
+    "img": null
+   },
+   {
+    "text": "OTP (One Time Password)",
+    "img": null
+   },
+   {
+    "text": "PKI (Public Key Infrastructure)",
+    "img": null
+   },
+   {
+    "text": "SSL (Secure Socket Layer)",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "security-21",
+  "stem": "What is the type of network attack described below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Forging a Media Access Control (MAC) address of a user PC with that of another user's PC."
+   },
+   {
+    "type": "li",
+    "text": "Bypassing or avoiding the Access Control List (ACL) of the other party by forging or deceiving the attacker's own IP address."
+   },
+   {
+    "type": "li",
+    "text": "Sending emails attached with malicious codes by forging the attacker's email address with that of the person the receiver trusts."
+   }
+  ],
+  "options": [
+   {
+    "text": "Smishing",
+    "img": null
+   },
+   {
+    "text": "Sniffing",
+    "img": null
+   },
+   {
+    "text": "Snooping",
+    "img": null
+   },
+   {
+    "text": "Spoofing",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "security-22",
+  "stem": "Which description is NOT correct about Wireless LAN Security of IEEE 802.11i?",
+  "context": [],
+  "options": [
+   {
+    "text": "Use 802.1x as the user authentication method.",
+    "img": null
+   },
+   {
+    "text": "4-way Handshake is used as the key exchange method.",
+    "img": null
+   },
+   {
+    "text": "Separate user authentication methods and the encryption function.",
+    "img": null
+   },
+   {
+    "text": "WEP (Wireless Equivalent Privacy) is used as the encryption algorithm.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "security-23",
+  "stem": "Choose the statement that can NOT be inferred from the situation below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Assistant Manager Park received a contract through the internet electronically signed by General Manager Lee who works for the partner company."
+   },
+   {
+    "type": "li",
+    "text": "Assistant Manager Park confirmed that the hash function result of the received contract and the decryption result of the electronic signature are identical."
+   }
+  ],
+  "options": [
+   {
+    "text": "The received contract was not forged or altered.",
+    "img": null
+   },
+   {
+    "text": "The contract guarantees that the document was prepared by General Manager Lee.",
+    "img": null
+   },
+   {
+    "text": "The contract was not leaked externally in the process of sending or receiving.",
+    "img": null
+   },
+   {
+    "text": "A set of paired private and public keys was used.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "security-24",
+  "stem": "Choose the setting which is NOT correct for the security of Windows system.",
+  "context": [
+   {
+    "type": "p",
+    "text": "What is the type of security weakness described below?"
+   },
+   {
+    "type": "li",
+    "text": "Malicious scripts are inserted into a web page to be executed by a user's PC."
+   },
+   {
+    "type": "li",
+    "text": "When an unverified external input is used to create a dynamic web page, it launches malicious behavior with the access privilege of the person browsing the page."
+   },
+   {
+    "type": "li",
+    "text": "It leads to attacks such as leaks in browser cookies."
+   },
+   {
+    "type": "img",
+    "src": "img/security/security-24-1.webp"
+   },
+   {
+    "type": "li",
+    "text": "Web shell"
+   },
+   {
+    "type": "li",
+    "text": "SQL injection"
+   },
+   {
+    "type": "li",
+    "text": "Cross-site script"
+   },
+   {
+    "type": "li",
+    "text": "Memory Buffer Overflow"
+   }
+  ],
+  "options": [
+   {
+    "text": "Delete unnecessary Guest accounts.",
+    "img": null
+   },
+   {
+    "text": "Block access to shared folders and remote registries.",
+    "img": null
+   },
+   {
+    "text": "Use \" iptables\" command to block the link of networks.",
+    "img": null
+   },
+   {
+    "text": "Stop unnecessary services applying terminal services, anonymous FTP, SNMP, etc.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "security-25",
+  "stem": "Choose the next-generation cryptography technology explained below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Cryptography technology using the minimum amount of physical entity."
+   },
+   {
+    "type": "li",
+    "text": "\"Superposition\", \"non-measurable\", and \"unclonable\" characteristics of physical entities are applied."
+   },
+   {
+    "type": "li",
+    "text": "It creates a one-time cryptographic key that is not decryptable between the sender and receiver to maintain confidentiality."
+   },
+   {
+    "type": "li",
+    "text": "It is regarded as the most secure communication cryptography method among current security cryptography technologies."
+   }
+  ],
+  "options": [
+   {
+    "text": "Hash-based Cryptography",
+    "img": null
+   },
+   {
+    "text": "Quantum Cryptography",
+    "img": null
+   },
+   {
+    "text": "Steganography",
+    "img": null
+   },
+   {
+    "text": "Stream Cipher",
+    "img": null
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "security-26",
+  "stem": "Choose the database access control policy explained below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Job functions are defined as developers, users, and database administrators (DBA)."
+   },
+   {
+    "type": "li",
+    "text": "The user, developer, and DBA functions are assigned to Assistant Manager Park, Manager Lee, and Director Jeong respectively, and only the minimum rights are permitted to perform their assigned functions as required."
+   },
+   {
+    "type": "li",
+    "text": "The assignment and withdrawal of permissions can be done efficiently when assigned functions for staffs change frequently."
+   }
+  ],
+  "options": [
+   {
+    "text": "Discretionary Access Control",
+    "img": null
+   },
+   {
+    "text": "Hybrid Access Control",
+    "img": null
+   },
+   {
+    "text": "Mandatory Access Control",
+    "img": null
+   },
+   {
+    "text": "Role-Based Access Control",
+    "img": null
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "security-27",
+  "stem": "Choose which of the following statements is INCORRECT on the security of the mobile applications.",
+  "context": [],
+  "options": [
+   {
+    "text": "Mobile applications are developed so as not to operate the functions that are different from the purpose of application services.",
+    "img": null
+   },
+   {
+    "text": "Mobile applications are developed so as to operate even when the terminals are controlled by Rooting(Android) or Jailbreaking(iOS).",
+    "img": null
+   },
+   {
+    "text": "Mobile applications are developed so as to encrypt important information when they are stored inside the application or transmitted.",
+    "img": null
+   },
+   {
+    "text": "Source code obfuscation methods are applied to Android mobile applications so as to prevent easy analyses of source code through decompilation.",
+    "img": null
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "security-28",
+  "stem": "Which of the following is NOT a correct description of a block cipher mode?",
+  "context": [],
+  "options": [
+   {
+    "text": "The DES and AES are typical algorithms of block ciphers.",
+    "img": null
+   },
+   {
+    "text": "A block cipher is faster than a stream cipher.",
+    "img": null
+   },
+   {
+    "text": "A block cipher encrypts by the unit of fixed-length group of bits called block.",
+    "img": null
+   },
+   {
+    "text": "When the size of the data to be encrypted is larger than the size of a block, a separate operation mode is required.",
+    "img": null
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "security-29",
+  "stem": "The diagram below is a process of digital signature between senders and receivers.",
+  "context": [
+   {
+    "type": "p",
+    "text": "Choose the correct set of key names for blanks and b."
+   },
+   {
+    "type": "img",
+    "src": "img/security/security-29-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(a) Public key of the sender (b) Private key of the sender",
+    "img": null
+   },
+   {
+    "text": "(a) Private key of the sender (b) Public key of the sender",
+    "img": null
+   },
+   {
+    "text": "(a) Public key of the receiver (b) Private key of the receiver",
+    "img": null
+   },
+   {
+    "text": "(a) Private key of the receiver (b) Public key of the receiver",
+    "img": null
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "security-30",
+  "stem": "Choose the phase of the Secure SDLC (Software Development Life Cycle) that corresponds to the description below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Threat modeling to identify security threats."
+   },
+   {
+    "type": "li",
+    "text": "System structure modification to eliminate identified security threats."
+   },
+   {
+    "type": "li",
+    "text": "Establishing security control criteria and activities suggested by the Secure Development Guidelines."
+   }
+  ],
+  "options": [
+   {
+    "text": "Design",
+    "img": null
+   },
+   {
+    "text": "Maintenance",
+    "img": null
+   },
+   {
+    "text": "Implementation",
+    "img": null
+   },
+   {
+    "text": "Requirements analysis",
+    "img": null
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "security-31",
+  "stem": "Choose the INCORRECT method to apply encryption.",
+  "context": [],
+  "options": [
+   {
+    "text": "AES-128 encryption algorithm is used when the unique identification information is encrypted.",
+    "img": null
+   },
+   {
+    "text": "Passwords must be encrypted multiple times with a bi-directional encryption algorithm before they are stored.",
+    "img": null
+   },
+   {
+    "text": "The unique identification information stored in the DMZ (Demilitarized Zone), intermediate zone of Internet and Intranet, is encrypted.",
+    "img": null
+   },
+   {
+    "text": "API (Application Programming Interface) encryption is applied to transmit and receive encrypted data between application servers and database servers.",
+    "img": null
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "security-32",
+  "stem": "Choose the activity performed during the implementation phase of the Secure SDLC (Secure Software Development Life Cycle).",
+  "context": [],
+  "options": [
+   {
+    "text": "Identification of security item requirements.",
+    "img": null
+   },
+   {
+    "text": "Threat modeling that identifies software security threats",
+    "img": null
+   },
+   {
+    "text": "Review of source code or diagnosis of source code security",
+    "img": null
+   },
+   {
+    "text": "Security vulnerability verification through dynamic analysis or Penetration Testing.",
+    "img": null
+   }
+  ],
+  "keyIndex": -1
+ }
+]

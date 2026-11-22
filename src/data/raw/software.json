@@ -1,0 +1,1697 @@
+[
+ {
+  "id": "software-01",
+  "stem": "What is the command for the description below?",
+  "context": [
+   {
+    "type": "p",
+    "text": "The GIT, a distributed version management tool, command to upload all “commit” source codes in the local (computer) to the central server."
+   }
+  ],
+  "options": [
+   {
+    "text": "git fetch",
+    "img": null
+   },
+   {
+    "text": "git pull",
+    "img": null
+   },
+   {
+    "text": "git push",
+    "img": null
+   },
+   {
+    "text": "git save",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-02",
+  "stem": "Choose the one that is NOT the advantage of the Micro Service Architecture (MSA).",
+  "context": [],
+  "options": [
+   {
+    "text": "The extension of services becomes easier because the reusability increases.",
+    "img": null
+   },
+   {
+    "text": "The probability of proliferation of a particular service failure to the whole service decreases.",
+    "img": null
+   },
+   {
+    "text": "The probability of the proliferation of the failures in a specific service to the whole service becomes lower.",
+    "img": null
+   },
+   {
+    "text": "Requirements can be reflected immediately because the individual deployment of services is possible.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-03",
+  "stem": "What is the design pattern described below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "The implementation layer and the abstraction layer are separated so that they can changed independently."
+   },
+   {
+    "type": "li",
+    "text": "The diagram shown below is the class diagram of this pattern."
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-03-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Adapter Pattern",
+    "img": null
+   },
+   {
+    "text": "Bridge Pattern",
+    "img": null
+   },
+   {
+    "text": "Decorator Pattern",
+    "img": null
+   },
+   {
+    "text": "Proxy Pattern",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-04",
+  "stem": "What is the type of document described in the example below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "The document is prepared and used to check if the project is carried out in the right direction"
+   },
+   {
+    "type": "li",
+    "text": "The requirements are specified and linked with deliverables in each phase of the software development life cycle."
+   }
+  ],
+  "options": [
+   {
+    "text": "Requirements specification",
+    "img": null
+   },
+   {
+    "text": "Requirements traceability matrix",
+    "img": null
+   },
+   {
+    "text": "Test results report",
+    "img": null
+   },
+   {
+    "text": "Test design specification",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-05",
+  "stem": "Which of the following is NOT a correct description of the notation of DFD (Data Flow Diagram)?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-05-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Arrows represent Data Flows.",
+    "img": null
+   },
+   {
+    "text": "The rectangle containing “Seller” represent a Terminator.",
+    "img": null
+   },
+   {
+    "text": "The circle containing “Purchase Products” represents a use case.",
+    "img": null
+   },
+   {
+    "text": "Parallel lines containing “Product Purchase Information” represents a Data Store.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-06",
+  "stem": "A Lambda Expression is a simple and clear method to represent the equivalent function. Which of the following Lambda Expression in Java is Not correct?",
+  "context": [],
+  "options": [
+   {
+    "text": "(int a, int b) -> a > b ? a: b",
+    "img": null
+   },
+   {
+    "text": "( ) -> (int) (Math.random() * 6)",
+    "img": null
+   },
+   {
+    "text": "{int a, int b} -> return a > b ? a: b",
+    "img": null
+   },
+   {
+    "text": "(name, i) -> System.out.println(name + “=” + i)",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-07",
+  "stem": "Choose the work product consisting of functions with their priorities defined by the Product Owner of the Scrum team.",
+  "context": [],
+  "options": [
+   {
+    "text": "Burndown chart",
+    "img": null
+   },
+   {
+    "text": "Sprint backlog",
+    "img": null
+   },
+   {
+    "text": "Product vision",
+    "img": null
+   },
+   {
+    "text": "Product backlog",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "software-08",
+  "stem": "Choose the optimized test case designed by the Pairwise Testing technique.",
+  "context": [
+   {
+    "type": "p",
+    "text": "Input condition"
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-08-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "",
+    "img": "img/software/software-08-2.webp"
+   },
+   {
+    "text": "",
+    "img": "img/software/software-08-3.webp"
+   },
+   {
+    "text": "",
+    "img": "img/software/software-08-4.webp"
+   },
+   {
+    "text": "",
+    "img": "img/software/software-08-5.webp"
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "software-09",
+  "stem": "The source code below has gone through transformation. What is the purpose of obfuscation in software development?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-09-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-09-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Re-structuring",
+    "img": null
+   },
+   {
+    "text": "Re-documentation",
+    "img": null
+   },
+   {
+    "text": "Reverse engineering",
+    "img": null
+   },
+   {
+    "text": "Forward engineering",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-10",
+  "stem": "Refer to the object-oriented concepts and comments included in the code below to choose the answer with the appropriate terms for blanks (a), (b), and (c).",
+  "context": [
+   {
+    "type": "p",
+    "text": "___(a)____ is a target to be implemented as software, which is an instantiation from the definition of ___(b)____. If ___(a)____ is allocated to a memory and executed, it is called ____(c)____."
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-10-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(a) object, (b) instance, (c) class",
+    "img": null
+   },
+   {
+    "text": "(a) class, (b) object, (c) instance",
+    "img": null
+   },
+   {
+    "text": "(a) object, (b) class, (c) instance",
+    "img": null
+   },
+   {
+    "text": "(a) instance, (b) class, (c) object",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-11",
+  "stem": "Choose the type of abstraction applied to the source code below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-11-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Data abstraction",
+    "img": null
+   },
+   {
+    "text": "Interface abstraction",
+    "img": null
+   },
+   {
+    "text": "Procedure abstraction",
+    "img": null
+   },
+   {
+    "text": "Inheritance abstraction",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-12",
+  "stem": "Which of the following is NOT a correct technique to elicit software requirements.",
+  "context": [],
+  "options": [
+   {
+    "text": "Observation",
+    "img": null
+   },
+   {
+    "text": "Survey",
+    "img": null
+   },
+   {
+    "text": "Inspection",
+    "img": null
+   },
+   {
+    "text": "Interview",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-13",
+  "stem": "Which of the following is NOT a correct explanation of non-functional requirements?",
+  "context": [],
+  "options": [
+   {
+    "text": "1,000 users shall be able to connect to the system simultaneously.",
+    "img": null
+   },
+   {
+    "text": "The first connection screen shall be displayed within five seconds after logging in to the system",
+    "img": null
+   },
+   {
+    "text": "An SMS text message shall be sent to the member after the sign-up process is complete.",
+    "img": null
+   },
+   {
+    "text": "Member’s personal information shall be encrypted before it is stored.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-14",
+  "stem": "Which of the following set includes only correct contents to be included in the software requirements specification, created during the analysis phase of the Software Development Life Cycle (SDLC)?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Site constraints"
+   },
+   {
+    "type": "li",
+    "text": "Component information"
+   },
+   {
+    "type": "li",
+    "text": "System properties"
+   },
+   {
+    "type": "li",
+    "text": "Requirements for logical model"
+   },
+   {
+    "type": "li",
+    "text": "Software code pattern"
+   }
+  ],
+  "options": [
+   {
+    "text": "(a), (b), (c)",
+    "img": null
+   },
+   {
+    "text": "(a), (c), (d)",
+    "img": null
+   },
+   {
+    "text": "(b), (c), (e)",
+    "img": null
+   },
+   {
+    "text": "(d), (d), (e)",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-15",
+  "stem": "Choose the design pattern that is explained below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Converts the interface provided by the service into the interface intended by the client."
+   },
+   {
+    "type": "li",
+    "text": "Can be applied when the incompatible interfaces between the clients and service work together."
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-15-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Decorator pattern",
+    "img": null
+   },
+   {
+    "text": "Bridge pattern",
+    "img": null
+   },
+   {
+    "text": "Adapter pattern",
+    "img": null
+   },
+   {
+    "text": "Command pattern",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-16",
+  "stem": "Which of the following definition about principles of software design is NOT correct?",
+  "context": [],
+  "options": [
+   {
+    "text": "Abstraction refers to the extraction of key concepts or functions from a complex system.",
+    "img": null
+   },
+   {
+    "text": "Stepwise refinements is mainly used in top-down design methods and refines the details of a module at each step.",
+    "img": null
+   },
+   {
+    "text": "Divide and conquer is to extract modules so that relationships between modules can be composed as data elements.",
+    "img": null
+   },
+   {
+    "text": "Information Hiding prevents other modules from modifying internal information and allows information exchange only through interfaces.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-17",
+  "stem": "Choose the test type described below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-17-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Unit Test",
+    "img": null
+   },
+   {
+    "text": "Integration Test",
+    "img": null
+   },
+   {
+    "text": "Acceptance Test",
+    "img": null
+   },
+   {
+    "text": "Regression Test",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "software-18",
+  "stem": "What is the sort algorithm implemented in C program shown below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-18-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Bubble Sort",
+    "img": null
+   },
+   {
+    "text": "Insertion Sort",
+    "img": null
+   },
+   {
+    "text": "Quick Sort",
+    "img": null
+   },
+   {
+    "text": "Selection Sort",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-19",
+  "stem": "Which of the following is NOT a correct explanation about Django and Flash, which are Python web development frameworks?",
+  "context": [],
+  "options": [
+   {
+    "text": "Django, a typical web development framework of Python, was written in C.",
+    "img": null
+   },
+   {
+    "text": "ORM (Object-Relational Mapping) functions for database are separately installed and used in Flask.",
+    "img": null
+   },
+   {
+    "text": "Flask is a micro framework to implement a Python web programming development environment.",
+    "img": null
+   },
+   {
+    "text": "A Django app is a Python package used in Django. A single Django project is composed of one or more Django apps.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-20",
+  "stem": "Which of the following statements is NOT a correct explanation of UI/UX (User Interface/ User Experience)",
+  "context": [],
+  "options": [
+   {
+    "text": "The UX design is a developer-center design because its focus is on the researching for improvements, whereas the UI design is a user- centered design because it focuses is on the realization.",
+    "img": null
+   },
+   {
+    "text": "The focus of UX design is on the research based on statistics of user experience whereas the UI design focuses on the realization based on the UX design.",
+    "img": null
+   },
+   {
+    "text": "UI refers to the interaction between users and system and UX refers to the total experience that users feel and think when they use the system directly or indirectly.",
+    "img": null
+   },
+   {
+    "text": "The UI design needs both visual outcomes and reflections of the user group level. The US design reflects the research results of psychology, computer science, visual design, etc. on the design of the user experience.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-21",
+  "stem": "The diagram below illustrates the SSPL (Software and System Product Line).",
+  "context": [
+   {
+    "type": "p",
+    "text": "Choose the term that is appropriate in the blank (a) below."
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-21-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Domain engineering",
+    "img": null
+   },
+   {
+    "text": "Service engineering",
+    "img": null
+   },
+   {
+    "text": "System engineering",
+    "img": null
+   },
+   {
+    "text": "Requirements engineering",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-22",
+  "stem": "What is the UML diagram illustrated in the example below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-22-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Deployment Diagram",
+    "img": null
+   },
+   {
+    "text": "State Machine Diagram",
+    "img": null
+   },
+   {
+    "text": "Communication Diagram",
+    "img": null
+   },
+   {
+    "text": "Collaboration Diagram",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-23",
+  "stem": "Choose the appropriate data structure to implement the visitor security checking system described in the example below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-23-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Graph",
+    "img": null
+   },
+   {
+    "text": "Stack",
+    "img": null
+   },
+   {
+    "text": "Queue",
+    "img": null
+   },
+   {
+    "text": "Tree",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-24",
+  "stem": "What is the architecture style applied to the diagram shown below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-24-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Client-server",
+    "img": null
+   },
+   {
+    "text": "Layered",
+    "img": null
+   },
+   {
+    "text": "Pipes and Filters",
+    "img": null
+   },
+   {
+    "text": "Repository",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-25",
+  "stem": "Choose the Java statement that will cause an exception when the code is executed.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-25-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "testArray[0] = -1;",
+    "img": null
+   },
+   {
+    "text": "int[] realArray = testArray;",
+    "img": null
+   },
+   {
+    "text": "testArray[testArray.length] = 100;",
+    "img": null
+   },
+   {
+    "text": "System.out.println(testArray[0]);",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-26",
+  "stem": "Which feature is commonly provided by the following Open Source Tools?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Jenkins"
+   },
+   {
+    "type": "li",
+    "text": "Docker"
+   },
+   {
+    "type": "li",
+    "text": "Travis CI"
+   }
+  ],
+  "options": [
+   {
+    "text": "Software test management",
+    "img": null
+   },
+   {
+    "text": "Software project management",
+    "img": null
+   },
+   {
+    "text": "Software distribution management",
+    "img": null
+   },
+   {
+    "text": "Software source code management",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-27",
+  "stem": "The diagram below illustrates the build lifecycle of Maven, an open-source build tool. Which of the following explanations is NOT correct?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-27-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Compile: Analyze the syntax of the source code and translate it into machine language.",
+    "img": null
+   },
+   {
+    "text": "Deploy: Deploy compressed files to the local repository",
+    "img": null
+   },
+   {
+    "text": "Package: Create deployable files.",
+    "img": null
+   },
+   {
+    "text": "Test: Carry out unit tests with the unit test tool.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-28",
+  "stem": "The diagram below is part of the software architecture based on IEEE 1471.",
+  "context": [
+   {
+    "type": "p",
+    "text": "Choose the explanation that is about the “System”."
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-28-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Realization of each application and product group",
+    "img": null
+   },
+   {
+    "text": "The purpose of one more stakeholders’ intension",
+    "img": null
+   },
+   {
+    "text": "Patterns that define the rules to structure the architecture",
+    "img": null
+   },
+   {
+    "text": "External factors that may affect the architecture such as development, operation, on politics.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-29",
+  "stem": "The source code written in C programming language below sorts the given five numbers in ascending order.",
+  "context": [
+   {
+    "type": "p",
+    "text": "Which sorting algorithm is applied here?"
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-29-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Heap sort",
+    "img": null
+   },
+   {
+    "text": "Bubble sort",
+    "img": null
+   },
+   {
+    "text": "Insertion sort",
+    "img": null
+   },
+   {
+    "text": "Selection sort",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-30",
+  "stem": "Choose the data structure appropriate to implement the backtrack function for a web browser.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-30-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Graph",
+    "img": null
+   },
+   {
+    "text": "Stack",
+    "img": null
+   },
+   {
+    "text": "Tree",
+    "img": null
+   },
+   {
+    "text": "Queue",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-31",
+  "stem": "The Java source code below adds numbers from 1 to N",
+  "context": [
+   {
+    "type": "p",
+    "text": "The Python source underneath the Java source code carries out the same function."
+   },
+   {
+    "type": "p",
+    "text": "Choose the correct code for blank (a)."
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-31-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "1 <= N",
+    "img": null
+   },
+   {
+    "text": "i <= N + 1",
+    "img": null
+   },
+   {
+    "text": "range(1, N)",
+    "img": null
+   },
+   {
+    "text": "range(1, N+1)",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "software-32",
+  "stem": "Choose the open source license described below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-32-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "AGPL (GNU Alfero General Public License)",
+    "img": null
+   },
+   {
+    "text": "BSD License (Berkeley Software Distribution)",
+    "img": null
+   },
+   {
+    "text": "GPL 2.0 (GNU General Public License)",
+    "img": null
+   },
+   {
+    "text": "LGPL 2.1 (GNU Lesser General Public License)",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "software-33",
+  "stem": "Choose the software reuse technique applied below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-33-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-33-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Forward engineering",
+    "img": null
+   },
+   {
+    "text": "Reverse engineering",
+    "img": null
+   },
+   {
+    "text": "Reengineering",
+    "img": null
+   },
+   {
+    "text": "Restructuring",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-34",
+  "stem": "Choose the type of code smell described below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-34-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Data class",
+    "img": null
+   },
+   {
+    "text": "Large class",
+    "img": null
+   },
+   {
+    "text": "Lazy class",
+    "img": null
+   },
+   {
+    "text": "Inline class",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-35",
+  "stem": "Which of the following extensibility mechanisms used in the UML (Unified Modeling Language) diagram below is NOT correct?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-35-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "{End Of Service}",
+    "img": null
+   },
+   {
+    "text": "Engine#1, Engine#2",
+    "img": null
+   },
+   {
+    "text": "{level = 1.0}, {level = 1.2}",
+    "img": null
+   },
+   {
+    "text": "<>, <>",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "software-36",
+  "stem": "Which is the pair of suitable codes for (a) and (b) in the [Pseudo Code: Search Function in the Binary Search Tree] that satisfy the [Conditions: Binary Search Tree] below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-36-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-36-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(a) data.left, (b) data.value",
+    "img": null
+   },
+   {
+    "text": "(a) data.value, (b) data.right",
+    "img": null
+   },
+   {
+    "text": "(a) data.left, (b) data.right",
+    "img": null
+   },
+   {
+    "text": "(a) data.right, (b) date.left",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-37",
+  "stem": "Choose the software development methodology described below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-37-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Architecture reference model (ARM)",
+    "img": null
+   },
+   {
+    "text": "Component-based development (CBD)",
+    "img": null
+   },
+   {
+    "text": "Model-drive development (MDD)",
+    "img": null
+   },
+   {
+    "text": "Software & systems product line (SSPL)",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-38",
+  "stem": "Choose the one that is not correct to explain the structure chart in the software design below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-38-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Module G means I / O module.",
+    "img": null
+   },
+   {
+    "text": "The fan-in degree for Module C is 2.",
+    "img": null
+   },
+   {
+    "text": "A flag is passed from Module D to Module C.",
+    "img": null
+   },
+   {
+    "text": "Module F is a library that consists of predefined modules.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-39",
+  "stem": "A character string is given in a Python program as shown below.",
+  "context": [
+   {
+    "type": "p",
+    "text": "Which of the following is NOT a correct output from each function? - D"
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-39-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "",
+    "img": "img/software/software-39-2.webp"
+   },
+   {
+    "text": "",
+    "img": "img/software/software-39-3.webp"
+   },
+   {
+    "text": "",
+    "img": "img/software/software-39-4.webp"
+   },
+   {
+    "text": "",
+    "img": "img/software/software-39-5.webp"
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "software-40",
+  "stem": "Choose the software requirement elicitation technique described below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-40-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Benchmarking",
+    "img": null
+   },
+   {
+    "text": "Facilitated workshop",
+    "img": null
+   },
+   {
+    "text": "Prototyping",
+    "img": null
+   },
+   {
+    "text": "Focus group interview",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-41",
+  "stem": "Choose the appropriate code to fill (a) & (b) in the Python source code below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-41-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(a) i < 100: (b) range(0,100):",
+    "img": null
+   },
+   {
+    "text": "(a) i <= 100: (b) range(0,101):",
+    "img": null
+   },
+   {
+    "text": "(a) i < 100: (b) range(1, 100):",
+    "img": null
+   },
+   {
+    "text": "(a) I < 100: (b) range(0, 99):",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-42",
+  "stem": "Choose the shortest path algorithm between two circles using the graph specified below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-42-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Dijsktra Algorithm",
+    "img": null
+   },
+   {
+    "text": "Kruscal Algorithm",
+    "img": null
+   },
+   {
+    "text": "Prim Algorithm",
+    "img": null
+   },
+   {
+    "text": "Knuth Morris Pratt Algorithm",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-43",
+  "stem": "What are correct (x,y) values that satisfy Condition Coverage of the underlined code below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-43-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(0,5), (0,0)",
+    "img": null
+   },
+   {
+    "text": "(7,0), (0,5)",
+    "img": null
+   },
+   {
+    "text": "(7,0), (5,0)",
+    "img": null
+   },
+   {
+    "text": "(7,5), (5,0)",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-44",
+  "stem": "During the testing process, which stage involves the activities listed below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Test Basis review"
+   },
+   {
+    "type": "li",
+    "text": "Identification of test status, requirements and data"
+   },
+   {
+    "type": "li",
+    "text": "Assignment of test methodologies"
+   },
+   {
+    "type": "li",
+    "text": "Establishment of test environments"
+   }
+  ],
+  "options": [
+   {
+    "text": "Test closure activities",
+    "img": null
+   },
+   {
+    "text": "Test analysis and design",
+    "img": null
+   },
+   {
+    "text": "Test implementation and execution",
+    "img": null
+   },
+   {
+    "text": "Test estimation and organization of the test team",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-45",
+  "stem": "Choose the object-oriented design principle that is applied to “the source code after the change”.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-45-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "OCP, Open-Closed Principle",
+    "img": null
+   },
+   {
+    "text": "SRP, Single Responsibility Principle",
+    "img": null
+   },
+   {
+    "text": "LSP, Liskov Substitution Principle",
+    "img": null
+   },
+   {
+    "text": "ISP, Interface Segregation Principle",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-46",
+  "stem": "What is the testing technique that Manager Kim suggests in the conversation below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-46-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Pairwise testing",
+    "img": null
+   },
+   {
+    "text": "Coverage testing",
+    "img": null
+   },
+   {
+    "text": "Regression testing",
+    "img": null
+   },
+   {
+    "text": "Exploratory testing",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "software-47",
+  "stem": "Choose the Design Baseline among the following work products of software development.",
+  "context": [],
+  "options": [
+   {
+    "text": "User manual",
+    "img": null
+   },
+   {
+    "text": "Source code",
+    "img": null
+   },
+   {
+    "text": "Sequence diagram",
+    "img": null
+   },
+   {
+    "text": "Project execution plan",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-48",
+  "stem": "What is the data structure that is suitable for all (a)s?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-48-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Heap",
+    "img": null
+   },
+   {
+    "text": "Linked List",
+    "img": null
+   },
+   {
+    "text": "Queue",
+    "img": null
+   },
+   {
+    "text": "Stack",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-49",
+  "stem": "The test case to test the rating of Example 1 is designed as shown in the table in Example 2.",
+  "context": [
+   {
+    "type": "p",
+    "text": "Choose the appropriate testing technique applied in the Example 2 below."
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-49-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Decision Table",
+    "img": null
+   },
+   {
+    "text": "Boundary Value Analysis",
+    "img": null
+   },
+   {
+    "text": "State Transition",
+    "img": null
+   },
+   {
+    "text": "Error Guessing",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-50",
+  "stem": "Choose the algorithm illustrated below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-50-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-50-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Greedy algorithm",
+    "img": null
+   },
+   {
+    "text": "Dynamic Programming",
+    "img": null
+   },
+   {
+    "text": "Divide and Conquer",
+    "img": null
+   },
+   {
+    "text": "Heuristics",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "software-51",
+  "stem": "Choose a representative value that can be computed by the Java source code shown below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-51-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Mean",
+    "img": null
+   },
+   {
+    "text": "Mode",
+    "img": null
+   },
+   {
+    "text": "Median",
+    "img": null
+   },
+   {
+    "text": "Quartiles",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-52",
+  "stem": "Below is the source code written in C programming language.",
+  "context": [
+   {
+    "type": "p",
+    "text": "Choose the appropriate coupling occurred between functions F1() & F2()."
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-52-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Common Coupling",
+    "img": null
+   },
+   {
+    "text": "Contents Coupling",
+    "img": null
+   },
+   {
+    "text": "Data Coupling",
+    "img": null
+   },
+   {
+    "text": "Control Coupling",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-53",
+  "stem": "Choose the type of coupling described below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Modules share data only through simple type arguments-parameters as shown below."
+   },
+   {
+    "type": "img",
+    "src": "img/software/software-53-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Common Coupling",
+    "img": null
+   },
+   {
+    "text": "Content Coupling",
+    "img": null
+   },
+   {
+    "text": "External Coupling",
+    "img": null
+   },
+   {
+    "text": "Data Coupling",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "software-54",
+  "stem": "Choose the refactoring technique applied to improve the Java source code below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-54-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Extract Class",
+    "img": null
+   },
+   {
+    "text": "Extract Method",
+    "img": null
+   },
+   {
+    "text": "Inline Method",
+    "img": null
+   },
+   {
+    "text": "Replace Temp with Query",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "software-55",
+  "stem": "Choose the appropriate design pattern proposed by the GoF (Gang of Four), which can be applied to the development of a fine dust alarm service system illustrated below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-55-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Façade pattern",
+    "img": null
+   },
+   {
+    "text": "Behavior pattern",
+    "img": null
+   },
+   {
+    "text": "Observer pattern",
+    "img": null
+   },
+   {
+    "text": "Decorator pattern",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "software-56",
+  "stem": "Choose the sorting algorithm illustrated in the figure below. (Note that the example presents only up to the second loop.)",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/software/software-56-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Bubble sort",
+    "img": null
+   },
+   {
+    "text": "Insertion sort",
+    "img": null
+   },
+   {
+    "text": "Quick sort",
+    "img": null
+   },
+   {
+    "text": "Selection sort",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ }
+]

@@ -1,0 +1,945 @@
+[
+ {
+  "id": "data-01",
+  "stem": "Which one is the correct sequence of the index design processes?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-01-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(b)->(c)->(a)->(d)",
+    "img": null
+   },
+   {
+    "text": "(b)->(c)->(d)->(a)",
+    "img": null
+   },
+   {
+    "text": "(c)->(b)->(a)->(d)",
+    "img": null
+   },
+   {
+    "text": "(c)->(b)->(d)->(a)",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "data-02",
+  "stem": "Choose the attribute that must be normalized to the third Normal Form (3NF) in the data model below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-02-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "CourseRegistration.Year",
+    "img": null
+   },
+   {
+    "text": "CourseRegistration.Semester",
+    "img": null
+   },
+   {
+    "text": "CourseRegistration.ProfessorName",
+    "img": null
+   },
+   {
+    "text": "CourseRegistration.DateRegistered",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "data-03",
+  "stem": "Refers to [Status of Bank A] and [Result of Data Standardization].",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-03-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/data/data-03-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(1) (1)",
+    "img": null
+   },
+   {
+    "text": "(2) (2)",
+    "img": null
+   },
+   {
+    "text": "(3) (3)",
+    "img": null
+   },
+   {
+    "text": "(4) (4)",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "data-04",
+  "stem": "Which of the following is NOT correct regarding the properties of NoSQL?",
+  "context": [],
+  "options": [
+   {
+    "text": "Supports ACID (Atomic, Consistency, Isolation, Durability) to ensure transactions.",
+    "img": null
+   },
+   {
+    "text": "Easy to change or expand data schema.",
+    "img": null
+   },
+   {
+    "text": "Does not support the foreign key feature among tables.",
+    "img": null
+   },
+   {
+    "text": "Supports a variety of types of data models, including document-based and graph-based data models.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "data-05",
+  "stem": "What is the Unsupervised Learning algorithm of AI described below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-05-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Decision Tree",
+    "img": null
+   },
+   {
+    "text": "K-Means Clustering",
+    "img": null
+   },
+   {
+    "text": "K-Nearest Neighbor",
+    "img": null
+   },
+   {
+    "text": "Neural Network",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "data-06",
+  "stem": "Choose the appropriate code to fill (a) in “SQL” to satisfy the “Requirements” in the example below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-06-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "ALTER",
+    "img": null
+   },
+   {
+    "text": "CREATE",
+    "img": null
+   },
+   {
+    "text": "COMMIT",
+    "img": null
+   },
+   {
+    "text": "GRANT",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "data-07",
+  "stem": "Choose the appropriate Functional Dependency type applied to the attribute ‘Name’ in the example below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-07-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Boyce-codd Functional Dependency",
+    "img": null
+   },
+   {
+    "text": "Partial Functional Dependency",
+    "img": null
+   },
+   {
+    "text": "Full Functional Dependency",
+    "img": null
+   },
+   {
+    "text": "Transitive Dependency",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "data-08",
+  "stem": "Which of the following Entity-Relationship Diagram is NOT a correct representation of the given conditions?",
+  "context": [
+   {
+    "type": "p",
+    "text": "(Note: that the diagrams employ Crow’s Foot notation). - D"
+   }
+  ],
+  "options": [
+   {
+    "text": "",
+    "img": "img/data/data-08-1.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-08-2.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-08-3.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-08-4.webp"
+   }
+  ],
+  "keyIndex": -1
+ },
+ {
+  "id": "data-09",
+  "stem": "Choose which of the following statements is incorrect about database system components?",
+  "context": [],
+  "options": [
+   {
+    "text": "The database management system (DBMS) provides features to build and use a database.",
+    "img": null
+   },
+   {
+    "text": "A database administrator (DBA) performs physical database design, backup, and recovery.",
+    "img": null
+   },
+   {
+    "text": "A data definition language (DDL) is used to input, modify, delete, and query data in database.",
+    "img": null
+   },
+   {
+    "text": "A database is set of integrated and stored data with the minimum duplication to share data with many application systems.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "data-10",
+  "stem": "Which of the following explanation is NOT correct about CAP (Consistency, Availability, Partition-tolerance) theorem?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-10-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "NoSQL repository satisfies A+P, C+A, and C+P. Mongo DB is the database of this model.",
+    "img": null
+   },
+   {
+    "text": "C+P is efficient when all nodes need be processed in parallel. BigTable and Hbase are database of this model.",
+    "img": null
+   },
+   {
+    "text": "A+P is suitable for asynchronous storage processing. Dynamo and Apache Cassandra are database of this model.",
+    "img": null
+   },
+   {
+    "text": "C+A is a strongly reliable model that prevents message losses even when the system is down. General RDBMS is the database of this model.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "data-11",
+  "stem": "Which of the following is NOT correct on Data Warehouse Modeling?",
+  "context": [],
+  "options": [
+   {
+    "text": "Consists of fact table and dimension tables.",
+    "img": null
+   },
+   {
+    "text": "A dimension table descriptive information about each row in a fact table.",
+    "img": null
+   },
+   {
+    "text": "Star Schema requires relatively small loading space because the number of duplicated data are small due to the normalization.",
+    "img": null
+   },
+   {
+    "text": "A snowflake schema is a model design technique for hierarchical analysis such as time-series analysis and regional analysis.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "data-12",
+  "stem": "Machine learning uses data to train machines and it is a way artificial intelligence to make its own decisions or predictions by itself. What is the type of machine learning that corresponds to the description below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-12-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Supervised learning",
+    "img": null
+   },
+   {
+    "text": "Unsupervised learning",
+    "img": null
+   },
+   {
+    "text": "Reinforcement learning",
+    "img": null
+   },
+   {
+    "text": "Semi-supervised learning",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "data-13",
+  "stem": "Which of the following is NOT correctly matched between the purposed of Data Definition Language (DDL) and the SQL statement in the [Staff Table] below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-13-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "",
+    "img": "img/data/data-13-2.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-13-3.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-13-4.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-13-5.webp"
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "data-14",
+  "stem": "What is the level of architecture described in the [Example] below among the 3-layer database architecture of ANSI-SPARC?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-14-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Conceptual level",
+    "img": null
+   },
+   {
+    "text": "External level",
+    "img": null
+   },
+   {
+    "text": "Internal level",
+    "img": null
+   },
+   {
+    "text": "Logical level",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "data-15",
+  "stem": "Choose the statement that is NOT a correct explanation of distributed database system.",
+  "context": [],
+  "options": [
+   {
+    "text": "Requires much storage space because one data item is duplicated to be stored in multiple areas.",
+    "img": null
+   },
+   {
+    "text": "The location of data storage must be identified, and the data access information must be managed separately.",
+    "img": null
+   },
+   {
+    "text": "When a problem emerges in a site, tasks can be carried out through other sites where the same data are stored.",
+    "img": null
+   },
+   {
+    "text": "The availability is increased because data processing requests are distributed on multiple sites, not concentrated on a single site.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "data-16",
+  "stem": "Choose the algorithm that is Not a supervised learning algorithm.",
+  "context": [],
+  "options": [
+   {
+    "text": "The algorithm that learns based on correct answer among the algorithms that model the human brain.",
+    "img": null
+   },
+   {
+    "text": "The algorithm that predicts the data with the nearest distance from adjacent data with k input values.",
+    "img": null
+   },
+   {
+    "text": "The analytical algorithm that groups data with similar characteristics taking a variety of attributes of given data into consideration.",
+    "img": null
+   },
+   {
+    "text": "The analytical algorithm that creates a tree-shape model that classifies category values of a specific categorical attributes with the analysis of the data when a data set is given.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "data-17",
+  "stem": "What is the type of backup policy described in part (c)?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-17-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Cold backup",
+    "img": null
+   },
+   {
+    "text": "Differential backup",
+    "img": null
+   },
+   {
+    "text": "Incremental backup",
+    "img": null
+   },
+   {
+    "text": "Archive log backup",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "data-18",
+  "stem": "Which of the following is NOT a characteristic of ORDB (Object Relational Database)",
+  "context": [],
+  "options": [
+   {
+    "text": "Able to design data models with complex structures because one column in a table is created as another table.",
+    "img": null
+   },
+   {
+    "text": "ORDB supports LOB (Large Object) types to store inheritance relationships between tables and unstructured data.",
+    "img": null
+   },
+   {
+    "text": "Easy to retrieve information because the characteristics, digits, and date type information are stored in two-dimensional structures of columns and rows.",
+    "img": null
+   },
+   {
+    "text": "Navigation-based data access using the reference structures is possible in such a way that one object record is eligible to access another object record.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "data-19",
+  "stem": "Choose the appropriate SQL statement for the [Query Condition] below.",
+  "context": [],
+  "options": [
+   {
+    "text": "",
+    "img": "img/data/data-19-1.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-19-2.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-19-3.webp"
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "data-20",
+  "stem": "Choose the correct explanation on the task carried out in the Concept Modeling phase.",
+  "context": [],
+  "options": [
+   {
+    "text": "Perform normalization",
+    "img": null
+   },
+   {
+    "text": "Define the subject area.",
+    "img": null
+   },
+   {
+    "text": "Create the Entity-Relationship Diagram (ERD).",
+    "img": null
+   },
+   {
+    "text": "Define Attributes, and determine Identifiers.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "data-21",
+  "stem": "Choose the appropriate Data Mining technique to apply to the Case in the example below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-21-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Co-Occurrence Matrix",
+    "img": null
+   },
+   {
+    "text": "Decision Tree",
+    "img": null
+   },
+   {
+    "text": "Convolutional Neural Network",
+    "img": null
+   },
+   {
+    "text": "K-Nearest Neighbor Algorithm",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "data-22",
+  "stem": "Choose the appropriate command in (a) below to ensure Serializability by the Two Phase Locking Protocol.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-22-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "lock(x)",
+    "img": null
+   },
+   {
+    "text": "Lock(y)",
+    "img": null
+   },
+   {
+    "text": "read(x)",
+    "img": null
+   },
+   {
+    "text": "unlock(y)",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "data-23",
+  "stem": "Choose the design activity of the database conceptual model as described below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Define things, events, and persons of continuous business interest."
+   },
+   {
+    "type": "li",
+    "text": "A group of homogeneous objects or activities (example) client, product, order history, etc."
+   }
+  ],
+  "options": [
+   {
+    "text": "Define relationships",
+    "img": null
+   },
+   {
+    "text": "Define attributes",
+    "img": null
+   },
+   {
+    "text": "Define identifiers",
+    "img": null
+   },
+   {
+    "text": "Define entities",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "data-24",
+  "stem": "Which of the following is NOT a correct explanation about Large Object (LOB) that is one of the data types of database?",
+  "context": [],
+  "options": [
+   {
+    "text": "LOB data types include BLOB and CLOB.",
+    "img": null
+   },
+   {
+    "text": "The transaction can be managed by the database itself.",
+    "img": null
+   },
+   {
+    "text": "Used to store massive unstructured data, including text, graphic, image, video, and audio.",
+    "img": null
+   },
+   {
+    "text": "Large files are stored in a file system of the operating system and are able to be accessed via tables.\\",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "data-25",
+  "stem": "Choose the JOIN SQL Statement that will produce the [Execution Result] below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-25-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "SELECT * FROM Customer LEFT OUTER JOIN Order ON Customer.CustomerNumber = Order.CustumerNumber",
+    "img": null
+   },
+   {
+    "text": "SELECT * FROM Customer RIGHT OUTER JOIN Order ON Customer.CustomerNumber = Order.CustumerNumber",
+    "img": null
+   },
+   {
+    "text": "SELECT * FROM Customer FULL OUTER JOIN Order ON Customer.CustomerNumber = Order.CustumerNumber",
+    "img": null
+   },
+   {
+    "text": "SELECT * FROM Customer INNER JOIN Result ON |OrderCustomerNumber = Order.CustumerNumber",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "data-26",
+  "stem": "Choose the appropriate denormalization technique for the blank (a) below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-26-1.webp"
+   },
+   {
+    "type": "img",
+    "src": "img/data/data-26-2.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Column",
+    "img": null
+   },
+   {
+    "text": "Index",
+    "img": null
+   },
+   {
+    "text": "Relationship",
+    "img": null
+   },
+   {
+    "text": "Table",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "data-27",
+  "stem": "From the 2 candidate keys Student_Number and Resident_Number, Student_Number was selected as the primary key of the relation Student. Choose the key type of Resident_Number.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-27-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Alternate key",
+    "img": null
+   },
+   {
+    "text": "Composite key",
+    "img": null
+   },
+   {
+    "text": "Artificial key",
+    "img": null
+   },
+   {
+    "text": "Foreign key",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "data-28",
+  "stem": "Who is the person in charge of the roles below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-28-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Data Modeler (DM)",
+    "img": null
+   },
+   {
+    "text": "Data Administrator (DA)",
+    "img": null
+   },
+   {
+    "text": "Database Administrator (DBA)",
+    "img": null
+   },
+   {
+    "text": "Enterprise Data Administrator (EDA)",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "data-29",
+  "stem": "Refer to the tables A and B below and choose the correct result of A/B operation which means the relation A divided by the relation B.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-29-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "",
+    "img": "img/data/data-29-2.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-29-3.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-29-4.webp"
+   },
+   {
+    "text": "",
+    "img": "img/data/data-29-5.webp"
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "data-30",
+  "stem": "Choose the statement which is NOT a correct explanation of the attribute design for data modeling.",
+  "context": [],
+  "options": [
+   {
+    "text": "Attributes must be defined to have only one meaning",
+    "img": null
+   },
+   {
+    "text": "Attributes are named with acronyms that are used on site",
+    "img": null
+   },
+   {
+    "text": "When a single attribute has multiple values, the attribute must be separated",
+    "img": null
+   },
+   {
+    "text": "The attribute of the primary identifier must be defined to comply with functional dependencies",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "data-31",
+  "stem": "Choose the statement which is NOT a correct of the relationship between the entities of Employee and Department in the example below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-31-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Employees without departments may exist",
+    "img": null
+   },
+   {
+    "text": "Departments without employees may exist",
+    "img": null
+   },
+   {
+    "text": "An employee must belong to only one department",
+    "img": null
+   },
+   {
+    "text": "Departments with one or more employees may exist",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "data-32",
+  "stem": "Choose which integrity is ensured by the following constraints.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/data/data-32-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Domain Integrity",
+    "img": null
+   },
+   {
+    "text": "Entity Integrity",
+    "img": null
+   },
+   {
+    "text": "Key Integrity",
+    "img": null
+   },
+   {
+    "text": "Referential Integrity",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "data-33",
+  "stem": "Which of the following is NOT a correct characteristic of column-oriented database?",
+  "context": [],
+  "options": [
+   {
+    "text": "Stores data tables by column.",
+    "img": null
+   },
+   {
+    "text": "Efficient when all column values are entered at the same time.",
+    "img": null
+   },
+   {
+    "text": "Useful when values of specific column are replaced without affecting other columns.",
+    "img": null
+   },
+   {
+    "text": "Suitable when a massive data stored in the same column is analyzed collectively.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "data-34",
+  "stem": "Below is the example of embedded SQL statements to input the amount of scholarship.",
+  "context": [
+   {
+    "type": "p",
+    "text": "Choose the incorrect command in (a), (b), (c), and (d)."
+   },
+   {
+    "type": "img",
+    "src": "img/data/data-34-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(a) – DECLARE",
+    "img": null
+   },
+   {
+    "text": "(b) – OPEN",
+    "img": null
+   },
+   {
+    "text": "(c) – CURSOR",
+    "img": null
+   },
+   {
+    "text": "(d) – CLOSE",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ }
+]

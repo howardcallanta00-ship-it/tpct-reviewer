@@ -1,0 +1,191 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import type { Question } from '../types';
+import { domainById, lessonById } from '../data';
+import { Icon, Md, PATHS, ZoomImg } from './ui';
+import { toggleSaved, useProgress } from '../store';
+
+const LETTERS = 'abcdefgh';
+
+/** Options keep their original order when they refer to each other or are images. */
+export function canShuffle(q: Question) {
+  if (q.options.some((o) => o.img)) return false;
+  const text = q.options.map((o) => o.text).join(' ');
+  if (/\([a-e]\)|all of the above|none of the above|→|->|\(1\)/i.test(text)) return false;
+  return true;
+}
+
+export function Context({ q }: { q: Question }) {
+  const lettered = /\([a-e]\)|ⓐ|\(a\)/i.test(q.stem + q.options.map((o) => o.text).join(' '));
+  const blocks: JSX.Element[] = [];
+  let list: { text: string }[] = [];
+  let liIndex = 0;
+  const flush = () => {
+    if (!list.length) return;
+    const items = list;
+    blocks.push(
+      <ul key={'ul' + blocks.length}>
+        {items.map((it, i) => (
+          <li key={i}>
+            <b>{lettered ? `(${LETTERS[liIndex - items.length + i]})` : '•'}</b>
+            <span>{it.text}</span>
+          </li>
+        ))}
+      </ul>,
+    );
+    list = [];
+  };
+  q.context.forEach((c, i) => {
+    if (c.type === 'li' && c.text) {
+      list.push({ text: c.text });
+      liIndex++;
+      return;
+    }
+    flush();
+    if (c.type === 'img' && c.src) blocks.push(<ZoomImg key={i} src={c.src} alt={`Figure for question ${q.num}`} />);
+    else if (c.text && c.text.trim() !== '\\') blocks.push(<p key={i}>{c.text}</p>);
+  });
+  flush();
+  if (!blocks.length) return null;
+  return <div className="q-ctx">{blocks}</div>;
+}
+
+interface Props {
+  q: Question;
+  order: number[];
+  picked: number | null;
+  revealed: boolean;
+  onPick?: (originalIndex: number) => void;
+  index?: number;
+  total?: number;
+}
+
+export function QuestionView({ q, order, picked, revealed, onPick, index, total }: Props) {
+  const p = useProgress();
+  const d = domainById[q.domain];
+  const saved = p.saved.includes(q.id);
+  const likely = q.notes.k && q.notes.k.likely >= 0 && q.notes.k.likely !== q.key ? q.notes.k.likely : -1;
+  const lesson = lessonById[q.notes.t];
+
+  return (
+    <div className="card" style={{ padding: 30, display: 'flex', flexDirection: 'column', gap: 20, background: 'radial-gradient(80% 60% at 100% 0%, #241f4c 0%, #151931 60%)' }}>
+      <div className="row wrap between">
+        <div className="row wrap" style={{ gap: 8 }}>
+          <span className="chip" style={{ background: d.color + '22', color: d.color }}>{d.short}</span>
+          {lesson && <span className="chip plain">{lesson.title}</span>}
+          {revealed && q.notes.k && <span className="chip warn">Key check</span>}
+          {revealed && q.keySource === 'claude' && <span className="chip warn">No key in reviewer</span>}
+        </div>
+        <div className="row" style={{ gap: 8 }}>
+          {index !== undefined && total !== undefined && <span className="sub n">{index + 1} / {total}</span>}
+          <button type="button" className={'icon-btn' + (saved ? ' on' : '')} onClick={() => toggleSaved(q.id)} aria-label={saved ? 'Remove from saved' : 'Save question'} title="Save (B)">
+            <Icon d={PATHS.bookmark} size={18} fill={saved ? 'currentColor' : 'none'} />
+          </button>
+        </div>
+      </div>
+      <h1 className="q-stem">{q.stem}</h1>
+      <Context q={q} />
+      <div className="opts" role="list">
+        {order.map((oi, pos) => {
+          const o = q.options[oi];
+          let cls = 'opt';
+          let tag = '';
+          if (revealed) {
+            if (oi === q.key) {
+              cls += ' key';
+              tag = q.keySource === 'claude' ? 'Answer' : picked === oi ? 'Correct per your key' : 'Your key’s answer';
+            } else if (oi === likely) {
+              cls += ' likely';
+              tag = oi === picked ? 'Your answer, likely correct' : 'Likely correct';
+            } else if (oi === picked) {
+              cls += ' wrong';
+              tag = 'Your answer';
+            } else cls += ' dim';
+          } else if (picked === oi) cls += ' picked';
+          return (
+            <button key={oi} type="button" role="listitem" className={cls} disabled={revealed || !onPick} onClick={() => onPick?.(oi)}>
+              <span className="k">{pos + 1}</span>
+              <span className="grow" style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+                {o.text && <span>{o.text}</span>}
+                {o.img && <img src={import.meta.env.BASE_URL + o.img} alt={`Option ${pos + 1}`} />}
+              </span>
+              {tag && <span className="tag">{tag}</span>}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+export function KeyCheck({ q }: { q: Question }) {
+  if (q.keySource === 'claude' && q.notes.m) {
+    return (
+      <div className="card warn row" style={{ alignItems: 'flex-start', gap: 16 }}>
+        <span className="tile" style={{ width: 42, height: 42, background: 'var(--warn)' }}><Icon d={PATHS.alert} stroke="#241D12" /></span>
+        <div className="stack" style={{ gap: 8 }}>
+          <h2 className="d" style={{ fontSize: 19, color: 'var(--warn-text)' }}>Your reviewer has no answer for this one</h2>
+          <p style={{ margin: 0, color: '#E4DCCB' }}><Md text={q.notes.m.note} /></p>
+        </div>
+      </div>
+    );
+  }
+  if (!q.notes.k) return null;
+  return (
+    <div className="card warn row" style={{ alignItems: 'flex-start', gap: 16 }}>
+      <span className="tile" style={{ width: 42, height: 42, background: 'var(--warn)' }}><Icon d={PATHS.alert} stroke="#241D12" /></span>
+      <div className="stack" style={{ gap: 8 }}>
+        <h2 className="d" style={{ fontSize: 19, color: 'var(--warn-text)' }}>Your answer key may be wrong here</h2>
+        <p style={{ margin: 0, color: '#E4DCCB' }}>
+          You are scored on your reviewer’s answer.{' '}
+          {q.notes.k.likely >= 0 ? (
+            <>The option that is more likely correct is marked <b style={{ color: 'var(--warn-text)' }}>Likely correct</b>.</>
+          ) : (
+            <>This question is ambiguous, so read the note carefully.</>
+          )}
+        </p>
+        <p style={{ margin: 0, color: '#E4DCCB' }}><Md text={q.notes.k.note} /></p>
+      </div>
+    </div>
+  );
+}
+
+export function Explanation({ q, order }: { q: Question; order: number[] }) {
+  const [tab, setTab] = useState<'why' | 'options'>('why');
+  const lesson = lessonById[q.notes.t];
+  return (
+    <div className="card stack" style={{ gap: 16 }}>
+      <div className="tabs" role="tablist">
+        <button type="button" role="tab" aria-selected={tab === 'why'} className={tab === 'why' ? 'on' : ''} onClick={() => setTab('why')}>Explanation</button>
+        <button type="button" role="tab" aria-selected={tab === 'options'} className={tab === 'options' ? 'on' : ''} onClick={() => setTab('options')}>Every option, explained</button>
+      </div>
+      {tab === 'why' ? (
+        <p style={{ margin: 0, fontSize: 16.5, lineHeight: 1.7, maxWidth: 720 }}><Md text={q.notes.e} /></p>
+      ) : (
+        <div className="why">
+          {order.map((oi, pos) => (
+            <div key={oi}>
+              <span className={'k' + (oi === q.key ? ' ok' : '')}>{pos + 1}</span>
+              <span style={{ color: 'var(--text-2)' }}><Md text={q.notes.w[oi] ?? ''} /></span>
+            </div>
+          ))}
+        </div>
+      )}
+      {q.notes.r && (
+        <div className="callout tip">
+          <span className="tile" style={{ width: 34, height: 34, background: 'var(--pink)', borderRadius: 10 }}><Icon d={PATHS.bulb} size={18} stroke="#241B2E" /></span>
+          <span><b style={{ color: '#FFB3DB' }}>Remember: </b><Md text={q.notes.r} /></span>
+        </div>
+      )}
+      {lesson && (
+        <Link to={`/learn/${lesson.id}`} className="row" style={{ textDecoration: 'none', color: 'var(--text)', gap: 12 }}>
+          <span className="tile" style={{ width: 36, height: 36, background: 'var(--accent)', borderRadius: 11 }}><Icon d={PATHS.layers} size={18} stroke="#0B0D1C" /></span>
+          <span className="stack">
+            <span className="sub small">Learn the concept</span>
+            <b>{lesson.title}</b>
+          </span>
+        </Link>
+      )}
+    </div>
+  );
+}

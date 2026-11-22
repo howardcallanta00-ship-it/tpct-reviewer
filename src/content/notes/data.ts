@@ -1,0 +1,426 @@
+import type { QuestionNotes } from '../../types';
+
+export const dataNotes: Record<string, QuestionNotes> = {
+  'data-01': {
+    t: 'db-ops',
+    e: 'Index design follows a logical order. First **collect** how the data is currently accessed (c). Then check value distribution to pick **candidate columns** (b). Then **decide the access paths** (a). Finally decide the **combination and order of columns** in each index (d).',
+    w: [
+      'Starts with candidate columns before knowing how data is accessed.',
+      'Starts with candidate columns before knowing how data is accessed.',
+      'Collect paths → pick candidates → decide paths → decide column order. This is the standard order.',
+      'Marked as the answer, but it decides column order before deciding the access paths.',
+    ],
+    k: {
+      likely: 2,
+      note: 'The standard index design procedure is: collect access paths → choose candidate columns by distribution → **determine access paths** → **determine column combination and order**. You need to know which access paths you will support before you can order the columns inside each index, so (a) comes before (d): (c)→(b)→(a)→(d), which is option 3.',
+    },
+    r: 'Collect → Candidates → Paths → Column order.',
+  },
+  'data-02': {
+    t: 'db-normal',
+    e: '**3NF** removes **transitive dependencies**: a non-key column that depends on another non-key column. Here `ProfessorName` depends on `ProfessorNumber`, which is not part of the key. So ProfessorName should move to a separate Professor table.',
+    w: [
+      'Depends on the registration itself, fine.',
+      'Depends on the registration itself, fine.',
+      'Correct. Depends on ProfessorNumber (a non-key column), which is a transitive dependency.',
+      'Depends on the registration itself, fine.',
+    ],
+    r: '3NF: every non-key column depends on "the key, the whole key, and nothing but the key".',
+  },
+  'data-03': {
+    t: 'db-ops',
+    e: '**Data standardization** gives each piece of data one standard **term**, a standard **domain** (a reusable type group like "Amount" or "Date") and a fixed **data type**. It fixes the problem in Bank A, where the same data had different names and types in each system. The reviewer does not include the actual question line, so focus on the idea: terms map to domains, and each domain has exactly one data type.',
+    w: [
+      'Your reviewer’s answer. Resident numbers are grouped under one "Resident number" domain with CHAR(13).',
+      'Amount values grouped under one numeric domain.',
+      'Dates grouped under one DATE domain.',
+      'Codes grouped under one code domain.',
+    ],
+    r: 'Standard term → standard domain → one data type.',
+  },
+  'data-04': {
+    t: 'db-nosql',
+    e: '**NoSQL** databases trade strict transactions for scale and flexibility. They usually follow **BASE** (Basically Available, Soft state, Eventually consistent) instead of full **ACID**. They have flexible schemas, no foreign keys between tables, and many data models (document, key-value, column, graph).',
+    w: [
+      'Correct. Full ACID is the relational database guarantee, not a typical NoSQL property.',
+      'True: schemas are flexible.',
+      'True: no foreign keys or joins enforced by the database.',
+      'True: document, key-value, column-family and graph models.',
+    ],
+    r: 'RDBMS = ACID. NoSQL = BASE.',
+  },
+  'data-05': {
+    t: 'db-ml',
+    e: '**Unsupervised learning** finds patterns in data that has **no labels**. **K-means clustering** groups data into k clusters by similarity. Decision trees, KNN and (most) neural networks learn from labeled answers, so they are supervised.',
+    w: [
+      'Supervised: learns rules from labeled data.',
+      'Correct. Groups unlabeled data into k clusters.',
+      'Supervised: classifies by the labels of the k nearest neighbors.',
+      'Usually supervised: learns from correct answers.',
+    ],
+    r: 'Clustering = unsupervised. Classification = supervised.',
+  },
+  'data-06': {
+    t: 'db-sql',
+    e: '**DCL (Data Control Language)** manages permissions. `GRANT` gives a privilege, `REVOKE` takes it away. "Allow user02 to SELECT from user01.custinfo" is `GRANT SELECT ON user01.custinfo TO user02`.',
+    w: [
+      'ALTER changes a table’s structure (DDL).',
+      'CREATE makes a new object (DDL).',
+      'COMMIT saves a transaction (TCL).',
+      'Correct. GRANT gives a privilege to a user.',
+    ],
+    r: 'DCL = GRANT and REVOKE.',
+  },
+  'data-07': {
+    t: 'db-normal',
+    e: 'The key is (Student No. + Subject No.). `Name` depends **only on Student No.**, which is just part of the key. When a column depends on only part of a composite key, that is a **partial functional dependency**, which 2NF removes. `Score` needs both parts, so Score is fully dependent.',
+    w: [
+      'BCNF is a normal form, not a dependency type.',
+      'Name depends only on Student No., part of the key, so this is partial dependency.',
+      'Marked as the answer, but Name does not need Subject No. at all.',
+      'Transitive means key → non-key → non-key.',
+    ],
+    k: {
+      likely: 1,
+      note: 'Look at student 220101: the name "Gil Dong Hong" stays the same for subjects A001 and A003. So Name is determined by Student No. alone, which is only **part** of the composite key. That is a **partial** functional dependency. Score is the column with full dependency, because it needs both Student No. and Subject No.',
+    },
+    r: 'Depends on part of the key = partial (fix with 2NF).',
+  },
+  'data-08': {
+    t: 'db-model',
+    e: 'In **crow’s foot** notation, each end shows how many of that entity can relate: a **bar |** means one (mandatory), a **circle O** means zero (optional), a **crow’s foot** means many. If a STUDENT can exist without a STUDENT ASSOCIATION, the association end must show it is optional.',
+    w: [
+      'Matches: each department has one or more students, students need a department.',
+      'Matches: zero or one locker per student.',
+      'Matches the "zero, one or more" side on the student end.',
+      'Your reviewer’s answer (marked "D"). Drawn as a dashed relationship that does not match the stated conditions.',
+    ],
+    k: {
+      likely: -1,
+      note: 'Your reviewer marks D. Be aware that diagram C uses the same "one" bar on the ADVISOR side even though a student can exist without an advisor, so C is arguably just as wrong. On the exam, check both ends of every line against the sentence: "can exist without" means the other end must be optional (circle).',
+    },
+    fix: { context: { 0: '(Note: the diagrams use crow’s foot notation.)' }, key: 3 },
+    r: 'Crow’s foot: | = one, O = zero, fork = many.',
+  },
+  'data-09': {
+    t: 'db-sql',
+    e: '**DDL** (Data Definition Language) defines structure: CREATE, ALTER, DROP. **DML** (Data Manipulation Language) works with the data: SELECT, INSERT, UPDATE, DELETE. The statement describes DML but calls it DDL.',
+    w: [
+      'True: the DBMS lets you build and use a database.',
+      'True: the DBA handles physical design, backup and recovery.',
+      'Correct. Inserting, changing and querying data is DML, not DDL.',
+      'True: a database is shared, integrated data with minimal duplication.',
+    ],
+    r: 'DDL = shape the table. DML = touch the rows.',
+  },
+  'data-10': {
+    t: 'db-nosql',
+    e: 'The **CAP theorem** says a distributed database can guarantee at most **two** of: Consistency, Availability, Partition tolerance. No system gets all three. MongoDB, HBase and BigTable lean **C+P**. Cassandra and Dynamo lean **A+P**. A traditional single-site RDBMS is **C+A**.',
+    w: [
+      'Correct. False: no NoSQL store satisfies all three pairs, and MongoDB is C+P.',
+      'True: BigTable and HBase are C+P.',
+      'True: Dynamo and Cassandra are A+P.',
+      'True: a classic RDBMS is C+A.',
+    ],
+    r: 'Pick two of three. Mongo/HBase = CP. Cassandra/Dynamo = AP. RDBMS = CA.',
+  },
+  'data-11': {
+    t: 'db-nosql',
+    e: 'A **data warehouse** model has a central **fact table** (numbers to analyze) surrounded by **dimension tables** (descriptions like time, product, region). A **star schema** is **denormalized**: dimensions repeat data, so it needs **more** space but queries are fast. A **snowflake schema** normalizes the dimensions into hierarchies.',
+    w: [
+      'True: fact table plus dimension tables.',
+      'True: dimensions describe the facts.',
+      'Correct. False: a star schema is denormalized, so it has more duplication and needs more space.',
+      'True: snowflake breaks dimensions into hierarchies.',
+    ],
+    r: 'Star = fast and fat (denormalized). Snowflake = normalized and slimmer.',
+  },
+  'data-12': {
+    t: 'db-ml',
+    e: '**Reinforcement learning**: an agent acts in an environment, gets **rewards** for good actions, and learns by trial and error to earn more reward. AlphaGo, robots and self-driving cars are classic examples.',
+    w: [
+      'Learns from labeled examples.',
+      'Finds patterns without labels.',
+      'Correct. Agent + environment + reward.',
+      'Mixes a little labeled data with a lot of unlabeled data.',
+    ],
+    r: 'Reward signal = reinforcement learning.',
+  },
+  'data-13': {
+    t: 'db-sql',
+    e: 'Match each purpose with the right DDL. Rename → `RENAME`. Delete all rows but keep the table → `TRUNCATE`. Delete the table entirely → `DROP`. Add a new column → `ALTER TABLE ... ADD`, not `MODIFY` (MODIFY changes an existing column).',
+    w: [
+      'Matches: RENAME renames the table.',
+      'Matches: TRUNCATE removes all rows, keeps the structure.',
+      'Correct. The goal is to add a column, but the SQL uses MODIFY on a different column.',
+      'Matches: DROP removes structure and data.',
+    ],
+    r: 'ADD = new column. MODIFY = change existing column. TRUNCATE keeps the table, DROP deletes it.',
+  },
+  'data-14': {
+    t: 'db-ops',
+    e: 'The **ANSI-SPARC** architecture has three levels. **External**: what each user or app sees. **Conceptual**: the whole logical structure for the organization. **Internal**: how data is physically stored, such as record length in bytes and indexes.',
+    w: [
+      'Conceptual is the overall logical design, not byte sizes.',
+      'Marked as the answer, but External is the user’s view, not storage details.',
+      'Record size in bytes and indexes for retrieval are physical storage details, which is the Internal level.',
+      'Not one of the three ANSI-SPARC level names.',
+    ],
+    k: {
+      likely: 2,
+      note: '"The record is 70 bytes" and "the Name column is indexed" are about **physical storage**. That is the **Internal** level. The External level would describe what a particular user or application sees (a view).',
+    },
+    r: 'External = view, Conceptual = whole design, Internal = disk.',
+  },
+  'data-15': {
+    t: 'db-ops',
+    e: 'A **distributed database** spreads data over several sites but must look like one database to the user. A key goal is **location transparency**: users do not need to know where data is stored. Replication uses more storage but improves availability and lets other sites take over if one fails.',
+    w: [
+      'Marked as the answer, but this is a true drawback: replicated data takes more storage.',
+      'Breaks location transparency, since users should not have to track where data lives.',
+      'True: replicas on other sites keep work going.',
+      'True: spreading requests increases availability.',
+    ],
+    k: {
+      likely: 1,
+      note: 'Option 1 is a real disadvantage of replication, so it is a **correct** statement. Option 2 goes against **location transparency**: in a distributed database, users and applications should not have to know or manage where data is stored. Option 2 is the incorrect statement.',
+    },
+    r: 'Distributed DB golden rule: transparency (location, replication, failure).',
+  },
+  'data-16': {
+    t: 'db-ml',
+    e: 'Translate each description. (1) a brain-like model trained on correct answers = **neural network** (supervised). (2) predict from the k nearest points = **KNN** (supervised). (3) group similar data = **clustering** (unsupervised). (4) build a tree that classifies categories = **decision tree** (supervised).',
+    w: [
+      'Neural network trained on correct answers: supervised.',
+      'K-nearest neighbor: supervised.',
+      'Clustering groups unlabeled data. This is the one that is NOT supervised.',
+      'Marked as the answer, but a decision tree is supervised.',
+    ],
+    k: {
+      likely: 2,
+      note: 'Option 4 describes a **decision tree**, which learns from labeled categories, so it **is** supervised. Option 3 describes **clustering** ("groups data with similar characteristics"), which is unsupervised. Option 3 is the answer.',
+    },
+    r: 'Grouping = unsupervised. Predicting a known label = supervised.',
+  },
+  'data-17': {
+    t: 'db-ops',
+    e: 'Backup types: **full** (everything), **differential** (everything changed since the last full), **incremental** (changed since the last backup of any kind), **archive log** (records every transaction, so you can recover to **a precise point in time**). Part (b) is differential. Part (c) asks to recover to just before a failure, which needs archive logs.',
+    w: [
+      'Cold backup is taken with the database shut down.',
+      'This is part (b): all changes since the last full backup.',
+      'Marked as the answer, but incremental backups alone cannot reach "just before the failure".',
+      'Recovering to the moment before failure uses archive (transaction) logs.',
+    ],
+    k: {
+      likely: 3,
+      note: 'Part (c) requires recovery "to the point immediately before the database failure". Only **archive log** backups (replaying the transaction log) can roll the database forward to an exact point in time. Incremental backups only capture state at scheduled backup times.',
+    },
+    r: 'Point-in-time recovery = archive logs.',
+  },
+  'data-18': {
+    t: 'db-nosql',
+    e: 'An **ORDB (Object-Relational Database)** adds object features to a relational database: nested tables, inheritance, large objects (LOB) and references between objects. Plain two-dimensional rows and columns describe an ordinary **relational** database.',
+    w: [
+      'True: a column can hold a nested table.',
+      'True: LOBs and inheritance are supported.',
+      'Correct. Flat rows and columns are plain relational, not the object-relational feature.',
+      'True: objects can reference other objects.',
+    ],
+    r: 'ORDB = relational + objects (nesting, inheritance, references).',
+  },
+  'data-19': {
+    t: 'db-sql',
+    e: 'Rules: `WHERE` filters **rows before** grouping. `GROUP BY` makes groups. `HAVING` filters **groups after** grouping. If you SELECT a normal column (Department) together with `SUM()`, you **must** `GROUP BY` that column.',
+    w: [
+      'Valid SQL: filter rows, then sum reports per department.',
+      'Invalid: Department is selected with SUM() but there is no GROUP BY.',
+      'Marked as the answer, but there is no GROUP BY, so it fails for the same reason as option 2.',
+    ],
+    k: {
+      likely: 0,
+      note: 'Your reviewer leaves out the [Query Condition], so I cannot check the intent. But as written, option 3 selects `Department` with `SUM()` and has **no GROUP BY**, which is an error in standard SQL. Option 1 is the only statement that runs. If the condition was about the **total** number of students per department, the correct form would be `GROUP BY Department HAVING SUM(NoOfStudents) >= 10`.',
+    },
+    r: 'WHERE = rows. HAVING = groups. Aggregate + plain column = GROUP BY.',
+  },
+  'data-20': {
+    t: 'db-model',
+    e: 'Data modeling has three stages. **Conceptual**: identify subject areas, core entities and their relationships (a high-level ERD). **Logical**: add all attributes, choose identifiers, normalize. **Physical**: tables, columns, types and indexes for a specific DBMS.',
+    w: [
+      'Normalization is done in logical modeling.',
+      'Defining subject areas is part of the conceptual stage.',
+      'A high-level ERD is the main output of conceptual modeling.',
+      'Marked as the answer. Detailed attributes and identifiers are usually logical modeling.',
+    ],
+    k: {
+      likely: -1,
+      note: 'In most data modeling guides, **defining attributes and determining identifiers** belongs to **logical** modeling, while conceptual modeling defines subject areas, core entities and relationships (a high-level ERD). Your key may come from a source that counts key attributes as conceptual. If you see this on the exam, read every option: "create the ERD" or "define the subject area" fit conceptual modeling better.',
+    },
+    r: 'Conceptual = what things exist. Logical = full detail. Physical = how it is stored.',
+  },
+  'data-21': {
+    t: 'db-ml',
+    e: 'The bank classifies customers with a sequence of yes/no questions (in service? 1+ year? income > $50,000?), drawn as a tree. That is a **decision tree**.',
+    w: [
+      'Counts how often items appear together.',
+      'Correct. A tree of yes/no splits ending in a class (Good / Poor).',
+      'Used mainly for images.',
+      'Classifies by nearest neighbors, no tree.',
+    ],
+    r: 'Flowchart of questions ending in a label = decision tree.',
+  },
+  'data-22': {
+    t: 'db-ops',
+    e: '**Two-Phase Locking (2PL)** has a **growing phase** (only acquire locks) and a **shrinking phase** (only release locks). Once a transaction unlocks anything, it cannot lock again. T1 unlocks x at step 6 and later uses y, so it must lock y **before** step 6.',
+    w: [
+      'x is already locked at step 1.',
+      'Correct. Lock y before the first unlock, so all locks come before any unlock.',
+      'Reading x does not fix the locking order.',
+      'Unlocking y before locking it makes no sense.',
+    ],
+    r: '2PL: grab all locks first, then release. Never lock after an unlock.',
+  },
+  'data-23': {
+    t: 'db-model',
+    e: 'An **entity** is a thing, event or person the business needs to keep information about, a group of similar objects (customer, product, order). Identifying these is "define entities".',
+    w: [
+      'Relationships link entities together.',
+      'Attributes are the properties of an entity.',
+      'Identifiers uniquely identify each instance.',
+      'Correct. Things, events and people of continuing business interest are entities.',
+    ],
+    r: 'Entity = noun the business cares about.',
+  },
+  'data-24': {
+    t: 'db-nosql',
+    e: '**LOB (Large Object)** types store huge unstructured data. **BLOB** = binary (images, video), **CLOB** = large text. Internal LOBs live inside the database, so the database manages their transactions. A **BFILE** is the exception: it points to a file in the operating system, is read-only, and is **not** covered by database transactions.',
+    w: [
+      'True: BLOB and CLOB are LOB types.',
+      'True for internal LOBs stored inside the database.',
+      'True: LOBs are for large unstructured data.',
+      'Correct per your key. It describes a BFILE, an external pointer, rather than how LOBs are normally stored.',
+    ],
+    r: 'BLOB = binary, CLOB = characters, BFILE = pointer to an OS file.',
+  },
+  'data-25': {
+    t: 'db-sql',
+    e: 'Read the result: it contains **every customer** (Kim and Park appear with NULL orders) **and every order** (order 202004233 appears with NULL customer). Keeping unmatched rows from **both** sides is a **FULL OUTER JOIN**.',
+    w: [
+      'Marked as the answer, but a LEFT join would drop order 202004233, which has no customer.',
+      'A RIGHT join would drop Kim and Park, who have no orders.',
+      'Keeps unmatched rows from both tables, exactly like the result.',
+      'Invalid syntax and joins the wrong table.',
+    ],
+    k: {
+      likely: 2,
+      note: 'The last row of the result is `NULL | NULL | 202004233 | NULL`: an order with no matching customer. A LEFT OUTER JOIN only keeps unmatched rows from the **left** (Customer) table, so that row could not appear. Unmatched rows from both sides means **FULL OUTER JOIN** (option 3).',
+    },
+    r: 'LEFT keeps left orphans, RIGHT keeps right orphans, FULL keeps both.',
+  },
+  'data-26': {
+    t: 'db-normal',
+    e: '**Denormalization** deliberately adds redundancy or restructures tables for speed. Techniques work on **tables** (split or merge tables, e.g. split by month), **columns** (add derived or duplicate columns) or **relationships** (add shortcut relationships). Splitting OrderList so each query only touches one month is a **table** technique (partitioning).',
+    w: [
+      'Column denormalization adds or duplicates columns.',
+      'Indexes are not a denormalization technique.',
+      'Relationship denormalization adds redundant relationships.',
+      'Correct. Splitting the table by month is table denormalization.',
+    ],
+    r: 'Denormalize at three levels: table, column, relationship.',
+  },
+  'data-27': {
+    t: 'db-normal',
+    e: '**Candidate keys** are all columns that could uniquely identify a row. The one you choose is the **primary key**. The rest are **alternate keys**.',
+    w: [
+      'Correct. A candidate key not chosen as primary is an alternate key.',
+      'A composite key is made of two or more columns.',
+      'An artificial (surrogate) key is a made-up ID number.',
+      'A foreign key points to another table’s key.',
+    ],
+    r: 'Candidates → one becomes Primary, the rest are Alternates.',
+  },
+  'data-28': {
+    t: 'db-ops',
+    e: 'The **DBA (Database Administrator)** runs the database day to day: backups, performance monitoring and tuning, finding slow queries, security and recovery. A **DA (Data Administrator)** manages data policies and standards at a business level.',
+    w: [
+      'A data modeler designs data models.',
+      'A DA manages data standards and policy, not running servers.',
+      'Correct. Backups, performance counters and slow queries are DBA work.',
+      'An EDA manages data architecture across the whole enterprise.',
+    ],
+    r: 'DBA = keeps the database running. DA = sets the data rules.',
+  },
+  'data-29': {
+    t: 'db-sql',
+    e: '**Division** A ÷ B returns the values in A that are paired with **every** value in B. B has p1, p2 and p4. Check each sno: s1 has p1, p2, p3, p4 (has all three). s2 has p1, p2 (missing p4). s3 has only p2. s4 has p2, p4 (missing p1). So the result is **s1 only**.',
+    w: [
+      'Only s1 is paired with all of p1, p2 and p4.',
+      'Marked as the answer, but s2 is missing p4.',
+      's2 and s3 are both missing parts.',
+      'Only s1 qualifies.',
+    ],
+    k: {
+      likely: 0,
+      note: 'Division asks "which sno has **all** the pno values in B (p1, p2, p4)?". s2 only has p1 and p2, with no p4, so it fails. Only **s1** has all three. The answer is option 1.',
+    },
+    r: 'A ÷ B = "who has ALL of them?"',
+  },
+  'data-30': {
+    t: 'db-model',
+    e: 'Good attribute design: each attribute has **one meaning**, holds **one value** (split multi-valued attributes), and identifiers follow functional dependencies. Names should be **clear standard terms**, not local acronyms that only some people understand.',
+    w: [
+      'True: one meaning per attribute.',
+      'Correct. Avoid local acronyms, use standard, clear names.',
+      'True: split multi-valued attributes.',
+      'True: identifiers must respect functional dependencies.',
+    ],
+    r: 'One meaning, one value, clear standard name.',
+  },
+  'data-31': {
+    t: 'db-model',
+    e: 'In **Barker notation**, read each half of the line from the entity next to it. A **solid** half means "must", a **dashed** half means "may", and the crow’s foot means "one or more". Here: each Employee **must** belong to exactly one Department (solid on the Employee side). Each Department **may** have one or more Employees (dashed on the Department side).',
+    w: [
+      'Incorrect: the solid line on the Employee side means every employee must have a department.',
+      'Marked as the answer, but the dashed half on the Department side means a department may have no employees.',
+      'True: each employee belongs to one department.',
+      'True: the crow’s foot allows many employees.',
+    ],
+    k: {
+      likely: 0,
+      note: 'The line is **solid** next to Employee and **dashed** next to Department. Solid = must, dashed = may. So employees **cannot** exist without a department (option 1 is the false statement), and departments **can** exist without employees (option 2 is true).',
+    },
+    r: 'Barker: solid = must, dashed = may. Read from the entity next to the line.',
+  },
+  'data-32': {
+    t: 'db-normal',
+    e: '**Domain integrity** makes sure each column only holds valid values: correct data type (DATE rejects "2021-02-30") and allowed values (CHECK constraint for Gender = 1 or 2).',
+    w: [
+      'Correct. Data types and CHECK constraints limit allowed values.',
+      'Entity integrity: primary key must be unique and not NULL.',
+      'Key integrity: key values must be unique.',
+      'Referential integrity: foreign keys must point to existing rows.',
+    ],
+    r: 'Domain = allowed values. Entity = valid PK. Referential = valid FK.',
+  },
+  'data-33': {
+    t: 'db-nosql',
+    e: 'A **column-oriented** database stores each column together. That is great for analyzing one column across millions of rows and for updating one column. It is **slow** for inserting whole rows at once, because each value goes to a different column file.',
+    w: [
+      'True: data is stored by column.',
+      'Correct. Writing all columns of a row at once is a weakness of column stores.',
+      'True: one column can change without touching others.',
+      'True: column-wide analysis is its strength.',
+    ],
+    r: 'Column store = fast analytics, slow row inserts.',
+  },
+  'data-34': {
+    t: 'db-sql',
+    e: 'A **cursor** walks through query results one row at a time in embedded SQL. The lifecycle is **DECLARE → OPEN → FETCH → CLOSE**. Step (c) runs inside the loop to get each row, so it must be `FETCH`.',
+    w: [
+      'Correct command: declare the cursor.',
+      'Correct command: open it.',
+      'Correct answer. (c) should be FETCH, not CURSOR.',
+      'Correct command: close it.',
+    ],
+    r: 'Cursor: Declare, Open, Fetch, Close.',
+  },
+};

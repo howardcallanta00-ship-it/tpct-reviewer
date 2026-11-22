@@ -1,0 +1,1184 @@
+[
+ {
+  "id": "management-01",
+  "stem": "Choose the customer type appropriately grouped to meet the Mutually Exclusive and Collectively Exhaustive (MECE) conditions.",
+  "context": [
+   {
+    "type": "p",
+    "text": "MECE is a logical thinking technique to analyze problems in which a set of items is separated into subsets ensuring that no information or messages are missing or repeated, and that the sum of all subsets includes all items."
+   },
+   {
+    "type": "p",
+    "text": "(e.g. male, female)"
+   }
+  ],
+  "options": [
+   {
+    "text": "(Single, married, employees)",
+    "img": null
+   },
+   {
+    "text": "(employed, self-employed, housewife)",
+    "img": null
+   },
+   {
+    "text": "(20s or younger, 30s, 40s, 50s, 60s, (Os or older)",
+    "img": null
+   },
+   {
+    "text": "(metropolitan area, island area, New York area, California area, Texas area, Washington area, Florida area)",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "management-02",
+  "stem": "Choose the quality control tool explained in the example below",
+  "context": [
+   {
+    "type": "li",
+    "text": "The frequency of occurrence is sorted in descending order and schematized to identify the priority."
+   },
+   {
+    "type": "li",
+    "text": "Utilized to identify primary causes based on the theory that in general, 80% of all problems are caused by critical 20% of the causes."
+   }
+  ],
+  "options": [
+   {
+    "text": "Control Chart",
+    "img": null
+   },
+   {
+    "text": "Scatter Plot",
+    "img": null
+   },
+   {
+    "text": "Cause and Effect Diagram",
+    "img": null
+   },
+   {
+    "text": "Pareto Chart",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-03",
+  "stem": "Which is the chart illustrated in the [Example] below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-03-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Candle Chart",
+    "img": null
+   },
+   {
+    "text": "Gantt Chart",
+    "img": null
+   },
+   {
+    "text": "Pareto Chart",
+    "img": null
+   },
+   {
+    "text": "PERT (Performance Evaluation and Review Technique) Chart",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "management-04",
+  "stem": "Which answer correctly matches P, b and © below?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-04-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(a): Scope management, (b): Work package, (c): WBS",
+    "img": null
+   },
+   {
+    "text": "(a): Scope management, (b): WBS, (c): Work package",
+    "img": null
+   },
+   {
+    "text": "(a): WBS, (b): Work package, (c): Scope management",
+    "img": null
+   },
+   {
+    "text": "(a): Work package, (b): WBS, (c): Scope management",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "management-05",
+  "stem": "The list in the Example below is the table of contents of the RFP (Request for Proposal) for the development of next-generation system for the government and public institutions. Which of the following is incorrect regarding the content to be included in the request for proposal?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-05-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "I. Overview - The configuration diagram of the target system is included.",
+    "img": null
+   },
+   {
+    "text": "II. Request for proposal - The conditions to cancel the contract such as the false information, unmet requirements, etc. are included.",
+    "img": null
+   },
+   {
+    "text": "III. Information for bidders - Suggestion to replace the technical evaluation of the acquired equipment with BMT(Bench Marking Test).",
+    "img": null
+   },
+   {
+    "text": "IV. Guidelines to document preparation - Request to include SLA(Service-Level Agrement) items such as system operation rate and system failure rate.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "management-06",
+  "stem": "Which answer corresponds to the description below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "A control point in project progress and management aimed to get approvals from Configuration Control Board (CCB)."
+   },
+   {
+    "type": "li",
+    "text": "A technical management point of changes (review, evaluation, adjustment, handling, etc.) in deliverables of each phase in software development."
+   }
+  ],
+  "options": [
+   {
+    "text": "Output",
+    "img": null
+   },
+   {
+    "text": "Baseline",
+    "img": null
+   },
+   {
+    "text": "Life cycle",
+    "img": null
+   },
+   {
+    "text": "Work Breakdown Structure",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "management-07",
+  "stem": "Choose the Agile model that is explained in the example below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Carry out continuous service improvement through frequent deployments with DevOps-based operations and maintenance."
+   },
+   {
+    "type": "li",
+    "text": "With many hotfixes for mobile services, apply changes immediately."
+   },
+   {
+    "type": "li",
+    "text": "Separate roles are not defined, and the lead time to the completion of tasks is established as the basic indicator."
+   },
+   {
+    "type": "li",
+    "text": "Limit the number of Work in Progress (WIP) tasks, and manage the workflows by each status."
+   }
+  ],
+  "options": [
+   {
+    "text": "Lean Development",
+    "img": null
+   },
+   {
+    "text": "Agile Unified Process",
+    "img": null
+   },
+   {
+    "text": "Kanban",
+    "img": null
+   },
+   {
+    "text": "Test Driven Development",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "management-08",
+  "stem": "Choose the statement which is appropriate about each schedule management technique.",
+  "context": [],
+  "options": [
+   {
+    "text": "The relationship between activities cannot be perceived with Activity Network Diagrams.",
+    "img": null
+   },
+   {
+    "text": "The progress of each activity is difficult to represent with the Gantt Chart.",
+    "img": null
+   },
+   {
+    "text": "The path requiring the longest time cannot be identified by the Critical Path.",
+    "img": null
+   },
+   {
+    "text": "Only milestones, whether the milestones are implemented or not, and the implementation periods of the milestones can be identified with Milestone Charts.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-09",
+  "stem": "Choose the correct list of the quality cost types in (a), (b) and (c).",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-09-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "(a)-Prevention cost, (b)-Internal failure cost, (c)-External failure cost",
+    "img": null
+   },
+   {
+    "text": "(a)-External failure cost, (b)-Prevention cost, (c)-Internal failure cost",
+    "img": null
+   },
+   {
+    "text": "(a)-External failure cost, (b)-Internal failure cost, (c)-Prevention cost",
+    "img": null
+   },
+   {
+    "text": "(a)-Internal failure cost, (b)-External failure cost, (c)-Prevention cost.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "management-10",
+  "stem": "Choose the appropriate organization structure illustrated in the Example below",
+  "context": [
+   {
+    "type": "li",
+    "text": "IT Service Company A is divided into two internal organizations: one is responsible for the development and designing to improve technical skills and the other is responsible for winning contracts and executing the projects."
+   },
+   {
+    "type": "li",
+    "text": "Business-centered department normally maintains the minimum number of staff to discover new businesses and prepares business basics to win the contracts."
+   },
+   {
+    "type": "li",
+    "text": "The Development and Design departments dispatch manpower required to carry out the projects."
+   },
+   {
+    "type": "li",
+    "text": "Development and Design departments after the project is completed."
+   },
+   {
+    "type": "img",
+    "src": "img/management/management-10-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Functional Organization",
+    "img": null
+   },
+   {
+    "text": "Hybrid Organization",
+    "img": null
+   },
+   {
+    "text": "Matrix Organization",
+    "img": null
+   },
+   {
+    "text": "Projectized Organization",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "management-11",
+  "stem": "Choose the statement that is NOT correct description of brainstorming.",
+  "context": [],
+  "options": [
+   {
+    "text": "Do not criticize the ideas of others.",
+    "img": null
+   },
+   {
+    "text": "Extend ideas using the ideas of others.",
+    "img": null
+   },
+   {
+    "text": "Talk freely without reservation and listen carefully.",
+    "img": null
+   },
+   {
+    "text": "The content of ideas is more important than the number of ideas.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-12",
+  "stem": "Which of the following is NOT a characteristic of a project?",
+  "context": [],
+  "options": [
+   {
+    "text": "Ongoing",
+    "img": null
+   },
+   {
+    "text": "Uniqueness",
+    "img": null
+   },
+   {
+    "text": "Progressive Elaboration",
+    "img": null
+   },
+   {
+    "text": "Constraints of Scope, Cost and Time",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "management-13",
+  "stem": "Choose the characteristic of the projects described in the Example below:",
+  "context": [
+   {
+    "type": "li",
+    "text": "Company A built a PLM (Product Lifecycle Management) system to manage the data, information, and knowledge of products."
+   },
+   {
+    "type": "li",
+    "text": "Company B built an ERP (Enterprise Resource Planning) system for rapid decision making and work performance."
+   }
+  ],
+  "options": [
+   {
+    "text": "Temporality",
+    "img": null
+   },
+   {
+    "text": "Repeatability",
+    "img": null
+   },
+   {
+    "text": "Defined Objectives",
+    "img": null
+   },
+   {
+    "text": "Progressive elaboration",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-14",
+  "stem": "Choose the component of a WBS (Work: Breakdown Structure) that corresponds to the definition and features described below:",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-14-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Work package",
+    "img": null
+   },
+   {
+    "text": "WBS dictionary",
+    "img": null
+   },
+   {
+    "text": "Control code",
+    "img": null
+   },
+   {
+    "text": "Activity",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "management-15",
+  "stem": "Choose the software quality control tool described below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "It is a histogram sorted by the frequency of occurrences in descending order so as to identify the priority of the problem."
+   },
+   {
+    "type": "li",
+    "text": "The X-axis represents the cause of defects while the Y-axis represents the frequency of defects."
+   },
+   {
+    "type": "li",
+    "text": "This is based on the principle that relatively frequent causes usually result in problems or defects mostly. (80:20 Rule)"
+   }
+  ],
+  "options": [
+   {
+    "text": "Control Chart.",
+    "img": null
+   },
+   {
+    "text": "Scatter Diagram.",
+    "img": null
+   },
+   {
+    "text": "Cause and Effect Diagram.",
+    "img": null
+   },
+   {
+    "text": "Pareto Chart.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-16",
+  "stem": "Which is the project management activity described in the [Example] below?",
+  "context": [
+   {
+    "type": "li",
+    "text": "As one of the critical success factors of a project, the activity to \"clearly differentiate and define the span of tasks that must be carried out.\""
+   },
+   {
+    "type": "li",
+    "text": "The project management process to specify, include, and manage all tasks required for the project."
+   }
+  ],
+  "options": [
+   {
+    "text": "Quality Management",
+    "img": null
+   },
+   {
+    "text": "Resource Management",
+    "img": null
+   },
+   {
+    "text": "Schedule Management",
+    "img": null
+   },
+   {
+    "text": "Scope Management",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-17",
+  "stem": "Refer to the explanation about the preparation process and the execution of the presentation in the Esample below and choose the INCORRECI one.",
+  "context": [
+   {
+    "type": "p",
+    "text": "Introduction to the completion of shopping mall construction by Company A"
+   },
+   {
+    "type": "li",
+    "text": "Speaker: PM Kim"
+   },
+   {
+    "type": "li",
+    "text": "Audience: MDs (Merchandisers) of the ordering organization and Show hosts"
+   },
+   {
+    "type": "li",
+    "text": "Topic: Introduction to the newly built shopping mall"
+   }
+  ],
+  "options": [
+   {
+    "text": "PM Kim made a rehearsal in the presentation room one day before the presentation.",
+    "img": null
+   },
+   {
+    "text": "PM Kim checked the fonts and images to be used in the presentation at the presentation room.",
+    "img": null
+   },
+   {
+    "text": "PM Kim frequently checked the reactions of the audience whether it was positive or negative during the presentation.",
+    "img": null
+   },
+   {
+    "text": "PM Kim explained about the ERD (entity-relationship diagram) of the newly constructed shopping mall at the presentation.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-18",
+  "stem": "Choose the appropriate document described below:",
+  "context": [
+   {
+    "type": "li",
+    "text": "The document, to figure out general technical flows, product information, etc. of the project before the project order is initiated."
+   },
+   {
+    "type": "li",
+    "text": "The document, prepared during the process of prior investigation into subcontractors that can solve the business issues of the client company."
+   },
+   {
+    "type": "li",
+    "text": "Include information as a brief introduction to the company, their credit reliability, and their performance experience in related services."
+   }
+  ],
+  "options": [
+   {
+    "text": "Acquisition Plan.",
+    "img": null
+   },
+   {
+    "text": "Project Plan.",
+    "img": null
+   },
+   {
+    "text": "RFI, Request For Information.",
+    "img": null
+   },
+   {
+    "text": "RFP, Request For Proposal.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-19",
+  "stem": "Choose the appropriate creative thinking technique in the announcement of the chairperson below.",
+  "context": [
+   {
+    "type": "p",
+    "text": "The purpose of this meeting today is to collect as many ideas as possible about the company's strategy to enter the new market. The quantity of the ideas is more valuable than the quality."
+   },
+   {
+    "type": "p",
+    "text": "So, please do not criticize any idea. You may combine, decompose, or recombine others' ideas to derive a new idea. Please do not hesitate suggesting your ideas freely."
+   }
+  ],
+  "options": [
+   {
+    "text": "Brainstorming",
+    "img": null
+   },
+   {
+    "text": "Brainwriting",
+    "img": null
+   },
+   {
+    "text": "SCAMPER",
+    "img": null
+   },
+   {
+    "text": "TRIZ",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "management-20",
+  "stem": "Choose the chart appropriate to the features described in the example below.",
+  "context": [
+   {
+    "type": "li",
+    "text": "The chart makes it easy to understand the analysis details through the degree and shape of the data distribution."
+   },
+   {
+    "type": "li",
+    "text": "The chart enables to represent the correlations among variables and to identify outliers that deviate from the center of dispersion."
+   }
+  ],
+  "options": [
+   {
+    "text": "Bar Chart",
+    "img": null
+   },
+   {
+    "text": "Dot Chart",
+    "img": null
+   },
+   {
+    "text": "Pie Chart",
+    "img": null
+   },
+   {
+    "text": "Box Plot",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "management-21",
+  "stem": "Choose the risk analysis method described below",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-21-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Scenario Analysis.",
+    "img": null
+   },
+   {
+    "text": "Expected Monetary Value Analysis.",
+    "img": null
+   },
+   {
+    "text": "Tornado Diagram Analysis.",
+    "img": null
+   },
+   {
+    "text": "Monte Carlo Simulation Analysis.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "management-22",
+  "stem": "Which of the following does NOT appropriately classify a client using the Mutually Exclusive and Collectively Exhaustive (MECE) approach?",
+  "context": [],
+  "options": [
+   {
+    "text": "Client's age (under 20s, 30s, 40s and over 50s)",
+    "img": null
+   },
+   {
+    "text": "Date of Purchase (under 2 months, under 6 months, 6 months or over, 1 year or over)",
+    "img": null
+   },
+   {
+    "text": "Monthly sales (under $ 10,000.00, $ 10,000.00 to $ 50,000.00, $ 50,000.00 or over)",
+    "img": null
+   },
+   {
+    "text": "Administrative Districts (State, Province, Metropolitan City, Suburb)",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "management-23",
+  "stem": "Choose the phase in the PDCA process that the following activities are carried out.",
+  "context": [
+   {
+    "type": "li",
+    "text": "The development team has examined the defects rate when the revised software is distributed, and the rate was at least 50% higher than the original goal."
+   },
+   {
+    "type": "li",
+    "text": "The development team decided to conduct an additional peer review of the modules that frequently cause errors in the process of software modification."
+   }
+  ],
+  "options": [
+   {
+    "text": "Plan",
+    "img": null
+   },
+   {
+    "text": "Do",
+    "img": null
+   },
+   {
+    "text": "Check",
+    "img": null
+   },
+   {
+    "text": "Act",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "management-24",
+  "stem": "The pie chart in the Example below illustrates three elements of the message that account for the communication by the Law of Mehrabian. Choose the explanation that is NOT appropriate to the Law of Mehrabian?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-24-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Words account for 7% only. The verbal contents in the communication is not important.",
+    "img": null
+   },
+   {
+    "text": "Non-verbal elements such as tone of voice, facial expressions, eyes, and gestures show the great impact during the communication.",
+    "img": null
+   },
+   {
+    "text": "The speed of speech, tone of voice, hair style have bigger impact than the contents of words when a person determines the favorability of the speaker.",
+    "img": null
+   },
+   {
+    "text": "When a specific message is delivered, the contents to be delivered may be distorted if the contents of words, tone of voice, speed of speech, volume of voice, gesture, an",
+    "img": null
+   },
+   {
+    "text": "d manners are different.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-25",
+  "stem": "Which is the risk countermeasure method used by Company A?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-25-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Accept",
+    "img": null
+   },
+   {
+    "text": "Avoid",
+    "img": null
+   },
+   {
+    "text": "Share",
+    "img": null
+   },
+   {
+    "text": "Transfer",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "management-26",
+  "stem": "Company K created a BCG (Boston Consulting Group) Matrix as shown in the [Example] below to reconstruct the portfolio of security products. Which is the correct interpretation of the strategy Company K must take based on the Matrix?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-26-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Maintain investments for network firewalls and remain in Quadrant B.",
+    "img": null
+   },
+   {
+    "text": "Discontinue PC Vaccine business in the market and withdraw from Quadrant D.",
+    "img": null
+   },
+   {
+    "text": "Discontinue investments in Cloud Security Equipment, and remain in Quadrant A.",
+    "img": null
+   },
+   {
+    "text": "Expand investments in DoS (Denial of Service) Security Equipment and move to Quadrant A.",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "management-27",
+  "stem": "Which is the correct estimation of the cost for the following project by 3-Point Estimation technique?",
+  "context": [
+   {
+    "type": "li",
+    "text": "Pessimistic : U$ 18 Million"
+   },
+   {
+    "type": "li",
+    "text": "Optimistic : U$ 8 Million"
+   },
+   {
+    "type": "li",
+    "text": "Most Likely : U$ 10 Million"
+   }
+  ],
+  "options": [
+   {
+    "text": "US 10 Million",
+    "img": null
+   },
+   {
+    "text": "US 11 Million",
+    "img": null
+   },
+   {
+    "text": "US 12 Million",
+    "img": null
+   },
+   {
+    "text": "US 13 Million",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "management-28",
+  "stem": "Which is NOT a correct description about quality control techniques?",
+  "context": [],
+  "options": [
+   {
+    "text": "Cause and Effect Diagrams illustrate the analysis of relationships between factors and results.",
+    "img": null
+   },
+   {
+    "text": "As a tool to figure out relationships between two or more variables, Scatter Diagrams illustrate relationships of them visually.",
+    "img": null
+   },
+   {
+    "text": "In order to figure out the priority of problems, Pareto Charts illustrate the analysis of the problems in descending order of impacts to control.",
+    "img": null
+   },
+   {
+    "text": "Control Charts use the highest and lowest values as Control Limits of quality goal values. States are decided as unstable if quality values are not in the range.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-29",
+  "stem": "Choose the business problem-solving approach that has been applied in the case below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-29-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Logic tree",
+    "img": null
+   },
+   {
+    "text": "Six Sigma",
+    "img": null
+   },
+   {
+    "text": "PDCA cycle",
+    "img": null
+   },
+   {
+    "text": "Causal loop diagram",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "management-30",
+  "stem": "The project schedule below is created by Project Manager (PM) Kim for the web service development. Kim is planning to conduct the task 7 \"Program design\" and the task & \"Front-end development\" simultaneously in order to reduce the project schedule by 8 days. Choose the technique to reduce the schedule.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-30-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Crashing",
+    "img": null
+   },
+   {
+    "text": "Fast tracking",
+    "img": null
+   },
+   {
+    "text": "Resource leveling",
+    "img": null
+   },
+   {
+    "text": "Resource smoothing",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "management-31",
+  "stem": "Following explanations are precautions on writing the test result report. Which is NOT a correct explanation?",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-31-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "\"ID\" must be identifiable with a unique value.",
+    "img": null
+   },
+   {
+    "text": "Test cases must be identifiable by \"Case name\".",
+    "img": null
+   },
+   {
+    "text": "\"Input value\" is described with terms that represent input values to the test.",
+    "img": null
+   },
+   {
+    "text": "\"Expected value\" describes the result suitable to the functions and types to be tested.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-32",
+  "stem": "Choose the phase in the business problem-solving process that the following activities are carried out.",
+  "context": [
+   {
+    "type": "li",
+    "text": "Classify predefined business problems according to logical criteria, build a phased structure, and decompose big problems into small pieces."
+   },
+   {
+    "type": "li",
+    "text": "Identify the principal causes by profiling and using various tools and techniques, implementing a bottom-up approach."
+   },
+   {
+    "type": "li",
+    "text": "Filter out insignificant causes by prioritizing the identified causes."
+   }
+  ],
+  "options": [
+   {
+    "text": "Define the Problem",
+    "img": null
+   },
+   {
+    "text": "Analyze underlying causes",
+    "img": null
+   },
+   {
+    "text": "Generate alternative solutions and evaluate them",
+    "img": null
+   },
+   {
+    "text": "Implement the solution and gather feedback",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-33",
+  "stem": "Choose the statement which is NOT appropriate to improve the method of creating meeting minutes.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-33-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "All attendees with their affiliation must be listed",
+    "img": null
+   },
+   {
+    "text": "In principle, the date, the location, and the information of attendees must not be disclosed to prevent information leaks.",
+    "img": null
+   },
+   {
+    "text": "The main agenda must be specified concretely about the details and the purpose of the discussion.",
+    "img": null
+   },
+   {
+    "text": "Change the heading of the minutes to \"Minutes of the Technology Management System Project\" to clearly specify the subject of the discussion",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "management-34",
+  "stem": "Choose which of the following statement is NOT cornect about how to prepare a business document.",
+  "context": [],
+  "options": [
+   {
+    "text": "The contents and components of the document are created by the standards of the author.",
+    "img": null
+   },
+   {
+    "text": "Materials related to the key messages can be attached as attachments,",
+    "img": null
+   },
+   {
+    "text": "Business documents may consist of different components depending on the purpose of preparation and the target readers.",
+    "img": null
+   },
+   {
+    "text": "Visual materials must be designed so that the key messages can be understood quickly.",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ },
+ {
+  "id": "management-35",
+  "stem": "Choose the type of technical document described below:",
+  "context": [
+   {
+    "type": "li",
+    "text": "It officially approves the initiation of a project."
+   },
+   {
+    "type": "li",
+    "text": "It is the top-level document specifying the initiation and scope of a project."
+   },
+   {
+    "type": "li",
+    "text": "It specifies the project objectives, achievement criteria, name of the project manager, assumptions, constraints, etc."
+   },
+   {
+    "type": "li",
+    "text": "It grants the project manager the authority to invest the resources of the organization into project activities."
+   }
+  ],
+  "options": [
+   {
+    "text": "Proposal",
+    "img": null
+   },
+   {
+    "text": "Project Charter",
+    "img": null
+   },
+   {
+    "text": "Scope Management Plan",
+    "img": null
+   },
+   {
+    "text": "Requirement Definition",
+    "img": null
+   }
+  ],
+  "keyIndex": 1
+ },
+ {
+  "id": "management-36",
+  "stem": "Which of the following is NOT a correct description of Fast Tracking?",
+  "context": [],
+  "options": [
+   {
+    "text": "Fast Tracking may increase risks and possible rework.",
+    "img": null
+   },
+   {
+    "text": "Fast Tracking is effective when the activities can be overlapped for the purpose of reducing the duration of the project.",
+    "img": null
+   },
+   {
+    "text": "Fast Tracking allows for executing specific tasks simultaneously that would have been performed sequentially according to the original schedule.",
+    "img": null
+   },
+   {
+    "text": "Fast Tracking is used to reduce or shorten the project schedule by adding additional resources, but the resulting increase in communication channels may delay the schedule.",
+    "img": null
+   }
+  ],
+  "keyIndex": 3
+ },
+ {
+  "id": "management-37",
+  "stem": "Choose the one that is not a component of a WBS (Work Breakdown Structure),",
+  "context": [],
+  "options": [
+   {
+    "text": "Gantt Chart.",
+    "img": null
+   },
+   {
+    "text": "Planning Package.",
+    "img": null
+   },
+   {
+    "text": "Code of Account.",
+    "img": null
+   },
+   {
+    "text": "Work Package.",
+    "img": null
+   }
+  ],
+  "keyIndex": 2
+ },
+ {
+  "id": "management-38",
+  "stem": "Choose the quality assurance activity described below.",
+  "context": [
+   {
+    "type": "img",
+    "src": "img/management/management-38-1.webp"
+   }
+  ],
+  "options": [
+   {
+    "text": "Audit",
+    "img": null
+   },
+   {
+    "text": "Walkthrough",
+    "img": null
+   },
+   {
+    "text": "Inspection",
+    "img": null
+   },
+   {
+    "text": "Compliance",
+    "img": null
+   }
+  ],
+  "keyIndex": 0
+ }
+]
