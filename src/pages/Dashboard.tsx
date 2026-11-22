@@ -183,7 +183,7 @@ export function Dashboard() {
       <section className="stack" style={{ gap: 16 }}>
         <div className="row between wrap">
           <h2 className="d" style={{ fontSize: 24, fontWeight: 800 }}>Domains</h2>
-          <span className="sub">Each segment is 10% mastery</span>
+          <span className="sub">Share of questions you last answered right. Guesses count half.</span>
         </div>
         <div className="grid">
           {DOMAINS.map((d) => {

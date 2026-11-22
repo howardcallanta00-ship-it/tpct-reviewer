@@ -12,6 +12,8 @@ export interface QState {
   box: number;
   due: number;
   lastAt: number;
+  /** The latest correct answer was marked "Guessed". */
+  guessed?: boolean;
 }
 
 export interface Progress {
@@ -113,7 +115,7 @@ export function recordAnswer(id: string, correct: boolean, confidence: Confidenc
     box = Math.min(5, prev.box + 1);
     due = now + 3 * DAY;
   }
-  const q = { ...state.q, [id]: { attempts: prev.attempts + 1, correct: prev.correct + (correct ? 1 : 0), lastCorrect: correct, box, due, lastAt: now } };
+  const q = { ...state.q, [id]: { attempts: prev.attempts + 1, correct: prev.correct + (correct ? 1 : 0), lastCorrect: correct, box, due, lastAt: now, guessed: correct && confidence === 'guessed' } };
   commit(bumpDay({ ...state, q, xp: state.xp + (correct ? 10 : 2) }));
 }
 
@@ -125,7 +127,7 @@ export function setConfidence(id: string, confidence: Confidence) {
   const base = Math.max(0, prev.box - 1);
   const box = confidence === 'guessed' ? 1 : confidence === 'knew' ? Math.min(5, base + 2) : Math.min(5, base + 1);
   const due = now + (confidence === 'guessed' ? DAY : confidence === 'knew' ? 14 * DAY : 3 * DAY);
-  commit({ ...state, q: { ...state.q, [id]: { ...prev, box, due } } });
+  commit({ ...state, q: { ...state.q, [id]: { ...prev, box, due, guessed: confidence === 'guessed' } } });
 }
 
 export function toggleSaved(id: string) {
@@ -183,11 +185,16 @@ export function streakOf(days: Record<string, number>) {
   return n;
 }
 
-/** 0..1 mastery for one question. */
+/**
+ * 0..1 mastery for one question: 1 if the latest answer was right, 0.5 if it was right but marked "Guessed",
+ * 0 if wrong or unseen. The review schedule (box) is separate and does not affect this number.
+ */
 export function mastery(p: Progress, id: string) {
   const s = p.q[id];
   if (!s || !s.lastCorrect) return 0;
-  return Math.min(1, 0.55 + s.box * 0.15);
+  // Older saves have no `guessed` flag: a "Guessed" rating set the next review one day out.
+  const guessed = s.guessed ?? (s.box === 1 && s.due - s.lastAt < 2 * DAY);
+  return guessed ? 0.5 : 1;
 }
 
 /** Next readiness milestone above the current value. */
@@ -204,10 +211,10 @@ export function readiness(p: Progress) {
   return QUESTIONS.reduce((a, q) => a + mastery(p, q.id), 0) / QUESTIONS.length;
 }
 
-/** Correct answers needed to reach a target readiness, assuming each new correct answer adds ~0.7. */
+/** Correct answers needed to reach a target readiness (each new correct answer adds one question's worth). */
 export function answersToTarget(p: Progress, target: number) {
   const gap = target * QUESTIONS.length - readiness(p) * QUESTIONS.length;
-  return Math.max(0, Math.ceil(gap / 0.7));
+  return Math.max(0, Math.ceil(gap - 0.0001));
 }
 
 export function lessonAccuracy(p: Progress, lessonId: string) {

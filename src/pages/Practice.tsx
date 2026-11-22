@@ -306,7 +306,7 @@ export function PracticeRun() {
                   <>
                     <span className="sub">How sure were you? This decides when you see it again.</span>
                     <div className="conf">
-                      <button type="button" className={conf === 'guessed' ? 'on' : ''} onClick={() => chooseConf('guessed')}>Guessed<span className="small" style={{ color: 'var(--bad-text)' }}>back tomorrow</span></button>
+                      <button type="button" className={conf === 'guessed' ? 'on' : ''} onClick={() => chooseConf('guessed')}>Guessed<span className="small" style={{ color: 'var(--bad-text)' }}>back tomorrow, counts half</span></button>
                       <button type="button" className={conf === 'unsure' || conf === null ? (conf ? 'on' : '') : ''} onClick={() => chooseConf('unsure')}>Unsure<span className="small" style={{ color: 'var(--accent)' }}>back in 3 days</span></button>
                       <button type="button" className={conf === 'knew' ? 'on' : ''} onClick={() => chooseConf('knew')}>Knew it<span className="small" style={{ color: 'var(--ok-text)' }}>back in 2 weeks</span></button>
                     </div>
