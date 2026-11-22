@@ -3,11 +3,12 @@ import { Link, useParams, useSearchParams } from 'react-router-dom';
 import type { DomainId, Question } from '../types';
 import { ALL_LESSONS, DOMAINS, KEY_CHECKS, QUESTIONS, domainById, questionById } from '../data';
 import {
-  exportProgress, importProgress, mistakes, recordAnswer, resetProgress, setExamDate, setShuffle, useProgress,
+  UI_SCALES, exportProgress, importProgress, mistakes, recordAnswer, resetProgress, setExamDate, setShuffle, setUiScale, useProgress,
 } from '../store';
 import { Explanation, KeyCheck, QuestionView, canShuffle } from '../components/QuestionView';
 import { Empty, Icon, Md, PATHS, shuffle } from '../components/ui';
 import { SearchBox } from '../components/Layout';
+import { haptic } from '../components/fx';
 
 function QRow({ q, extra }: { q: Question; extra?: React.ReactNode }) {
   const d = domainById[q.domain];
@@ -199,6 +200,22 @@ export function Settings() {
   return (
     <div className="page" style={{ maxWidth: 760 }}>
       <h1 className="d" style={{ fontSize: 32, fontWeight: 800 }}>Progress and settings</h1>
+      <div className="card stack" style={{ gap: 14 }}>
+        <div className="row between wrap">
+          <h2 className="d" style={{ fontSize: 19 }}>Interface size</h2>
+          <span className="chip plain n">{Math.round(p.uiScale * 100)}%</span>
+        </div>
+        <span className="sub">Makes everything smaller or larger so more fits on screen. Handy on phones. Saved on this device.</span>
+        <div className="size-picker" role="radiogroup" aria-label="Interface size">
+          {UI_SCALES.map((s) => (
+            <button key={s.value} type="button" role="radio" aria-checked={p.uiScale === s.value}
+              className={p.uiScale === s.value ? 'on' : ''} onClick={() => { setUiScale(s.value); haptic('tap'); }}>
+              <span className="d" style={{ fontSize: 13 + (s.value - 0.8) * 30, fontWeight: 800, lineHeight: 1 }}>Aa</span>
+              <span className="small">{s.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="card stack" style={{ gap: 12 }}>
         <h2 className="d" style={{ fontSize: 19 }}>Exam date</h2>
         <span className="sub">Shows a countdown on the dashboard.</span>

@@ -25,12 +25,28 @@ export interface Progress {
   shuffle: boolean;
   bestStreak: number;
   exams: { at: number; total: number; correct: number; minutes: number }[];
+  /** Interface zoom, 1 = default. */
+  uiScale: number;
+}
+
+export const UI_SCALES = [
+  { value: 0.8, label: 'Smallest' },
+  { value: 0.88, label: 'Small' },
+  { value: 0.94, label: 'Compact' },
+  { value: 1, label: 'Default' },
+  { value: 1.08, label: 'Large' },
+];
+
+/** Scales the whole interface. CSS zoom keeps layout, fixed bars and tap targets in proportion. */
+export function applyUiScale(scale: number) {
+  if (typeof document === 'undefined') return;
+  document.documentElement.style.setProperty('zoom', scale === 1 ? '' : String(scale));
 }
 
 const KEY = 'tpct-reviewer-progress';
 const DAY = 86_400_000;
 
-const empty = (): Progress => ({ v: 1, q: {}, days: {}, saved: [], lessons: {}, xp: 0, examDate: null, shuffle: true, bestStreak: 0, exams: [] });
+const empty = (): Progress => ({ v: 1, q: {}, days: {}, saved: [], lessons: {}, xp: 0, examDate: null, shuffle: true, bestStreak: 0, exams: [], uiScale: 1 });
 
 function load(): Progress {
   try {
@@ -43,6 +59,7 @@ function load(): Progress {
 }
 
 let state: Progress = load();
+applyUiScale(state.uiScale);
 const listeners = new Set<() => void>();
 
 function commit(next: Progress) {
@@ -128,6 +145,11 @@ export function setShuffle(shuffle: boolean) {
   commit({ ...state, shuffle });
 }
 
+export function setUiScale(uiScale: number) {
+  applyUiScale(uiScale);
+  commit({ ...state, uiScale });
+}
+
 export function recordExam(total: number, correct: number, minutes: number) {
   commit({ ...state, exams: [...state.exams, { at: Date.now(), total, correct, minutes }].slice(-20) });
 }
@@ -140,10 +162,12 @@ export function importProgress(json: string) {
   const data = JSON.parse(json);
   if (!data || data.v !== 1 || typeof data.q !== 'object') throw new Error('This file is not a TOPCIT Sprint progress file.');
   commit({ ...empty(), ...data });
+  applyUiScale(state.uiScale);
 }
 
 export function resetProgress() {
-  commit(empty());
+  // Keep display preferences; reset study data only.
+  commit({ ...empty(), uiScale: state.uiScale, shuffle: state.shuffle });
 }
 
 // ---------- Derived numbers ----------

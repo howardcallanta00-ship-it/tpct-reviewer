@@ -216,3 +216,15 @@ table.t td:first-child { color: var(--text); font-weight: 700; }
   .btn { min-height: 48px; }
   .hide-sm { display: none !important; }
 }
+
+/* Interface size picker */
+.size-picker { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.size-picker button {
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px; min-height: 76px; padding: 10px 4px;
+  border-radius: 14px; border: 1.5px solid var(--line-2); background: var(--raised); color: var(--text-2); cursor: pointer;
+  transition: border-color .2s, background-color .2s, transform .18s;
+}
+.size-picker button:active { transform: scale(0.95); }
+.size-picker button.on { border-color: var(--accent); background: #23281a; color: var(--text); box-shadow: 0 0 0 3px rgba(200, 244, 90, .12); }
+.mobile-only { display: none; }
+@media (max-width: 900px) { .mobile-only { display: inline-flex; } }

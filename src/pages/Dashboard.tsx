@@ -50,9 +50,15 @@ export function Dashboard() {
   return (
     <div className="page stagger">
       <div className="row wrap between">
-        <div>
-          <span className="sub">{new Date().toLocaleDateString('en', { weekday: 'long', day: 'numeric', month: 'long' })}</span>
-          <h1 className="d" style={{ fontSize: 34, fontWeight: 800 }}>{greeting()}</h1>
+        <div className="row between" style={{ flex: '1 1 auto' }}>
+          <div>
+            <span className="sub">{new Date().toLocaleDateString('en', { weekday: 'long', day: 'numeric', month: 'long' })}</span>
+            <h1 className="d" style={{ fontSize: 34, fontWeight: 800 }}>{greeting()}</h1>
+          </div>
+          <div className="row mobile-only" style={{ gap: 8 }}>
+            <Link to="/search" className="icon-btn" aria-label="Search"><Icon d={PATHS.search} size={19} /></Link>
+            <Link to="/settings" className="icon-btn" aria-label="Settings and interface size"><Icon d={PATHS.gear} size={19} /></Link>
+          </div>
         </div>
         <div className="row wrap">
           <div style={{ width: 280 }} className="hide-sm"><SearchBox /></div>
