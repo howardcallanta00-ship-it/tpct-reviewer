@@ -5,6 +5,7 @@ import { DOMAINS, QUESTIONS, domainById } from '../data';
 import { recordAnswer, recordExam, useProgress } from '../store';
 import { Explanation, KeyCheck, QuestionView, canShuffle } from '../components/QuestionView';
 import { Icon, PATHS, shuffle } from '../components/ui';
+import { Confirm, CountUp, celebrate, haptic } from '../components/fx';
 
 /** Even spread across domains, random within each. */
 function buildExam(total: number): Question[] {
@@ -34,6 +35,7 @@ export function Exam() {
   const [left, setLeft] = useState(0);
   const [submitted, setSubmitted] = useState(false);
   const [review, setReview] = useState<string | null>(null);
+  const [ask, setAsk] = useState(false);
 
   const start = () => {
     const l = buildExam(size);
@@ -60,6 +62,10 @@ export function Exam() {
     }
     recordExam(list.length, correct, minutes);
     window.scrollTo({ top: 0 });
+    if (correct / list.length >= 0.7) {
+      setTimeout(() => celebrate(160), 500);
+      haptic('win');
+    }
   };
 
   useEffect(() => {
@@ -124,9 +130,14 @@ export function Exam() {
     const rq = review ? list.find((q) => q.id === review) : null;
     return (
       <div className="page" style={{ maxWidth: 1000 }}>
-        <div className="card glow stack" style={{ gap: 16, padding: 32 }}>
+        <div className="card glow stack" style={{ gap: 16, padding: 32, animation: 'scale-in .5s var(--ease-spring) both' }}>
           <span className="sub">Mock exam result</span>
-          <h1 className="d" style={{ fontSize: 44, fontWeight: 800 }}>{stats.right} / {list.length} <span style={{ color: 'var(--accent)' }}>({pct}%)</span></h1>
+          <h1 className="d" style={{ fontSize: 44, fontWeight: 800 }}>
+            <CountUp value={stats.right} ms={1200} /> / {list.length} <span style={{ color: 'var(--accent)' }}>(<CountUp value={pct} ms={1200} />%)</span>
+          </h1>
+          <p className="sub" style={{ margin: 0, fontSize: 16 }}>
+            {pct >= 85 ? 'Excellent. You are exam ready in most areas.' : pct >= 70 ? 'Passing territory. Polish the weakest domain below.' : 'Keep going. Every miss is now in your Mistakes deck.'}
+          </p>
           <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 200px), 1fr))', gap: 10 }}>
             {stats.byDomain.map(({ d, total, right }) => (
               <div key={d.id} className="stack" style={{ padding: 12, borderRadius: 14, background: 'var(--raised)', gap: 6 }}>
@@ -180,7 +191,18 @@ export function Exam() {
         <span className="chip n" style={{ padding: '10px 14px', fontSize: 16, background: left < 300 ? 'var(--bad-bg)' : 'var(--surface)', color: left < 300 ? 'var(--bad-text)' : 'var(--text)', border: '1px solid var(--line)' }}>
           <Icon d={PATHS.clock} size={16} /> {fmt(left)}
         </span>
-        <button type="button" className="btn small primary" onClick={() => { if (confirm(`Submit now? ${list.length - answeredCount} question(s) are unanswered.`)) submit(); }}>Submit</button>
+        <button type="button" className="btn small primary" onClick={() => setAsk(true)}>Submit</button>
+        {ask && (
+          <Confirm
+            title="Submit your exam?"
+            body={list.length - answeredCount > 0
+              ? `${list.length - answeredCount} question${list.length - answeredCount === 1 ? ' is' : 's are'} still unanswered and will count as wrong.`
+              : 'You answered every question. Ready to see your score?'}
+            confirm="Submit exam"
+            onConfirm={() => { setAsk(false); submit(); }}
+            onCancel={() => setAsk(false)}
+          />
+        )}
       </div>
       <div className="row wrap" style={{ alignItems: 'flex-start', gap: 24 }}>
         <div className="stack" style={{ flex: '999 1 600px', minWidth: 0, gap: 16 }}>

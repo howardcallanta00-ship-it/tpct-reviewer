@@ -43,6 +43,7 @@ body {
   font-size: 15px;
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  font-variant-ligatures: no-common-ligatures no-contextual;
 }
 a { color: var(--accent); }
 button { font: inherit; color: inherit; }

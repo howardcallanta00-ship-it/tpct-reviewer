@@ -1,8 +1,37 @@
-import { useState, type FormEvent } from 'react';
-import { Link, NavLink, Outlet, useNavigate } from 'react-router-dom';
+import { useEffect, useRef, useState, type FormEvent } from 'react';
+import { Link, NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { DOMAINS, KEY_CHECKS } from '../data';
-import { domainMastery, mistakes, streakOf, useProgress } from '../store';
+import { domainMastery, mistakes, nextMilestone, readiness, streakOf, today, useProgress } from '../store';
 import { Icon, PATHS } from './ui';
+import { FxLayer, celebrate, haptic, toast } from './fx';
+
+/** Celebrates readiness milestones and the first study of the day. */
+function useCelebrations() {
+  const p = useProgress();
+  const ready = readiness(p);
+  const prevMilestone = useRef<number | null>(null);
+  const prevToday = useRef<number | null>(null);
+  useEffect(() => {
+    // The milestone already reached is the one just below the next milestone.
+    const reached = [0, 0.1, 0.25, 0.5, 0.7, 0.85, 1].filter((m) => m <= ready + 0.0001).pop() ?? 0;
+    if (prevMilestone.current !== null && reached > prevMilestone.current) {
+      celebrate(140);
+      haptic('win');
+      toast(`${Math.round(reached * 100)}% exam ready`, {
+        body: reached >= 1 ? 'Everything mastered. Incredible work.' : `Next milestone: ${Math.round(nextMilestone(ready) * 100)}%`,
+        icon: PATHS.bolt,
+      });
+    }
+    prevMilestone.current = reached;
+
+    const todayCount = p.days[today()] ?? 0;
+    if (prevToday.current === 0 && todayCount > 0) {
+      const s = streakOf(p.days);
+      toast(s > 1 ? `${s}-day streak` : 'Streak started', { body: 'Come back tomorrow to keep it going.', icon: PATHS.flame, color: '#FF9F43' });
+    }
+    prevToday.current = todayCount;
+  }, [ready, p.days]);
+}
 
 export function Brand() {
   return (
@@ -35,8 +64,11 @@ export function Layout() {
   const p = useProgress();
   const mistakeCount = mistakes(p).length;
   const streak = streakOf(p.days);
+  const location = useLocation();
+  useCelebrations();
   return (
     <div className="shell">
+      <FxLayer />
       <aside className="sidebar">
         <Brand />
         <nav aria-label="Main" className="stack" style={{ gap: 2 }}>
@@ -68,7 +100,7 @@ export function Layout() {
           ))}
         </div>
         <div style={{ marginTop: 'auto', padding: 16, borderRadius: 18, background: '#241D12', border: '1px solid #4A3818' }} className="row">
-          <span className="tile" style={{ width: 36, height: 36, background: '#FF9F43', borderRadius: 11 }}><Icon d={PATHS.flame} size={18} fill="#241D12" /></span>
+          <span className={'tile' + (streak > 0 ? ' flame-anim' : '')} style={{ width: 36, height: 36, background: '#FF9F43', borderRadius: 11 }}><Icon d={PATHS.flame} size={18} fill="#241D12" /></span>
           <span className="stack" style={{ lineHeight: 1.2 }}>
             <b className="n" style={{ color: '#FFC27A' }}>{streak}-day streak</b>
             <span className="small" style={{ color: '#C9A77A' }}>Best: {Math.max(p.bestStreak, streak)} days</span>
@@ -76,7 +108,9 @@ export function Layout() {
         </div>
       </aside>
       <main className="main">
-        <Outlet />
+        <div key={location.pathname} className="route">
+          <Outlet />
+        </div>
       </main>
       <nav className="tabbar" aria-label="Main">
         <NavLink to="/" end className="tab"><Icon d={PATHS.home} size={22} />Home</NavLink>

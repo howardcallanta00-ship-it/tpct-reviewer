@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState, type ReactNode } from 'react';
 import type { DomainInfo } from '../types';
+import { useCountUp } from './fx';
 
 export const PATHS = {
   bolt: 'M13 2 4 14h7l-1 8 9-12h-7z',
@@ -58,14 +59,15 @@ export function Ring({ value, target = 0.7, size = 180, stroke = 16, label = 'ex
   const r = (size - stroke) / 2 - 4;
   const c = 2 * Math.PI * r;
   const pct = Math.round(value * 100);
+  const shown = useCountUp(value, 1200);
   return (
     <div style={{ position: 'relative', width: size, height: size, flex: 'none' }}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} role="img" aria-label={`Readiness ${pct} percent, target ${Math.round(target * 100)} percent`}>
         <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#262B55" strokeWidth={stroke} />
         <circle
           cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--accent)" strokeWidth={stroke} strokeLinecap="round" strokeOpacity={value < 0.005 ? 0 : 1}
-          strokeDasharray={`${Math.max(0.001, value) * c} ${c}`} transform={`rotate(-90 ${size / 2} ${size / 2})`}
-          style={{ transition: 'stroke-dasharray .8s ease' }}
+          strokeDasharray={`${Math.max(0.001, shown) * c} ${c}`} transform={`rotate(-90 ${size / 2} ${size / 2})`}
+          style={{ filter: shown > 0.01 ? 'drop-shadow(0 0 8px rgba(200,244,90,.45))' : 'none' }}
         />
         <g transform={`rotate(${target * 360} ${size / 2} ${size / 2})`}>
           <line x1={size / 2} y1={size / 2 - r - stroke / 2 - 4} x2={size / 2} y2={size / 2 - r + stroke / 2 + 4} stroke="#fff" strokeWidth={3} strokeLinecap="round" />
@@ -73,7 +75,7 @@ export function Ring({ value, target = 0.7, size = 180, stroke = 16, label = 'ex
       </svg>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
         <span className="d n" style={{ fontSize: size * 0.28, fontWeight: 800, lineHeight: 1 }}>
-          {pct}
+          {Math.round(shown * 100)}
           <span style={{ fontSize: size * 0.13 }}>%</span>
         </span>
         {label && <span className="sub small">{label}</span>}
@@ -91,7 +93,9 @@ export function HexChart({ items, target = 0.7, compact = false }: { items: { la
   const ang = items.map((_, i) => ((-90 + (360 / items.length) * i) * Math.PI) / 180);
   const pt = (r: number, i: number) => [cx + r * Math.cos(ang[i]), cy + r * Math.sin(ang[i])];
   const poly = (fn: (i: number) => number) => ang.map((_, i) => pt(fn(i), i).map((v) => v.toFixed(1)).join(',')).join(' ');
-  const label = items.map((it, i) => it.label + ' ' + Math.round(it.value * 100) + ' percent').join(', ');
+  const label = items.map((it) => it.label + ' ' + Math.round(it.value * 100) + ' percent').join(', ');
+  const grow = useCountUp(1, 1100);
+  items = items.map((it) => ({ ...it, value: it.value * grow }));
   return (
     <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label={'Mastery by domain: ' + label}>
       {[0.25, 0.5, 0.75, 1].map((f) => (
@@ -102,7 +106,7 @@ export function HexChart({ items, target = 0.7, compact = false }: { items: { la
         return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="#262B55" strokeWidth="1" />;
       })}
       <polygon points={poly(() => R * target)} fill="none" stroke="#fff" strokeOpacity="0.55" strokeWidth="1.5" strokeDasharray="4 5" />
-      <polygon points={poly((i) => R * Math.max(0.03, items[i].value))} fill="var(--accent)" fillOpacity="0.18" stroke="var(--accent)" strokeWidth="2.5" strokeLinejoin="round" style={{ transition: 'all .6s ease' }} />
+      <polygon points={poly((i) => R * Math.max(0.03, items[i].value))} fill="var(--accent)" fillOpacity="0.18" stroke="var(--accent)" strokeWidth="2.5" strokeLinejoin="round" />
       {items.map((it, i) => {
         const [x, y] = pt(R * Math.max(0.03, it.value), i);
         return <circle key={i} cx={x} cy={y} r="6" fill={it.color} stroke="#151931" strokeWidth="2.5" />;

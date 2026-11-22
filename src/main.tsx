@@ -2,6 +2,7 @@ import { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom';
 import './styles.css';
+import './motion.css';
 import { Layout } from './components/Layout';
 import { Dashboard } from './pages/Dashboard';
 import { LearnIndex, LessonPage } from './pages/Learn';

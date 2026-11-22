@@ -5,6 +5,7 @@ import {
 } from '../store';
 import { DomainTile, HexChart, Icon, PATHS, Ring, SegBar } from '../components/ui';
 import { SearchBox } from '../components/Layout';
+import { CountUp } from '../components/fx';
 
 function greeting() {
   const h = new Date().getHours();
@@ -47,7 +48,7 @@ export function Dashboard() {
         : `${need} more right answer${need === 1 ? '' : 's'} and you hit your ${Math.round(target * 100)}% target.`;
 
   return (
-    <div className="page">
+    <div className="page stagger">
       <div className="row wrap between">
         <div>
           <span className="sub">{new Date().toLocaleDateString('en', { weekday: 'long', day: 'numeric', month: 'long' })}</span>
@@ -74,7 +75,7 @@ export function Dashboard() {
                 {answered} of {QUESTIONS.length} questions answered. Tonight focuses on {planDomain.name}.
               </p>
               <div className="row wrap" style={{ marginTop: 4 }}>
-                <Link to={steps[currentStep === -1 ? 1 : currentStep].to} className="btn primary">
+                <Link to={steps[currentStep === -1 ? 1 : currentStep].to} className="btn primary shine">
                   <Icon d={PATHS.play} size={16} fill="currentColor" /> Start tonight’s sprint
                 </Link>
                 <Link to="/exam" className="btn">Take a mock exam</Link>
@@ -185,14 +186,14 @@ export function Dashboard() {
             const done = qs.filter((q) => p.q[q.id]).length;
             const w = weak.find((x) => x.l.domain === d.id)?.l;
             return (
-              <Link key={d.id} to={`/learn?d=${d.id}`} className="card stack" style={{ gap: 16, textDecoration: 'none', color: 'var(--text)', background: `linear-gradient(180deg, ${d.color}14, #151931 45%)` }}>
+              <Link key={d.id} to={`/learn?d=${d.id}`} className="card stack card-link" style={{ gap: 16, textDecoration: 'none', color: 'var(--text)', background: `linear-gradient(180deg, ${d.color}14, #151931 45%)` }}>
                 <div className="row">
                   <DomainTile d={d} />
                   <span className="stack grow">
                     <span className="d" style={{ fontSize: 17, fontWeight: 700 }}>{d.name}</span>
                     <span className="sub small n">{qs.length} questions, {done} answered</span>
                   </span>
-                  <span className="d n" style={{ fontSize: 26, fontWeight: 800 }}>{Math.round(m * 100)}<span style={{ fontSize: 14, color: 'var(--muted)' }}>%</span></span>
+                  <span className="d n" style={{ fontSize: 26, fontWeight: 800 }}><CountUp value={Math.round(m * 100)} /><span style={{ fontSize: 14, color: 'var(--muted)' }}>%</span></span>
                 </div>
                 <SegBar value={m} color={d.color} />
                 <span className="sub small">{w ? <>Weakest: <b style={{ color: 'var(--text)' }}>{w.title}</b></> : d.blurb}</span>

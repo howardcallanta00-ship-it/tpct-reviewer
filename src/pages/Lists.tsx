@@ -12,7 +12,7 @@ import { SearchBox } from '../components/Layout';
 function QRow({ q, extra }: { q: Question; extra?: React.ReactNode }) {
   const d = domainById[q.domain];
   return (
-    <Link to={`/q/${q.id}`} className="card row" style={{ padding: 16, gap: 14, textDecoration: 'none', color: 'var(--text)', alignItems: 'flex-start' }}>
+    <Link to={`/q/${q.id}`} className="card row card-link" style={{ padding: 16, gap: 14, textDecoration: 'none', color: 'var(--text)', alignItems: 'flex-start' }}>
       <span className="tile" style={{ width: 34, height: 34, background: d.color, borderRadius: 10 }}><Icon d={d.icon} size={17} stroke="#0B0D1C" /></span>
       <span className="stack grow" style={{ gap: 4 }}>
         <span className="sub small">{d.short}, question {q.num}</span>
@@ -51,7 +51,7 @@ export function Mistakes() {
       {list.length === 0 ? (
         <Empty title="No mistakes right now">Answer some questions and anything you miss will collect here.</Empty>
       ) : (
-        <div className="stack" style={{ gap: 10 }}>{list.map((q) => <QRow key={q.id} q={q} />)}</div>
+        <div className="stack stagger" style={{ gap: 10 }}>{list.map((q) => <QRow key={q.id} q={q} />)}</div>
       )}
     </div>
   );
@@ -102,7 +102,7 @@ export function Saved() {
         {list.length > 0 && <Link to="/practice/go?mode=saved&n=0" className="btn primary">Practice saved</Link>}
       </div>
       {list.length === 0 ? <Empty title="Nothing saved yet">Tap the bookmark on any question to keep it here.</Empty> : (
-        <div className="stack" style={{ gap: 10 }}>{list.map((q) => <QRow key={q.id} q={q} />)}</div>
+        <div className="stack stagger" style={{ gap: 10 }}>{list.map((q) => <QRow key={q.id} q={q} />)}</div>
       )}
     </div>
   );
@@ -161,7 +161,7 @@ export function QuestionPage() {
           {next && <Link to={`/q/${next.id}`} className="btn small" onClick={() => setPicked(null)}>Next</Link>}
         </div>
       </div>
-      <QuestionView q={q} order={order} picked={picked} revealed={picked !== null}
+      <QuestionView fx q={q} order={order} picked={picked} revealed={picked !== null}
         onPick={(oi) => { setPicked(oi); recordAnswer(q.id, oi === q.key, null); }} />
       {picked === null ? (
         <button type="button" className="btn" style={{ alignSelf: 'flex-start' }} onClick={() => setPicked(-1)}>Just show me the answer</button>

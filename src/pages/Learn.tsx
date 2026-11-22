@@ -5,6 +5,7 @@ import { DOMAINS, domainById, lessonById, lessonsFor, questionById } from '../da
 import { lessonAccuracy, markLesson, recordAnswer, useProgress } from '../store';
 import { Explanation, KeyCheck, QuestionView, canShuffle } from '../components/QuestionView';
 import { DomainTile, Empty, Icon, Md, PATHS, shuffle } from '../components/ui';
+import { ReadProgress, celebrate, haptic, toast } from '../components/fx';
 
 export function LearnIndex() {
   const p = useProgress();
@@ -42,13 +43,13 @@ export function LearnIndex() {
         <Link to={`/learn/${firstOpen.id}`} className="btn primary"><Icon d={PATHS.play} size={16} fill="currentColor" /> {doneCount ? 'Continue' : 'Start'}: {firstOpen.title}</Link>
       </div>
 
-      <div className="grid">
+      <div className="grid stagger">
         {lessons.map((l, i) => {
           const st = p.lessons[l.id];
           const acc = lessonAccuracy(p, l.id);
           const yieldLevel = Math.max(1, Math.round((l.questionIds.length / max) * 3));
           return (
-            <Link key={l.id} to={`/learn/${l.id}`} className="card stack" style={{ gap: 12, textDecoration: 'none', color: 'var(--text)' }}>
+            <Link key={l.id} to={`/learn/${l.id}`} className="card stack card-link" style={{ gap: 12, textDecoration: 'none', color: 'var(--text)' }}>
               <div className="row between">
                 <span className="row" style={{ gap: 4 }} aria-label={`Importance ${yieldLevel} of 3`}>
                   {[1, 2, 3].map((k) => <span key={k} style={{ width: 7, height: 16, borderRadius: 2, background: k <= yieldLevel ? 'var(--accent)' : '#2A2F52' }} />)}
@@ -139,6 +140,7 @@ function QuickCheck({ ids }: { ids: string[] }) {
     if (picked !== null) return;
     setPicked(oi);
     recordAnswer(q.id, oi === q.key, null);
+    haptic(oi === q.key ? 'ok' : 'bad');
   };
   return (
     <section className="stack" style={{ gap: 16 }}>
@@ -146,11 +148,11 @@ function QuickCheck({ ids }: { ids: string[] }) {
         <h2 className="d" style={{ fontSize: 22, fontWeight: 800 }}>Check yourself</h2>
         <span className="sub">From your reviewer · {i + 1} of {ids.length}</span>
       </div>
-      <QuestionView q={q} order={order} picked={picked} revealed={picked !== null} onPick={pick} />
+      <QuestionView key={q.id} q={q} order={order} picked={picked} revealed={picked !== null} onPick={pick} fx />
       {picked !== null && (
         <>
-          <KeyCheck q={q} />
-          <Explanation q={q} order={order} />
+          <div className="reveal"><KeyCheck q={q} /></div>
+          <div className="reveal-2"><Explanation q={q} order={order} /></div>
           {i + 1 < ids.length && (
             <button type="button" className="btn" style={{ alignSelf: 'flex-start' }} onClick={() => { setPicked(null); setI(i + 1); }}>
               Next check <Icon d={PATHS.next} size={18} />
@@ -175,12 +177,25 @@ export function LessonPage() {
   const nextL = list[pos + 1];
   const finish = (r: 'got' | 'again') => {
     markLesson(l.id, r);
+    if (r === 'got') {
+      haptic('ok');
+      const learned = list.filter((x) => x.id === l.id || p.lessons[x.id] === 'got').length;
+      if (learned === list.length) {
+        celebrate(150);
+        toast(`${d.short} complete`, { body: `All ${list.length} lessons learned. +15 XP`, icon: PATHS.check, color: d.color });
+      } else {
+        toast('Lesson learned', { body: `${l.title}. +15 XP`, icon: PATHS.check });
+      }
+    } else {
+      toast('Saved for later', { body: 'This lesson stays marked for review.', icon: PATHS.undo, color: '#FF9A8E' });
+    }
     nav(nextL ? `/learn/${nextL.id}` : `/learn?d=${l.domain}`);
     window.scrollTo({ top: 0 });
   };
 
   return (
     <div className="page" style={{ maxWidth: 940 }}>
+      <ReadProgress />
       <div className="row wrap" style={{ gap: 14 }}>
         <Link to={`/learn?d=${l.domain}`} className="icon-btn" aria-label="All lessons"><Icon d={PATHS.back} /></Link>
         <div className="stack">

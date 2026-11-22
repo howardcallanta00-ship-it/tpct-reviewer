@@ -4,6 +4,7 @@ import type { Question } from '../types';
 import { domainById, lessonById } from '../data';
 import { Icon, Md, PATHS, ZoomImg } from './ui';
 import { toggleSaved, useProgress } from '../store';
+import { Burst, haptic } from './fx';
 
 const LETTERS = 'abcdefgh';
 
@@ -58,9 +59,11 @@ interface Props {
   onPick?: (originalIndex: number) => void;
   index?: number;
   total?: number;
+  /** Play answer animations (off for passive review lists). */
+  fx?: boolean;
 }
 
-export function QuestionView({ q, order, picked, revealed, onPick, index, total }: Props) {
+export function QuestionView({ q, order, picked, revealed, onPick, index, total, fx = false }: Props) {
   const p = useProgress();
   const d = domainById[q.domain];
   const saved = p.saved.includes(q.id);
@@ -78,7 +81,7 @@ export function QuestionView({ q, order, picked, revealed, onPick, index, total 
         </div>
         <div className="row" style={{ gap: 8 }}>
           {index !== undefined && total !== undefined && <span className="sub n">{index + 1} / {total}</span>}
-          <button type="button" className={'icon-btn' + (saved ? ' on' : '')} onClick={() => toggleSaved(q.id)} aria-label={saved ? 'Remove from saved' : 'Save question'} title="Save (B)">
+          <button type="button" className={'icon-btn' + (saved ? ' on' : '')} onClick={() => { toggleSaved(q.id); haptic('tap'); }} aria-label={saved ? 'Remove from saved' : 'Save question'} title="Save (B)">
             <Icon d={PATHS.bookmark} size={18} fill={saved ? 'currentColor' : 'none'} />
           </button>
         </div>
@@ -102,9 +105,22 @@ export function QuestionView({ q, order, picked, revealed, onPick, index, total 
               tag = 'Your answer';
             } else cls += ' dim';
           } else if (picked === oi) cls += ' picked';
+          const animate = fx && revealed && picked !== null && picked >= 0;
+          if (animate && (oi === q.key || oi === picked || oi === likely)) cls += ' fx';
+          const won = animate && oi === q.key && picked === q.key;
           return (
             <button key={oi} type="button" role="listitem" className={cls} disabled={revealed || !onPick} onClick={() => onPick?.(oi)}>
-              <span className="k">{pos + 1}</span>
+              {won && <Burst />}
+              {won && <span className="xp-float">+10 XP</span>}
+              <span className="k">
+                {revealed && oi === q.key ? (
+                  <svg className={animate ? 'check-draw' : ''} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" strokeLinejoin="round" aria-label={`Option ${pos + 1}`}><path d="M5 12l5 5L20 7" /></svg>
+                ) : revealed && oi === picked && oi !== likely ? (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" aria-label={`Option ${pos + 1}`}><path d="M6 6l12 12M18 6 6 18" /></svg>
+                ) : (
+                  pos + 1
+                )}
+              </span>
               <span className="grow" style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                 {o.text && <span>{o.text}</span>}
                 {o.img && <img src={import.meta.env.BASE_URL + o.img} alt={`Option ${pos + 1}`} />}
@@ -160,9 +176,9 @@ export function Explanation({ q, order }: { q: Question; order: number[] }) {
         <button type="button" role="tab" aria-selected={tab === 'options'} className={tab === 'options' ? 'on' : ''} onClick={() => setTab('options')}>Every option, explained</button>
       </div>
       {tab === 'why' ? (
-        <p style={{ margin: 0, fontSize: 16.5, lineHeight: 1.7, maxWidth: 720 }}><Md text={q.notes.e} /></p>
+        <p key="why" className="tab-panel" style={{ margin: 0, fontSize: 16.5, lineHeight: 1.7, maxWidth: 720 }}><Md text={q.notes.e} /></p>
       ) : (
-        <div className="why">
+        <div key="opts" className="why tab-panel">
           {order.map((oi, pos) => (
             <div key={oi}>
               <span className={'k' + (oi === q.key ? ' ok' : '')}>{pos + 1}</span>

@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { CountUp, celebrate, haptic, toast } from '../components/fx';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import type { DomainId, Question } from '../types';
 import { ALL_LESSONS, DOMAINS, KEY_CHECKS, QUESTIONS, domainById, lessonById, lessonsFor } from '../data';
@@ -150,6 +151,7 @@ export function PracticeRun() {
   const revealed = picked !== null;
   const done = i >= list.length;
 
+  const resultRef = useRef<HTMLDivElement>(null);
   const pick = (oi: number) => {
     if (revealed || !q) return;
     const ok = oi === q.key;
@@ -159,6 +161,13 @@ export function PracticeRun() {
     const c = ok ? combo + 1 : 0;
     setCombo(c);
     setBestCombo((b) => Math.max(b, c));
+    haptic(ok ? 'ok' : 'bad');
+    if (ok && [3, 5, 10, 15, 20].includes(c)) {
+      toast(`${c} in a row`, { body: c >= 10 ? 'Unstoppable. Keep the streak alive.' : 'You are on a roll.', icon: PATHS.bolt });
+      if (c >= 5) celebrate(c >= 10 ? 120 : 60);
+    }
+    // On phones the result sits below the fold: bring it into view.
+    if (window.innerWidth < 900) setTimeout(() => resultRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 650);
   };
   const next = () => {
     setPicked(null);
@@ -170,7 +179,17 @@ export function PracticeRun() {
     if (!q) return;
     setConf(c);
     setConfidence(q.id, c);
+    haptic('tap');
   };
+  const finished = i >= list.length && list.length > 0;
+  const rightCount = results.filter(Boolean).length;
+  useEffect(() => {
+    if (finished && rightCount / list.length >= 0.7) {
+      celebrate(rightCount === list.length ? 160 : 100);
+      haptic('win');
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [finished]);
 
   // An answer tapped on the dashboard's "Up next" card counts as the first pick.
   useEffect(() => {
@@ -208,9 +227,14 @@ export function PracticeRun() {
     const missed = list.filter((_, k) => results[k] === false);
     return (
       <div className="page" style={{ maxWidth: 820 }}>
-        <div className="card glow stack" style={{ gap: 18, padding: 32 }}>
+        <div className="card glow stack" style={{ gap: 18, padding: 32, animation: 'scale-in .5s var(--ease-spring) both' }}>
           <span className="sub">Set complete</span>
-          <h1 className="d" style={{ fontSize: 40, fontWeight: 800 }}>{right} of {list.length} correct</h1>
+          <h1 className="d" style={{ fontSize: 44, fontWeight: 800 }}>
+            <span style={{ color: 'var(--accent)' }}><CountUp value={right} ms={1000} /></span> of {list.length} correct
+          </h1>
+          <p className="sub" style={{ margin: 0, fontSize: 16 }}>
+            {right === list.length ? 'A perfect set.' : right / list.length >= 0.7 ? 'Strong work. The misses are queued for review.' : 'Every miss is now in your Mistakes deck, so it will come back.'}
+          </p>
           <div className="row wrap" style={{ gap: 10 }}>
             <span className="chip accent">+{right * 10 + (list.length - right) * 2} XP</span>
             <span className="chip plain">Best combo: {bestCombo}</span>
@@ -257,16 +281,16 @@ export function PracticeRun() {
           ))}
         </div>
         {combo >= 2 && (
-          <span className="chip accent" style={{ padding: '8px 12px' }}><Icon d={PATHS.bolt} size={15} fill="currentColor" /> {combo} in a row</span>
+          <span key={combo} className="chip accent combo-chip" style={{ padding: '8px 12px' }}><Icon d={PATHS.bolt} size={15} fill="currentColor" /> {combo} in a row</span>
         )}
       </div>
 
       <div className="row wrap" style={{ alignItems: 'flex-start', gap: 24 }}>
         <div className="stack" style={{ flex: '999 1 600px', minWidth: 0, gap: 20 }}>
-          <QuestionView q={q} order={order} picked={picked} revealed={revealed} onPick={pick} />
+          <QuestionView key={q.id} q={q} order={order} picked={picked} revealed={revealed} onPick={pick} fx />
           {revealed && (
             <>
-              <div className="card stack" style={{ gap: 12, padding: 20 }}>
+              <div ref={resultRef} className="card stack reveal" style={{ gap: 12, padding: 20, scrollMarginTop: 16 }}>
                 <div className="row between wrap">
                   <span className="row">
                     <span className="tile" style={{ width: 34, height: 34, borderRadius: 10, background: picked === q.key ? 'var(--ok)' : 'var(--bad)' }}>
@@ -291,14 +315,20 @@ export function PracticeRun() {
                   <span className="sub">Added to your Mistakes. It will come back until you get it right.</span>
                 )}
               </div>
-              <KeyCheck q={q} />
-              <Explanation q={q} order={order} />
+              <div className="reveal-2"><KeyCheck q={q} /></div>
+              <div className="reveal-3"><Explanation q={q} order={order} /></div>
+              <div className="action-bar">
+                <button type="button" className="btn primary" onClick={next}>
+                  {i + 1 === list.length ? 'See results' : 'Next question'} <Icon d={PATHS.next} size={18} />
+                </button>
+              </div>
+              <div className="action-spacer" />
             </>
           )}
         </div>
-        <aside className="stack" style={{ flex: '1 1 280px', gap: 16, position: 'sticky', top: 20 }}>
+        <aside className="stack hide-mobile" style={{ flex: '1 1 280px', gap: 16, position: 'sticky', top: 20 }}>
           {revealed ? (
-            <button type="button" className="btn primary" onClick={next} style={{ minHeight: 58, fontSize: 17 }}>
+            <button type="button" className="btn primary shine" onClick={next} style={{ minHeight: 58, fontSize: 17, animation: 'scale-in .35s var(--ease-spring) both' }}>
               {i + 1 === list.length ? 'See results' : 'Next question'} <Icon d={PATHS.next} size={18} />
             </button>
           ) : (
