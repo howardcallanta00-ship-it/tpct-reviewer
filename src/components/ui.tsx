@@ -63,9 +63,9 @@ export function Ring({ value, target = 0.7, size = 180, stroke = 16, label = 'ex
   return (
     <div style={{ position: 'relative', width: size, height: size, flex: 'none' }}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} role="img" aria-label={`Readiness ${pct} percent, target ${Math.round(target * 100)} percent`}>
-        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="#262B55" strokeWidth={stroke} />
+        <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--track)" strokeWidth={stroke} />
         <circle
-          cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--accent)" strokeWidth={stroke} strokeLinecap="round" strokeOpacity={value < 0.005 ? 0 : 1}
+          cx={size / 2} cy={size / 2} r={r} fill="none" stroke="var(--accent-fg)" strokeWidth={stroke} strokeLinecap="round" strokeOpacity={value < 0.005 ? 0 : 1}
           strokeDasharray={`${Math.max(0.001, shown) * c} ${c}`} transform={`rotate(-90 ${size / 2} ${size / 2})`}
           style={{ filter: shown > 0.01 ? 'drop-shadow(0 0 8px rgba(200,244,90,.45))' : 'none' }}
         />
@@ -99,17 +99,17 @@ export function HexChart({ items, target = 0.7, compact = false }: { items: { la
   return (
     <svg viewBox={`0 0 ${W} ${H}`} width="100%" role="img" aria-label={'Mastery by domain: ' + label}>
       {[0.25, 0.5, 0.75, 1].map((f) => (
-        <polygon key={f} points={poly(() => R * f)} fill="none" stroke="#262B55" strokeWidth="1" />
+        <polygon key={f} points={poly(() => R * f)} fill="none" stroke="var(--track)" strokeWidth="1" />
       ))}
       {ang.map((_, i) => {
         const [x, y] = pt(R, i);
-        return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="#262B55" strokeWidth="1" />;
+        return <line key={i} x1={cx} y1={cy} x2={x} y2={y} stroke="var(--track)" strokeWidth="1" />;
       })}
       <polygon points={poly(() => R * target)} fill="none" stroke="#fff" strokeOpacity="0.55" strokeWidth="1.5" strokeDasharray="4 5" />
-      <polygon points={poly((i) => R * Math.max(0.03, items[i].value))} fill="var(--accent)" fillOpacity="0.18" stroke="var(--accent)" strokeWidth="2.5" strokeLinejoin="round" />
+      <polygon points={poly((i) => R * Math.max(0.03, items[i].value))} fill="var(--accent)" fillOpacity="0.18" stroke="var(--accent-fg)" strokeWidth="2.5" strokeLinejoin="round" />
       {items.map((it, i) => {
         const [x, y] = pt(R * Math.max(0.03, it.value), i);
-        return <circle key={i} cx={x} cy={y} r="6" fill={it.color} stroke="#151931" strokeWidth="2.5" />;
+        return <circle key={i} cx={x} cy={y} r="6" fill={it.color} stroke="var(--surface)" strokeWidth="2.5" />;
       })}
       {items.map((it, i) => {
         const [x, y] = pt(R + (compact ? 16 : 22), i);
@@ -119,8 +119,8 @@ export function HexChart({ items, target = 0.7, compact = false }: { items: { la
         const by = sin < -0.9 ? y - 16 : sin > 0.9 ? y + 6 : y - 4;
         return (
           <g key={'l' + i}>
-            <text x={x} y={by} textAnchor={anchor} fill="#C9CCE3" fontFamily="Manrope, sans-serif" fontSize="12.5" fontWeight="700">{it.label}</text>
-            <text x={x} y={by + 16} textAnchor={anchor} fill={it.color} fontFamily="Bricolage Grotesque, sans-serif" fontSize="14" fontWeight="800">{Math.round(it.value * 100)}%</text>
+            <text x={x} y={by} textAnchor={anchor} fill="var(--text-2)" fontFamily="Manrope, sans-serif" fontSize="12.5" fontWeight="700">{it.label}</text>
+            <text x={x} y={by + 16} textAnchor={anchor} fill={ink(it.color)} fontFamily="Bricolage Grotesque, sans-serif" fontSize="14" fontWeight="800">{Math.round(it.value * 100)}%</text>
           </g>
         );
       })}
@@ -187,3 +187,6 @@ export function shuffle<T>(arr: T[]): T[] {
   }
   return a;
 }
+
+/** A domain colour made readable as text: unchanged on dark themes, deepened on Daylight. */
+export const ink = (color: string) => `color-mix(in srgb, ${color} var(--ink-mix), var(--ink-base))`;

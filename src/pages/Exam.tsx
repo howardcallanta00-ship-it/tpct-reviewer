@@ -4,7 +4,7 @@ import type { Question } from '../types';
 import { DOMAINS, QUESTIONS, domainById } from '../data';
 import { recordAnswer, recordExam, useProgress } from '../store';
 import { Explanation, KeyCheck, QuestionView, canShuffle } from '../components/QuestionView';
-import { Icon, PATHS, shuffle } from '../components/ui';
+import { Icon, PATHS, ink, shuffle } from '../components/ui';
 import { Confirm, CountUp, celebrate, haptic } from '../components/fx';
 
 /** Even spread across domains, random within each. */
@@ -133,7 +133,7 @@ export function Exam() {
         <div className="card glow stack" style={{ gap: 16, padding: 32, animation: 'scale-in .5s var(--ease-spring) both' }}>
           <span className="sub">Mock exam result</span>
           <h1 className="d" style={{ fontSize: 44, fontWeight: 800 }}>
-            <CountUp value={stats.right} ms={1200} /> / {list.length} <span style={{ color: 'var(--accent)' }}>(<CountUp value={pct} ms={1200} />%)</span>
+            <CountUp value={stats.right} ms={1200} /> / {list.length} <span style={{ color: 'var(--accent-fg)' }}>(<CountUp value={pct} ms={1200} />%)</span>
           </h1>
           <p className="sub" style={{ margin: 0, fontSize: 16 }}>
             {pct >= 85 ? 'Excellent. You are exam ready in most areas.' : pct >= 70 ? 'Passing territory. Polish the weakest domain below.' : 'Keep going. Every miss is now in your Mistakes deck.'}
@@ -141,7 +141,7 @@ export function Exam() {
           <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 200px), 1fr))', gap: 10 }}>
             {stats.byDomain.map(({ d, total, right }) => (
               <div key={d.id} className="stack" style={{ padding: 12, borderRadius: 14, background: 'var(--raised)', gap: 6 }}>
-                <span className="small" style={{ color: d.color, fontWeight: 700 }}>{d.short}</span>
+                <span className="small" style={{ color: ink(d.color), fontWeight: 700 }}>{d.short}</span>
                 <b className="d n" style={{ fontSize: 20 }}>{right} / {total}</b>
                 <div className="bar"><span style={{ width: `${(right / total) * 100}%`, background: d.color }} /></div>
               </div>
@@ -157,11 +157,11 @@ export function Exam() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(44px, 1fr))', gap: 6 }}>
             {list.map((q, k) => {
               const a = answers[q.id];
-              const bg = a === undefined ? '#262B55' : a === q.key ? 'var(--ok-bg)' : 'var(--bad-bg)';
+              const bg = a === undefined ? 'var(--track)' : a === q.key ? 'var(--ok-bg)' : 'var(--bad-bg)';
               const fg = a === undefined ? 'var(--faint)' : a === q.key ? 'var(--ok-text)' : 'var(--bad-text)';
               return (
                 <button key={q.id} type="button" onClick={() => setReview(q.id)}
-                  style={{ height: 42, borderRadius: 10, border: review === q.id ? '2px solid var(--accent)' : 0, background: bg, color: fg, fontWeight: 800, cursor: 'pointer' }}>
+                  style={{ height: 42, borderRadius: 10, border: review === q.id ? '2px solid var(--accent-fg)' : 0, background: bg, color: fg, fontWeight: 800, cursor: 'pointer' }}>
                   {k + 1}
                 </button>
               );
@@ -224,8 +224,8 @@ export function Exam() {
               <button key={x.id} type="button" onClick={() => setI(k)} aria-label={`Question ${k + 1}`}
                 style={{
                   height: 36, borderRadius: 9, cursor: 'pointer', fontWeight: 800, fontSize: 13,
-                  border: k === i ? '2px solid var(--accent)' : flags[x.id] ? '2px solid var(--warn)' : '1px solid var(--line-2)',
-                  background: answers[x.id] !== undefined ? '#23281A' : 'var(--raised)', color: answers[x.id] !== undefined ? 'var(--accent)' : 'var(--faint)',
+                  border: k === i ? '2px solid var(--accent-fg)' : flags[x.id] ? '2px solid var(--warn)' : '1px solid var(--line-2)',
+                  background: answers[x.id] !== undefined ? 'var(--accent-tint)' : 'var(--raised)', color: answers[x.id] !== undefined ? 'var(--accent-fg)' : 'var(--faint)',
                 }}>
                 {k + 1}
               </button>

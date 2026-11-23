@@ -3,7 +3,7 @@ import { Link, useParams, useSearchParams } from 'react-router-dom';
 import type { DomainId, Question } from '../types';
 import { ALL_LESSONS, DOMAINS, KEY_CHECKS, QUESTIONS, domainById, questionById } from '../data';
 import {
-  UI_SCALES, exportProgress, importProgress, mistakes, recordAnswer, resetProgress, setExamDate, setShuffle, setUiScale, useProgress,
+  THEMES, UI_SCALES, exportProgress, importProgress, mistakes, recordAnswer, resetProgress, setExamDate, setShuffle, setTheme, setUiScale, useProgress,
 } from '../store';
 import { Explanation, KeyCheck, QuestionView, canShuffle } from '../components/QuestionView';
 import { Empty, Icon, Md, PATHS, shuffle } from '../components/ui';
@@ -200,6 +200,28 @@ export function Settings() {
   return (
     <div className="page" style={{ maxWidth: 760 }}>
       <h1 className="d" style={{ fontSize: 32, fontWeight: 800 }}>Progress and settings</h1>
+      <div className="card stack" style={{ gap: 14 }}>
+        <h2 className="d" style={{ fontSize: 19 }}>Color scheme</h2>
+        <span className="sub">Pick what feels comfortable for where and when you study. Saved on this device.</span>
+        <div className="theme-picker" role="radiogroup" aria-label="Color scheme">
+          {THEMES.map((t) => (
+            <button key={t.id} type="button" role="radio" aria-checked={p.theme === t.id}
+              className={p.theme === t.id ? 'on' : ''} onClick={() => { setTheme(t.id); haptic('tap'); }}>
+              <span className="theme-swatch" aria-hidden="true" style={{ background: t.bg, borderColor: t.line }}>
+                <span style={{ background: t.surface, borderColor: t.line }}>
+                  <i style={{ background: t.text, width: '70%' }} />
+                  <i style={{ background: t.text, width: '45%', opacity: 0.5 }} />
+                  <b style={{ background: t.accent }} />
+                </span>
+              </span>
+              <span className="stack" style={{ gap: 2, textAlign: 'left' }}>
+                <b>{t.label}</b>
+                <span className="small" style={{ color: 'var(--muted)' }}>{t.note}</span>
+              </span>
+            </button>
+          ))}
+        </div>
+      </div>
       <div className="card stack" style={{ gap: 14 }}>
         <div className="row between wrap">
           <h2 className="d" style={{ fontSize: 19 }}>Interface size</h2>

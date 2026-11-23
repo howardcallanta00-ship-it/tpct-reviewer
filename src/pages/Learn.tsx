@@ -4,7 +4,7 @@ import type { DomainId, LessonBlock } from '../types';
 import { DOMAINS, domainById, lessonById, lessonsFor, questionById } from '../data';
 import { lessonAccuracy, markLesson, recordAnswer, useProgress } from '../store';
 import { Explanation, KeyCheck, QuestionView, canShuffle } from '../components/QuestionView';
-import { DomainTile, Empty, Icon, Md, PATHS, shuffle } from '../components/ui';
+import { DomainTile, Empty, Icon, Md, PATHS, ink, shuffle } from '../components/ui';
 import { ReadProgress, celebrate, haptic, toast } from '../components/fx';
 
 export function LearnIndex() {
@@ -52,7 +52,7 @@ export function LearnIndex() {
             <Link key={l.id} to={`/learn/${l.id}`} className="card stack card-link" style={{ gap: 12, textDecoration: 'none', color: 'var(--text)' }}>
               <div className="row between">
                 <span className="row" style={{ gap: 4 }} aria-label={`Importance ${yieldLevel} of 3`}>
-                  {[1, 2, 3].map((k) => <span key={k} style={{ width: 7, height: 16, borderRadius: 2, background: k <= yieldLevel ? 'var(--accent)' : '#2A2F52' }} />)}
+                  {[1, 2, 3].map((k) => <span key={k} style={{ width: 7, height: 16, borderRadius: 2, background: k <= yieldLevel ? 'var(--accent)' : 'var(--track)' }} />)}
                 </span>
                 {st === 'got' ? <span className="chip ok">Learned</span> : st === 'again' ? <span className="chip bad">Review again</span> : <span className="chip plain">#{i + 1}</span>}
               </div>
@@ -106,14 +106,14 @@ function Block({ b }: { b: LessonBlock }) {
       return (
         <div className="callout tip">
           <span className="tile" style={{ width: 34, height: 34, background: 'var(--pink)', borderRadius: 10 }}><Icon d={PATHS.bulb} size={18} stroke="#241B2E" /></span>
-          <span><b style={{ color: '#FFB3DB' }}>Memory trick: </b><Md text={b.md} /></span>
+          <span><b style={{ color: 'var(--pink-text)' }}>Memory trick: </b><Md text={b.md} /></span>
         </div>
       );
     case 'trap':
       return (
         <div className="callout trap">
           <span className="tile" style={{ width: 34, height: 34, background: 'var(--warn)', borderRadius: 10 }}><Icon d={PATHS.alert} size={18} stroke="#241D12" /></span>
-          <span style={{ color: '#E4DCCB' }}><b style={{ color: 'var(--warn-text)' }}>Common trap: </b><Md text={b.md} /></span>
+          <span style={{ color: 'var(--warn-body)' }}><b style={{ color: 'var(--warn-text)' }}>Common trap: </b><Md text={b.md} /></span>
         </div>
       );
     case 'formula':
@@ -199,24 +199,24 @@ export function LessonPage() {
       <div className="row wrap" style={{ gap: 14 }}>
         <Link to={`/learn?d=${l.domain}`} className="icon-btn" aria-label="All lessons"><Icon d={PATHS.back} /></Link>
         <div className="stack">
-          <span className="sub small" style={{ color: d.color, fontWeight: 700 }}>{d.name}</span>
+          <span className="sub small" style={{ color: ink(d.color), fontWeight: 700 }}>{d.name}</span>
           <span className="d" style={{ fontSize: 18, fontWeight: 700 }}>Lesson {pos + 1} of {list.length}</span>
         </div>
         <div className="grow" style={{ display: 'grid', gridTemplateColumns: `repeat(${list.length}, minmax(0, 1fr))`, gap: 5, minWidth: 140 }}>
           {list.map((x, k) => (
-            <span key={x.id} style={{ height: 8, borderRadius: 4, background: k === pos ? d.color : p.lessons[x.id] === 'got' ? 'var(--accent)' : '#262B55' }} />
+            <span key={x.id} style={{ height: 8, borderRadius: 4, background: k === pos ? d.color : p.lessons[x.id] === 'got' ? 'var(--accent)' : 'var(--track)' }} />
           ))}
         </div>
       </div>
 
-      <article className="card stack" style={{ gap: 22, padding: 32, background: 'radial-gradient(100% 80% at 100% 0%, #1F2550 0%, #151931 60%)' }}>
+      <article className="card stack" style={{ gap: 22, padding: 32, background: 'radial-gradient(100% 80% at 100% 0%, var(--q-glow) 0%, var(--surface) 60%)' }}>
         <div className="stack" style={{ gap: 10 }}>
           <div className="row wrap" style={{ gap: 8 }}>
             {l.questionIds.length >= 5 && <span className="chip accent">Often tested</span>}
             <span className="chip plain">In {l.questionIds.length} of your questions</span>
           </div>
           <h1 className="d" style={{ fontSize: 38, fontWeight: 800, lineHeight: 1.08 }}>{l.title}</h1>
-          <p style={{ margin: 0, color: '#B9BDD8', fontSize: 17 }}>{l.summary}</p>
+          <p style={{ margin: 0, color: 'var(--text-2)', fontSize: 17 }}>{l.summary}</p>
         </div>
         {l.blocks.map((b, i) => (
           <div key={i} className="lesson-block"><Block b={b} /></div>

@@ -84,7 +84,7 @@ export function Layout() {
           <NavLink to="/key-checks" className="nav-link">
             <Icon d={PATHS.alert} />
             <span className="grow">Key checks</span>
-            <span className="badge" style={{ background: '#3A2C14', color: 'var(--warn-text)' }}>{KEY_CHECKS.length}</span>
+            <span className="badge" style={{ background: 'var(--warn-chip)', color: 'var(--warn-text)' }}>{KEY_CHECKS.length}</span>
           </NavLink>
           <NavLink to="/saved" className="nav-link"><Icon d={PATHS.bookmark} />Saved</NavLink>
           <NavLink to="/settings" className="nav-link"><Icon d={PATHS.gear} />Progress and settings</NavLink>
@@ -99,11 +99,11 @@ export function Layout() {
             </Link>
           ))}
         </div>
-        <div style={{ marginTop: 'auto', padding: 16, borderRadius: 18, background: '#241D12', border: '1px solid #4A3818' }} className="row">
+        <div style={{ marginTop: 'auto', padding: 16, borderRadius: 18, background: 'var(--streak-bg)', border: '1px solid var(--streak-line)' }} className="row">
           <span className={'tile' + (streak > 0 ? ' flame-anim' : '')} style={{ width: 36, height: 36, background: '#FF9F43', borderRadius: 11 }}><Icon d={PATHS.flame} size={18} fill="#241D12" /></span>
           <span className="stack" style={{ lineHeight: 1.2 }}>
-            <b className="n" style={{ color: '#FFC27A' }}>{streak}-day streak</b>
-            <span className="small" style={{ color: '#C9A77A' }}>Best: {Math.max(p.bestStreak, streak)} days</span>
+            <b className="n" style={{ color: 'var(--streak-text)' }}>{streak}-day streak</b>
+            <span className="small" style={{ color: 'var(--streak-sub)' }}>Best: {Math.max(p.bestStreak, streak)} days</span>
           </span>
         </div>
       </aside>

@@ -29,6 +29,24 @@ export interface Progress {
   exams: { at: number; total: number; correct: number; minutes: number }[];
   /** Interface zoom, 1 = default. */
   uiScale: number;
+  theme: ThemeId;
+}
+
+export type ThemeId = 'midnight' | 'dusk' | 'day';
+
+export const THEMES: { id: ThemeId; label: string; note: string; bg: string; surface: string; line: string; text: string; accent: string }[] = [
+  { id: 'midnight', label: 'Midnight', note: 'Deep navy. Lowest light for late nights.', bg: '#0B0D1C', surface: '#1A1E3A', line: '#2A3060', text: '#EEF0FA', accent: '#C8F45A' },
+  { id: 'dusk', label: 'Dusk', note: 'Lifted slate. Brighter and crisper, still dark.', bg: '#1A2133', surface: '#29324A', line: '#3D4867', text: '#F4F6FB', accent: '#C8F45A' },
+  { id: 'day', label: 'Daylight', note: 'Soft blue-grey, no harsh white. For daytime study.', bg: '#E7EBF2', surface: '#F6F8FB', line: '#C9D1DE', text: '#182035', accent: '#BDEE45' },
+];
+
+export function applyTheme(theme: ThemeId) {
+  if (typeof document === 'undefined') return;
+  const root = document.documentElement;
+  if (theme === 'midnight') root.removeAttribute('data-theme');
+  else root.setAttribute('data-theme', theme);
+  const t = THEMES.find((x) => x.id === theme) ?? THEMES[0];
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', t.bg);
 }
 
 export const UI_SCALES = [
@@ -48,7 +66,7 @@ export function applyUiScale(scale: number) {
 const KEY = 'tpct-reviewer-progress';
 const DAY = 86_400_000;
 
-const empty = (): Progress => ({ v: 1, q: {}, days: {}, saved: [], lessons: {}, xp: 0, examDate: null, shuffle: true, bestStreak: 0, exams: [], uiScale: 1 });
+const empty = (): Progress => ({ v: 1, q: {}, days: {}, saved: [], lessons: {}, xp: 0, examDate: null, shuffle: true, bestStreak: 0, exams: [], uiScale: 1, theme: 'midnight' });
 
 function load(): Progress {
   try {
@@ -62,6 +80,7 @@ function load(): Progress {
 
 let state: Progress = load();
 applyUiScale(state.uiScale);
+applyTheme(state.theme);
 const listeners = new Set<() => void>();
 
 function commit(next: Progress) {
@@ -152,6 +171,11 @@ export function setUiScale(uiScale: number) {
   commit({ ...state, uiScale });
 }
 
+export function setTheme(theme: ThemeId) {
+  applyTheme(theme);
+  commit({ ...state, theme });
+}
+
 export function recordExam(total: number, correct: number, minutes: number) {
   commit({ ...state, exams: [...state.exams, { at: Date.now(), total, correct, minutes }].slice(-20) });
 }
@@ -165,11 +189,12 @@ export function importProgress(json: string) {
   if (!data || data.v !== 1 || typeof data.q !== 'object') throw new Error('This file is not a TOPCIT Sprint progress file.');
   commit({ ...empty(), ...data });
   applyUiScale(state.uiScale);
+  applyTheme(state.theme);
 }
 
 export function resetProgress() {
   // Keep display preferences; reset study data only.
-  commit({ ...empty(), uiScale: state.uiScale, shuffle: state.shuffle });
+  commit({ ...empty(), uiScale: state.uiScale, shuffle: state.shuffle, theme: state.theme });
 }
 
 // ---------- Derived numbers ----------

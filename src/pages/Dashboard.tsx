@@ -77,7 +77,7 @@ export function Dashboard() {
             <Ring value={ready} target={target} size={190} />
             <div className="stack grow" style={{ gap: 12, flexBasis: 280 }}>
               <h2 className="d" style={{ fontSize: 36, lineHeight: 1.08, fontWeight: 800 }}>{headline}</h2>
-              <p style={{ margin: 0, color: '#B9BDD8', fontSize: 16 }}>
+              <p style={{ margin: 0, color: 'var(--text-2)', fontSize: 16 }}>
                 {answered} of {QUESTIONS.length} questions answered. Tonight focuses on {planDomain.name}.
               </p>
               <div className="row wrap" style={{ marginTop: 4 }}>
@@ -95,8 +95,8 @@ export function Dashboard() {
                 <span
                   style={{
                     width: 38, height: 38, borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    background: w.count ? 'var(--accent)' : w.isToday ? 'rgba(200,244,90,.08)' : '#1A1E3A',
-                    border: w.isToday && !w.count ? '2px dashed var(--accent)' : 'none',
+                    background: w.count ? 'var(--accent)' : w.isToday ? 'rgba(200,244,90,.08)' : 'var(--raised)',
+                    border: w.isToday && !w.count ? '2px dashed var(--accent-fg)' : 'none',
                   }}
                 >
                   {w.count > 0 && <Icon d={PATHS.check} size={16} stroke="#0B0D1C" width={3.2} />}
@@ -162,17 +162,17 @@ export function Dashboard() {
                   style={{
                     width: 30, height: 30, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flex: 'none', fontWeight: 800, fontSize: 13,
                     background: s.done ? 'var(--accent)' : 'transparent',
-                    border: s.done ? 'none' : `2px solid ${i === currentStep ? 'var(--accent)' : 'var(--line-3)'}`,
-                    color: i === currentStep ? 'var(--accent)' : 'var(--faint)',
+                    border: s.done ? 'none' : `2px solid ${i === currentStep ? 'var(--accent-fg)' : 'var(--line-3)'}`,
+                    color: i === currentStep ? 'var(--accent-fg)' : 'var(--faint)',
                     boxShadow: i === currentStep ? '0 0 0 5px rgba(200,244,90,.12)' : 'none',
                   }}
                 >
                   {s.done ? <Icon d={PATHS.check} size={16} stroke="#0B0D1C" width={3} /> : i + 1}
                 </span>
-                {i < 2 && <span style={{ flex: '1 1 auto', width: 2, minHeight: 20, background: '#2F3566' }} />}
+                {i < 2 && <span style={{ flex: '1 1 auto', width: 2, minHeight: 20, background: 'var(--track)' }} />}
               </div>
               <div style={{ paddingBottom: i < 2 ? 16 : 0 }}>
-                <div style={{ fontWeight: 700, color: s.done ? '#8F94B5' : 'var(--text)', textDecoration: s.done ? 'line-through' : 'none' }}>{s.title}</div>
+                <div style={{ fontWeight: 700, color: s.done ? 'var(--faint)' : 'var(--text)', textDecoration: s.done ? 'line-through' : 'none' }}>{s.title}</div>
                 <div className="sub">{s.meta}</div>
               </div>
             </Link>
@@ -192,7 +192,7 @@ export function Dashboard() {
             const done = qs.filter((q) => p.q[q.id]).length;
             const w = weak.find((x) => x.l.domain === d.id)?.l;
             return (
-              <Link key={d.id} to={`/learn?d=${d.id}`} className="card stack card-link" style={{ gap: 16, textDecoration: 'none', color: 'var(--text)', background: `linear-gradient(180deg, ${d.color}14, #151931 45%)` }}>
+              <Link key={d.id} to={`/learn?d=${d.id}`} className="card stack card-link" style={{ gap: 16, textDecoration: 'none', color: 'var(--text)', background: `linear-gradient(180deg, ${d.color}14, var(--surface) 45%)` }}>
                 <div className="row">
                   <DomainTile d={d} />
                   <span className="stack grow">

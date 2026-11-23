@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import type { Question } from '../types';
 import { domainById, lessonById } from '../data';
-import { Icon, Md, PATHS, ZoomImg } from './ui';
+import { Icon, Md, PATHS, ZoomImg, ink } from './ui';
 import { toggleSaved, useProgress } from '../store';
 import { Burst, haptic } from './fx';
 
@@ -71,10 +71,10 @@ export function QuestionView({ q, order, picked, revealed, onPick, index, total,
   const lesson = lessonById[q.notes.t];
 
   return (
-    <div className="card" style={{ padding: 30, display: 'flex', flexDirection: 'column', gap: 20, background: 'radial-gradient(80% 60% at 100% 0%, #241f4c 0%, #151931 60%)' }}>
+    <div className="card" style={{ padding: 30, display: 'flex', flexDirection: 'column', gap: 20, background: 'radial-gradient(80% 60% at 100% 0%, var(--q-glow) 0%, var(--surface) 60%)' }}>
       <div className="row wrap between">
         <div className="row wrap" style={{ gap: 8 }}>
-          <span className="chip" style={{ background: d.color + '22', color: d.color }}>{d.short}</span>
+          <span className="chip" style={{ background: d.color + '22', color: ink(d.color) }}>{d.short}</span>
           {lesson && <span className="chip plain">{lesson.title}</span>}
           {revealed && q.notes.k && <span className="chip warn">Key check</span>}
           {revealed && q.keySource === 'claude' && <span className="chip warn">No key in reviewer</span>}
@@ -141,7 +141,7 @@ export function KeyCheck({ q }: { q: Question }) {
         <span className="tile" style={{ width: 42, height: 42, background: 'var(--warn)' }}><Icon d={PATHS.alert} stroke="#241D12" /></span>
         <div className="stack" style={{ gap: 8 }}>
           <h2 className="d" style={{ fontSize: 19, color: 'var(--warn-text)' }}>Your reviewer has no answer for this one</h2>
-          <p style={{ margin: 0, color: '#E4DCCB' }}><Md text={q.notes.m.note} /></p>
+          <p style={{ margin: 0, color: 'var(--warn-body)' }}><Md text={q.notes.m.note} /></p>
         </div>
       </div>
     );
@@ -152,7 +152,7 @@ export function KeyCheck({ q }: { q: Question }) {
       <span className="tile" style={{ width: 42, height: 42, background: 'var(--warn)' }}><Icon d={PATHS.alert} stroke="#241D12" /></span>
       <div className="stack" style={{ gap: 8 }}>
         <h2 className="d" style={{ fontSize: 19, color: 'var(--warn-text)' }}>Your answer key may be wrong here</h2>
-        <p style={{ margin: 0, color: '#E4DCCB' }}>
+        <p style={{ margin: 0, color: 'var(--warn-body)' }}>
           You are scored on your reviewer’s answer.{' '}
           {q.notes.k.likely >= 0 ? (
             <>The option that is more likely correct is marked <b style={{ color: 'var(--warn-text)' }}>Likely correct</b>.</>
@@ -160,7 +160,7 @@ export function KeyCheck({ q }: { q: Question }) {
             <>This question is ambiguous, so read the note carefully.</>
           )}
         </p>
-        <p style={{ margin: 0, color: '#E4DCCB' }}><Md text={q.notes.k.note} /></p>
+        <p style={{ margin: 0, color: 'var(--warn-body)' }}><Md text={q.notes.k.note} /></p>
       </div>
     </div>
   );
@@ -190,7 +190,7 @@ export function Explanation({ q, order }: { q: Question; order: number[] }) {
       {q.notes.r && (
         <div className="callout tip">
           <span className="tile" style={{ width: 34, height: 34, background: 'var(--pink)', borderRadius: 10 }}><Icon d={PATHS.bulb} size={18} stroke="#241B2E" /></span>
-          <span><b style={{ color: '#FFB3DB' }}>Remember: </b><Md text={q.notes.r} /></span>
+          <span><b style={{ color: 'var(--pink-text)' }}>Remember: </b><Md text={q.notes.r} /></span>
         </div>
       )}
       {lesson && (

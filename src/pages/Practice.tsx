@@ -103,7 +103,7 @@ export function PracticeSetup() {
         <h2 className="d" style={{ fontSize: 19 }}>What to practice</h2>
         <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 250px), 1fr))', gap: 10 }}>
           {MODES.map((m) => (
-            <button key={m.id} type="button" onClick={() => setMode(m.id)} className="opt" style={{ alignItems: 'flex-start', flexDirection: 'column', gap: 2, ...(mode === m.id ? { borderColor: 'var(--accent)', background: '#23281A' } : {}) }}>
+            <button key={m.id} type="button" onClick={() => setMode(m.id)} className="opt" style={{ alignItems: 'flex-start', flexDirection: 'column', gap: 2, ...(mode === m.id ? { borderColor: 'var(--accent-fg)', background: 'var(--accent-tint)' } : {}) }}>
               <b>{m.title}</b>
               <span className="sub small" style={{ fontWeight: 500 }}>{m.desc}</span>
             </button>
@@ -230,7 +230,7 @@ export function PracticeRun() {
         <div className="card glow stack" style={{ gap: 18, padding: 32, animation: 'scale-in .5s var(--ease-spring) both' }}>
           <span className="sub">Set complete</span>
           <h1 className="d" style={{ fontSize: 44, fontWeight: 800 }}>
-            <span style={{ color: 'var(--accent)' }}><CountUp value={right} ms={1000} /></span> of {list.length} correct
+            <span style={{ color: 'var(--accent-fg)' }}><CountUp value={right} ms={1000} /></span> of {list.length} correct
           </h1>
           <p className="sub" style={{ margin: 0, fontSize: 16 }}>
             {right === list.length ? 'A perfect set.' : right / list.length >= 0.7 ? 'Strong work. The misses are queued for review.' : 'Every miss is now in your Mistakes deck, so it will come back.'}
@@ -275,7 +275,7 @@ export function PracticeRun() {
           {list.slice(0, 30).map((_, k) => (
             <span key={k} style={{
               height: 8, borderRadius: 4,
-              background: k === i ? 'var(--accent)' : results[k] === true ? 'var(--ok)' : results[k] === false ? 'var(--bad)' : '#262B55',
+              background: k === i ? 'var(--accent)' : results[k] === true ? 'var(--ok)' : results[k] === false ? 'var(--bad)' : 'var(--track)',
               boxShadow: k === i ? '0 0 12px var(--accent)' : 'none',
             }} />
           ))}
@@ -300,14 +300,14 @@ export function PracticeRun() {
                       {picked === q.key ? (q.keySource === 'claude' ? 'Correct' : 'Correct per your key') : 'Not quite'}
                     </b>
                   </span>
-                  <span className="d" style={{ color: 'var(--accent)', fontWeight: 800 }}>+{picked === q.key ? 10 : 2} XP</span>
+                  <span className="d" style={{ color: 'var(--accent-fg)', fontWeight: 800 }}>+{picked === q.key ? 10 : 2} XP</span>
                 </div>
                 {picked === q.key ? (
                   <>
                     <span className="sub">How sure were you? This decides when you see it again.</span>
                     <div className="conf">
                       <button type="button" className={conf === 'guessed' ? 'on' : ''} onClick={() => chooseConf('guessed')}>Guessed<span className="small" style={{ color: 'var(--bad-text)' }}>back tomorrow, counts half</span></button>
-                      <button type="button" className={conf === 'unsure' || conf === null ? (conf ? 'on' : '') : ''} onClick={() => chooseConf('unsure')}>Unsure<span className="small" style={{ color: 'var(--accent)' }}>back in 3 days</span></button>
+                      <button type="button" className={conf === 'unsure' || conf === null ? (conf ? 'on' : '') : ''} onClick={() => chooseConf('unsure')}>Unsure<span className="small" style={{ color: 'var(--accent-fg)' }}>back in 3 days</span></button>
                       <button type="button" className={conf === 'knew' ? 'on' : ''} onClick={() => chooseConf('knew')}>Knew it<span className="small" style={{ color: 'var(--ok-text)' }}>back in 2 weeks</span></button>
                     </div>
                   </>
