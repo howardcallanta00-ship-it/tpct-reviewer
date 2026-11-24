@@ -315,7 +315,7 @@ export function PracticeRun() {
                   <span className="sub">Added to your Mistakes. It will come back until you get it right.</span>
                 )}
               </div>
-              <div className="reveal-2"><KeyCheck q={q} /></div>
+              <div className="reveal-2"><KeyCheck q={q} order={order} /></div>
               <div className="reveal-3"><Explanation q={q} order={order} /></div>
               <div className="action-bar">
                 <button type="button" className="btn primary" onClick={next}>

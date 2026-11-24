@@ -134,14 +134,31 @@ export function QuestionView({ q, order, picked, revealed, onPick, index, total,
   );
 }
 
-export function KeyCheck({ q }: { q: Question }) {
+/**
+ * Notes are written against the reviewer's original option numbers. When options are shuffled,
+ * rewrite "option 3" / "Options 2 and 3" to the numbers shown on screen.
+ */
+export function remapOptionRefs(text: string, order?: number[]) {
+  if (!order) return text;
+  const posOf = new Map(order.map((oi, pos) => [oi, pos]));
+  const fix = (d: string) => {
+    const pos = posOf.get(Number(d) - 1);
+    return pos === undefined ? d : String(pos + 1);
+  };
+  return text.replace(/\b([Oo]ptions?) (\d)\b((?:\s*(?:,|and|or)\s*\d\b)*)/g, (_m, word: string, first: string, rest: string) =>
+    `${word} ${fix(first)}${rest.replace(/\d/g, fix)}`,
+  );
+}
+
+export function KeyCheck({ q, order }: { q: Question; order?: number[] }) {
+  const fx = (t: string) => remapOptionRefs(t, order);
   if (q.keySource === 'claude' && q.notes.m) {
     return (
       <div className="card warn row" style={{ alignItems: 'flex-start', gap: 16 }}>
         <span className="tile" style={{ width: 42, height: 42, background: 'var(--warn)' }}><Icon d={PATHS.alert} stroke="#241D12" /></span>
         <div className="stack" style={{ gap: 8 }}>
           <h2 className="d" style={{ fontSize: 19, color: 'var(--warn-text)' }}>Your reviewer has no answer for this one</h2>
-          <p style={{ margin: 0, color: 'var(--warn-body)' }}><Md text={q.notes.m.note} /></p>
+          <p style={{ margin: 0, color: 'var(--warn-body)' }}><Md text={fx(q.notes.m.note)} /></p>
         </div>
       </div>
     );
@@ -160,7 +177,7 @@ export function KeyCheck({ q }: { q: Question }) {
             <>This question is ambiguous, so read the note carefully.</>
           )}
         </p>
-        <p style={{ margin: 0, color: 'var(--warn-body)' }}><Md text={q.notes.k.note} /></p>
+        <p style={{ margin: 0, color: 'var(--warn-body)' }}><Md text={fx(q.notes.k.note)} /></p>
       </div>
     </div>
   );
@@ -169,6 +186,7 @@ export function KeyCheck({ q }: { q: Question }) {
 export function Explanation({ q, order }: { q: Question; order: number[] }) {
   const [tab, setTab] = useState<'why' | 'options'>('why');
   const lesson = lessonById[q.notes.t];
+  const fx = (t: string) => remapOptionRefs(t, order);
   return (
     <div className="card stack" style={{ gap: 16 }}>
       <div className="tabs" role="tablist">
@@ -176,13 +194,13 @@ export function Explanation({ q, order }: { q: Question; order: number[] }) {
         <button type="button" role="tab" aria-selected={tab === 'options'} className={tab === 'options' ? 'on' : ''} onClick={() => setTab('options')}>Every option, explained</button>
       </div>
       {tab === 'why' ? (
-        <p key="why" className="tab-panel" style={{ margin: 0, fontSize: 16.5, lineHeight: 1.7, maxWidth: 720 }}><Md text={q.notes.e} /></p>
+        <p key="why" className="tab-panel" style={{ margin: 0, fontSize: 16.5, lineHeight: 1.7, maxWidth: 720 }}><Md text={fx(q.notes.e)} /></p>
       ) : (
         <div key="opts" className="why tab-panel">
           {order.map((oi, pos) => (
             <div key={oi}>
               <span className={'k' + (oi === q.key ? ' ok' : '')}>{pos + 1}</span>
-              <span style={{ color: 'var(--text-2)' }}><Md text={q.notes.w[oi] ?? ''} /></span>
+              <span style={{ color: 'var(--text-2)' }}><Md text={fx(q.notes.w[oi] ?? '')} /></span>
             </div>
           ))}
         </div>
@@ -190,7 +208,7 @@ export function Explanation({ q, order }: { q: Question; order: number[] }) {
       {q.notes.r && (
         <div className="callout tip">
           <span className="tile" style={{ width: 34, height: 34, background: 'var(--pink)', borderRadius: 10 }}><Icon d={PATHS.bulb} size={18} stroke="#241B2E" /></span>
-          <span><b style={{ color: 'var(--pink-text)' }}>Remember: </b><Md text={q.notes.r} /></span>
+          <span><b style={{ color: 'var(--pink-text)' }}>Remember: </b><Md text={fx(q.notes.r)} /></span>
         </div>
       )}
       {lesson && (

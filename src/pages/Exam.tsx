@@ -172,7 +172,7 @@ export function Exam() {
         {rq && (
           <>
             <QuestionView q={rq} order={orders[rq.id]} picked={answers[rq.id] ?? -1} revealed />
-            <KeyCheck q={rq} />
+            <KeyCheck q={rq} order={orders[rq.id]} />
             <Explanation q={rq} order={orders[rq.id]} />
           </>
         )}

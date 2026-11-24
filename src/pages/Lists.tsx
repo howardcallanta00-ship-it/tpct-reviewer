@@ -168,7 +168,7 @@ export function QuestionPage() {
         <button type="button" className="btn" style={{ alignSelf: 'flex-start' }} onClick={() => setPicked(-1)}>Just show me the answer</button>
       ) : (
         <>
-          <KeyCheck q={q} />
+          <KeyCheck q={q} order={order} />
           <Explanation q={q} order={order} />
         </>
       )}

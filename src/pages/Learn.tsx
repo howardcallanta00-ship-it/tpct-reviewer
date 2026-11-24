@@ -151,7 +151,7 @@ function QuickCheck({ ids }: { ids: string[] }) {
       <QuestionView key={q.id} q={q} order={order} picked={picked} revealed={picked !== null} onPick={pick} fx />
       {picked !== null && (
         <>
-          <div className="reveal"><KeyCheck q={q} /></div>
+          <div className="reveal"><KeyCheck q={q} order={order} /></div>
           <div className="reveal-2"><Explanation q={q} order={order} /></div>
           {i + 1 < ids.length && (
             <button type="button" className="btn" style={{ alignSelf: 'flex-start' }} onClick={() => { setPicked(null); setI(i + 1); }}>
