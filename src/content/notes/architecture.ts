@@ -295,7 +295,7 @@ export const architectureNotes: Record<string, QuestionNotes> = {
     ],
     k: {
       likely: 2,
-      note: '"HDFS consists of NameNodes that manage metadata and DataNodes that store data" is a **true** statement, it is the textbook HDFS structure. The false one is option 3: HDFS follows a **write-once, read-many** model, and stored files are not modified in place.',
+      note: '"HDFS consists of NameNodes that manage metadata and DataNodes that store data" is a **true** statement (the textbook HDFS structure), so it is not the answer. Option 3 is the false statement, so it is the answer: HDFS follows a **write-once, read-many** model, and stored files are not modified in place.',
     },
     r: 'HDFS: write once, read many.',
   },
@@ -384,7 +384,7 @@ export const architectureNotes: Record<string, QuestionNotes> = {
     ],
     k: {
       likely: 0,
-      note: 'Option 2 is the **correct** definition of fast recovery. The false statement is option 1: despite the name, slow start **doubles** the congestion window every round trip. Linear growth by one is congestion avoidance.',
+      note: 'Option 2 is a **true** statement (it is the real definition of fast recovery), so it is not the answer to a NOT question. Option 1 is the false statement, so it is the answer: despite the name, slow start **doubles** the congestion window every round trip. Linear growth by one is congestion avoidance.',
     },
     r: 'Slow start = exponential. Congestion avoidance = linear.',
   },

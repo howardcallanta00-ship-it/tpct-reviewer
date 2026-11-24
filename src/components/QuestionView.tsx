@@ -99,7 +99,7 @@ export function QuestionView({ q, order, picked, revealed, onPick, index, total,
               tag = q.keySource === 'claude' ? 'Answer' : picked === oi ? 'Correct per your key' : 'Your key’s answer';
             } else if (oi === likely) {
               cls += ' likely';
-              tag = oi === picked ? 'Your answer, likely correct' : 'Likely correct';
+              tag = oi === picked ? 'Your answer, likely right' : 'Likely answer';
             } else if (oi === picked) {
               cls += ' wrong';
               tag = 'Your answer';
@@ -172,7 +172,7 @@ export function KeyCheck({ q, order }: { q: Question; order?: number[] }) {
         <p style={{ margin: 0, color: 'var(--warn-body)' }}>
           You are scored on your reviewer’s answer.{' '}
           {q.notes.k.likely >= 0 ? (
-            <>The option that is more likely correct is marked <b style={{ color: 'var(--warn-text)' }}>Likely correct</b>.</>
+            <>The option that is more likely the real answer is marked <b style={{ color: 'var(--warn-text)' }}>Likely answer</b>.</>
           ) : (
             <>This question is ambiguous, so read the note carefully.</>
           )}

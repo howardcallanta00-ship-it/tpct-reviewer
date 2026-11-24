@@ -44,7 +44,7 @@ export const securityNotes: Record<string, QuestionNotes> = {
     ],
     k: {
       likely: 3,
-      note: 'Removing write permission on `/etc/profile` from everyone except root is a **standard, correct** hardening step, since that file runs for every user at login. Option 4 is the incorrect one: `/etc/hosts.allow` and `/etc/hosts.deny` (TCP Wrappers) list **hosts and IP addresses**, not users.',
+      note: 'Removing write permission on `/etc/profile` from everyone except root is a **standard, good** hardening step, since that file runs for every user at login, so it is not the answer. Option 4 is the wrong practice, so it is the answer: `/etc/hosts.allow` and `/etc/hosts.deny` (TCP Wrappers) list **hosts and IP addresses**, not users.',
     },
     r: 'hosts.allow / hosts.deny = which machines may connect.',
   },
@@ -137,7 +137,7 @@ export const securityNotes: Record<string, QuestionNotes> = {
     ],
     k: {
       likely: 2,
-      note: '"HTTPS is SSL applied to HTTP" is the textbook definition of HTTPS, so it is **true**. The false statement is option 3: SSL/TLS works above TCP (between transport and application layers). The network layer security protocol is **IPsec**.',
+      note: '"HTTPS is SSL applied to HTTP" is the textbook definition of HTTPS, so it is **true** and not the answer. Option 3 is the false statement, so it is the answer: SSL/TLS works above TCP (between transport and application layers). The network layer security protocol is **IPsec**.',
     },
     r: 'HTTPS = HTTP + SSL/TLS. Network-layer security = IPsec.',
   },

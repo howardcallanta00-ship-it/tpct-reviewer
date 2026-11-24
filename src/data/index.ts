@@ -18,6 +18,7 @@ import { securityLessons } from '../content/lessons/security';
 import { businessLessons } from '../content/lessons/business';
 import { managementLessons } from '../content/lessons/management';
 import { fixTypos } from './typos';
+import { clarifyNotes } from './wording';
 
 export const ICONS = {
   code: 'M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16',
@@ -83,7 +84,8 @@ function build(domain: DomainId, raw: RawQuestion, num: number): Question {
   }
   context = context.map((c) => ('text' in c && c.text ? { ...c, text: fixTypos(c.text) } : c));
   options = options.map((o) => (o.text ? { ...o, text: fixTypos(o.text) } : o));
-  return { id: raw.id, domain, num, stem: fixTypos(fix.stem ?? raw.stem), context, options, key, keySource, notes };
+  const stem = fixTypos(fix.stem ?? raw.stem);
+  return { id: raw.id, domain, num, stem, context, options, key, keySource, notes: clarifyNotes(stem, notes) };
 }
 
 export const QUESTIONS: Question[] = DOMAINS.flatMap((d) => RAW[d.id].map((r, i) => build(d.id, r, i + 1)));

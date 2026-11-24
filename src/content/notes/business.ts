@@ -11,7 +11,7 @@ const nftNotes: QuestionNotes = {
   ],
   k: {
     likely: 2,
-    note: '"Cannot be replaced with other tokens" is the **definition** of non-fungible, so option 4 is true. The false statement is option 3: "tokens of the same type have the same value" describes **fungible** tokens (like cryptocurrency coins). Every NFT is unique.',
+    note: '"Cannot be replaced with other tokens" is the **definition** of non-fungible, so option 4 is true and not the answer. Option 3 is the false statement, so it is the answer: "tokens of the same type have the same value" describes **fungible** tokens (like cryptocurrency coins). Every NFT is unique.',
   },
   r: 'Fungible = swappable like money. Non-fungible = one of a kind.',
 };
@@ -230,7 +230,7 @@ export const businessNotes: Record<string, QuestionNotes> = {
     ],
     k: {
       likely: 2,
-      note: 'Option 4 is almost word-for-word the **Product** principle ("ensure products meet the highest professional standards possible"), so it is a correct code item. Option 3 conflicts with the **Judgment** principle: engineers must keep **independence** in professional judgment instead of focusing on stakeholders’ perspectives.',
+      note: 'Option 4 is almost word-for-word the **Product** principle ("ensure products meet the highest professional standards possible"), so it is a true code item and not the answer. Option 3 is the answer: it conflicts with the **Judgment** principle: engineers must keep **independence** in professional judgment instead of focusing on stakeholders’ perspectives.',
     },
     r: 'Ethics code: Public first, independent judgment, highest standards.',
   },
@@ -291,7 +291,7 @@ export const businessNotes: Record<string, QuestionNotes> = {
     ],
     k: {
       likely: 1,
-      note: '"A single repository of data collected inside or outside the organization" is a correct description of a **data lake**. "A repository used by field workers for specific tasks" describes a **data mart**, so option 2 is the incorrect one. (The question says "Data Take", which is a typo for "Data Lake".)',
+      note: '"A single repository of data collected inside or outside the organization" is a true description of a **data lake**, so it is not the answer. "A repository used by field workers for specific tasks" describes a **data mart**, so option 2 is the false statement and the answer. (The question says "Data Take", which is a typo for "Data Lake".)',
     },
     fix: { stem: 'Which of the following is NOT correct about the Data Lake?' },
     r: 'Data lake = everything raw. Data warehouse = cleaned. Data mart = one team’s slice.',

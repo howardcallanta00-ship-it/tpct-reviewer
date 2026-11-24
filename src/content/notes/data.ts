@@ -183,7 +183,7 @@ export const dataNotes: Record<string, QuestionNotes> = {
     ],
     k: {
       likely: 1,
-      note: 'Option 1 is a real disadvantage of replication, so it is a **correct** statement. Option 2 goes against **location transparency**: in a distributed database, users and applications should not have to know or manage where data is stored. Option 2 is the incorrect statement.',
+      note: 'Option 1 is a real disadvantage of replication, so it is a **true** statement and not the answer. Option 2 goes against **location transparency**: in a distributed database, users and applications should not have to know or manage where data is stored. Option 2 is the false statement, so it is the answer.',
     },
     r: 'Distributed DB golden rule: transparency (location, replication, failure).',
   },
@@ -386,7 +386,7 @@ export const dataNotes: Record<string, QuestionNotes> = {
     ],
     k: {
       likely: 0,
-      note: 'The line is **solid** next to Employee and **dashed** next to Department. Solid = must, dashed = may. So employees **cannot** exist without a department (option 1 is the false statement), and departments **can** exist without employees (option 2 is true).',
+      note: 'The line is **solid** next to Employee and **dashed** next to Department. Solid = must, dashed = may. So employees **cannot** exist without a department (option 1 is the false statement, so it is the answer), and departments **can** exist without employees (option 2 is true).',
     },
     r: 'Barker: solid = must, dashed = may. Read from the entity next to the line.',
   },
