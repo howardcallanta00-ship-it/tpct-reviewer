@@ -18,7 +18,11 @@ const MODES: { id: Mode; title: string; desc: string }[] = [
   { id: 'saved', title: 'Saved', desc: 'Questions you bookmarked' },
 ];
 
-export function pickQuestions(p: Progress, opts: { d?: string | null; t?: string | null; mode: Mode; n: number; first?: string | null }) {
+export function pickQuestions(p: Progress, opts: { d?: string | null; t?: string | null; mode: Mode; n: number; first?: string | null; ids?: string | null }) {
+  if (opts.ids) {
+    const ids = opts.ids.split(',');
+    return shuffle(QUESTIONS.filter((q) => ids.includes(q.id)));
+  }
   let pool: Question[] = QUESTIONS;
   if (opts.d && opts.d !== 'all') pool = pool.filter((q) => q.domain === opts.d);
   if (opts.t) pool = pool.filter((q) => q.notes.t === opts.t);
@@ -133,7 +137,7 @@ export function PracticeRun() {
   const nav = useNavigate();
   const p = useProgress();
   const [list] = useState(() =>
-    pickQuestions(p, { d: params.get('d'), t: params.get('t'), mode: (params.get('mode') as Mode) ?? 'smart', n: Number(params.get('n') ?? 10), first: params.get('first') }),
+    pickQuestions(p, { d: params.get('d'), t: params.get('t'), mode: (params.get('mode') as Mode) ?? 'smart', n: Number(params.get('n') ?? 10), first: params.get('first'), ids: params.get('ids') }),
   );
   const [i, setI] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
@@ -242,7 +246,7 @@ export function PracticeRun() {
           </div>
           <div className="row wrap">
             <button type="button" className="btn primary" onClick={() => nav(0)}>Practice another set</button>
-            {missed.length > 0 && <Link to="/practice/go?mode=mistakes" className="btn">Retry mistakes</Link>}
+            {missed.length > 0 && <Link to={`/practice/go?ids=${missed.map((m) => m.id).join(',')}`} className="btn">Retry {missed.length === 1 ? 'this mistake' : `these ${missed.length} mistakes`}</Link>}
             <Link to="/" className="btn">Back to dashboard</Link>
           </div>
         </div>

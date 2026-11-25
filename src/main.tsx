@@ -11,6 +11,12 @@ import { Exam } from './pages/Exam';
 import { KeyChecks, Mistakes, QuestionPage, Saved, Search, Settings } from './pages/Lists';
 import { Empty } from './components/ui';
 
+/** A new practice set starts on every navigation, even to the same URL (e.g. "Retry mistakes"). */
+function PracticeRunPage() {
+  const { key } = useLocation();
+  return <PracticeRun key={key} />;
+}
+
 function ScrollTop() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -29,7 +35,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="learn" element={<LearnIndex />} />
           <Route path="learn/:id" element={<LessonPage />} />
           <Route path="practice" element={<PracticeSetup />} />
-          <Route path="practice/go" element={<PracticeRun />} />
+          <Route path="practice/go" element={<PracticeRunPage />} />
           <Route path="exam" element={<Exam />} />
           <Route path="mistakes" element={<Mistakes />} />
           <Route path="key-checks" element={<KeyChecks />} />
